@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AS Economics Paper 2 宏观教学站</title>
+  <style>
+    :root {
+      --bg: #f6f8fc;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --border: #e5e7eb;
+    }
+    body {
+      margin: 0;
+      font-family: "Inter", "Noto Sans SC", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    .hero {
+      background: linear-gradient(120deg, #dbeafe, #eef2ff);
+      border: 1px solid #c7d2fe;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    h1, h2, h3 { margin: 0 0 10px; }
+    .muted { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 900px) { .grid { grid-template-columns: 1.2fr 1fr; } }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+    .topic {
+      border-left: 4px solid var(--primary);
+      padding-left: 12px;
+      margin: 14px 0;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid #bfdbfe;
+      background: #eff6ff;
+      color: #1d4ed8;
+      margin-right: 6px;
+    }
+    details { margin-top: 10px; }
+    summary { cursor: pointer; font-weight: 600; }
+    .footer { margin-top: 18px; color: var(--muted); font-size: 14px; }
+    .mindmap-wrap { overflow-x: auto; }
+  </style>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+  </script>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <h1>AS Economics Paper 2 · 宏观教学版</h1>
+      <p class="muted">聚焦课堂教学：知识点 + 思维导图（后续可扩展题库、测验和学习进度）。</p>
+      <span class="tag">Teacher-ready</span>
+      <span class="tag">Macro only</span>
+      <span class="tag">Concept + Mind Map</span>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>核心知识点（可直接用于授课）</h2>
+
+        <div class="topic">
+          <h3>1) 宏观目标与指标</h3>
+          <p><strong>关键词：</strong>GDP、Inflation、Unemployment、BOP、Growth</p>
+          <p><strong>课堂重点：</strong>解释“目标之间可能冲突”，如控制通胀与促进增长的短期权衡。</p>
+        </div>
+
+        <div class="topic">
+          <h3>2) AD / AS 模型</h3>
+          <p><strong>关键词：</strong>AD, SRAS, LRAS, output gap</p>
+          <p><strong>课堂重点：</strong>学生需要能说清“曲线为什么移动”“均衡变化意味着什么”。</p>
+        </div>
+
+        <div class="topic">
+          <h3>3) 通胀与失业</h3>
+          <p><strong>关键词：</strong>demand-pull, cost-push, cyclical, structural, Phillips Curve</p>
+          <p><strong>课堂重点：</strong>区分成因并能对应政策工具，避免“只背定义”。</p>
+        </div>
+
+        <div class="topic">
+          <h3>4) 宏观政策工具</h3>
+          <p><strong>关键词：</strong>Fiscal, Monetary, Supply-side</p>
+          <p><strong>课堂重点：</strong>每种政策都讲“机制 + 时滞 + 副作用 + 评价条件”。</p>
+        </div>
+
+        <div class="topic">
+          <h3>5) 国际经济联系</h3>
+          <p><strong>关键词：</strong>exchange rate, current account, competitiveness</p>
+          <p><strong>课堂重点：</strong>汇率变化如何影响净出口、通胀与增长。</p>
+        </div>
+
+        <details>
+          <summary>建议的单节课板书结构（可复制）</summary>
+          <ol>
+            <li>考试目标（本节要拿什么分）</li>
+            <li>概念框架（定义 + 图）</li>
+            <li>机制链条（A 导致 B，B 导致 C）</li>
+            <li>政策评估（短期/长期、条件、风险）</li>
+            <li>课堂练习（1道解释题 + 1道评估题）</li>
+          </ol>
+        </details>
+      </article>
+
+      <article class="card">
+        <h2>思维导图（课堂总览）</h2>
+        <p class="muted">用于导入新课、章节复盘和考前串讲。</p>
+        <div class="mindmap-wrap">
+          <pre class="mermaid">
+mindmap
+  root((AS Macro Paper 2))
+    Objectives
+      Growth
+      Low Inflation
+      Low Unemployment
+      External Balance
+    AD-AS
+      AD shifts
+        C I G (X-M)
+      AS shifts
+        SRAS
+        LRAS
+      Output Gap
+    Inflation & Unemployment
+      Demand-pull
+      Cost-push
+      Cyclical
+      Structural
+      Phillips Curve
+    Policy Tools
+      Fiscal Policy
+        Tax
+        Spending
+      Monetary Policy
+        Interest Rate
+        Money Supply
+      Supply-side Policy
+        Productivity
+        Incentives
+    Open Economy
+      Exchange Rate
+      Current Account
+      Competitiveness
+          </pre>
+        </div>
+
+        <details>
+          <summary>怎么在课堂上用这张图</summary>
+          <ul>
+            <li>第 1 轮：只讲主枝（5 分钟）。</li>
+            <li>第 2 轮：每个主枝补 1 个典型题型（10 分钟）。</li>
+            <li>第 3 轮：让学生从“政策工具”反推到“目标变化”（8 分钟）。</li>
+          </ul>
+        </details>
+      </article>
+    </section>
+
+    <p class="footer">下一步可扩展：每个主枝拆成独立页面 + 可打印讲义 + 课堂小测。</p>
+  </main>
+</body>
+</html>
