@@ -1,40 +1,953 @@
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lesson 3: Index Numbers and Real Data</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson 3 - Index Numbers and Real Values</title>
+
   <style>
-    body { font-family: Inter, "Noto Sans SC", sans-serif; background:#f4f7fb; color:#1f2937; margin:0; }
-    .container { max-width: 980px; margin: 0 auto; padding: 24px; }
-    .card { background:#fff; border:1px solid #dbe3ef; border-radius:12px; padding:18px; }
-    .muted { color:#6b7280; }
-    h1,h2 { margin:0 0 10px; }
-    ul { margin:0; padding-left:20px; }
-    a { color:#1d4ed8; }
+    *{ margin:0; padding:0; box-sizing:border-box; }
+
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      line-height:1.7;
+      background:#f5f7fb;
+      color:#222;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+      padding:40px 0;
+    }
+
+    header{
+      background:#1d3557;
+      color:white;
+      padding:60px 20px;
+      text-align:center;
+    }
+
+    header h1{ font-size:3rem; margin-bottom:10px; }
+    header p{ font-size:1.1rem; opacity:0.9; }
+
+    .lesson-info{
+      background:white;
+      padding:25px;
+      margin-top:-30px;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    h2{
+      margin-top:50px;
+      margin-bottom:20px;
+      color:#1d3557;
+      border-left:6px solid #457b9d;
+      padding-left:15px;
+    }
+
+    h3{
+      margin-top:30px;
+      margin-bottom:15px;
+      color:#2a5d84;
+    }
+
+    h4{
+      margin-bottom:10px;
+      color:#1d3557;
+    }
+
+    p{ margin-bottom:15px; }
+
+    ul{
+      margin-left:25px;
+      margin-bottom:20px;
+    }
+
+    li{ margin-bottom:10px; }
+
+    .box{
+      background:white;
+      padding:25px;
+      border-radius:12px;
+      margin-bottom:25px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .definition{
+      background:#edf6ff;
+      border-left:5px solid #457b9d;
+      padding:15px;
+      margin:20px 0;
+    }
+
+    .example{
+      background:#fff8e7;
+      border-left:5px solid #f4a261;
+      padding:15px;
+      margin:20px 0;
+    }
+
+    .evaluation{
+      background:#eefbea;
+      border-left:5px solid #4caf50;
+      padding:15px;
+      margin:20px 0;
+    }
+
+    .warning{
+      background:#fff1f1;
+      border-left:5px solid #e76f51;
+      padding:15px;
+      margin:20px 0;
+    }
+
+    .formula{
+      background:#1d3557;
+      color:white;
+      padding:12px 18px;
+      border-radius:8px;
+      font-family:monospace;
+      margin:15px 0;
+      display:inline-block;
+      overflow-x:auto;
+      max-width:100%;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin:20px 0;
+      background:white;
+      font-size:0.95rem;
+    }
+
+    th, td{
+      border:1px solid #d7e0ea;
+      padding:12px;
+      text-align:left;
+      vertical-align:top;
+    }
+
+    th{
+      background:#1d3557;
+      color:white;
+    }
+
+    .table-wrap{
+      overflow-x:auto;
+    }
+
+    .mindmap-section{ margin-top:50px; }
+
+    .mindmap-diagram{
+      background:white;
+      padding:30px 20px 40px;
+      border-radius:16px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.05);
+      overflow-x:auto;
+    }
+
+    .mindmap-root{
+      position:relative;
+      max-width:580px;
+      margin:0 auto 50px;
+      background:#1d3557;
+      color:white;
+      text-align:center;
+      padding:18px 20px;
+      border-radius:14px;
+      font-weight:bold;
+      font-size:1.1rem;
+      line-height:1.5;
+    }
+
+    .mindmap-root::after{
+      content:"";
+      position:absolute;
+      left:50%;
+      bottom:-32px;
+      transform:translateX(-50%);
+      width:3px;
+      height:32px;
+      background:#9bb7d4;
+    }
+
+    .mindmap-level-1{
+      position:relative;
+      display:grid;
+      grid-template-columns:repeat(4, minmax(230px, 1fr));
+      gap:20px;
+      min-width:1050px;
+      padding-top:35px;
+    }
+
+    .mindmap-level-1::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:8%;
+      right:8%;
+      height:3px;
+      background:#9bb7d4;
+      border-radius:3px;
+    }
+
+    .mindmap-branch{
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+    .mindmap-branch::before{
+      content:"";
+      position:absolute;
+      top:-35px;
+      left:50%;
+      transform:translateX(-50%);
+      width:3px;
+      height:35px;
+      background:#9bb7d4;
+    }
+
+    .branch-title{
+      width:100%;
+      text-align:center;
+      color:white;
+      padding:14px 12px;
+      border-radius:12px;
+      font-weight:bold;
+      margin-bottom:16px;
+      line-height:1.4;
+    }
+
+    .index{ background:#457b9d; }
+    .cpi{ background:#e76f51; }
+    .real{ background:#2a9d8f; }
+    .compare{ background:#6c5ce7; }
+
+    .sub-branch{
+      width:100%;
+      border-radius:12px;
+      padding:14px 14px 12px;
+      margin-bottom:14px;
+      border:1px solid #d9e7f4;
+      border-left:5px solid #457b9d;
+      background:#f8fbff;
+    }
+
+    .index-box{ border-left-color:#457b9d; background:#f8fbff; }
+    .cpi-box{ border-left-color:#e76f51; background:#fff8f6; }
+    .real-box{ border-left-color:#2a9d8f; background:#f4fffd; }
+    .compare-box{ border-left-color:#6c5ce7; background:#f7f5ff; }
+
+    .sub-branch p{
+      margin:0;
+      font-size:0.95rem;
+    }
+
+    .mindmap-note{
+      margin-top:20px;
+      font-size:0.95rem;
+      color:#555;
+      text-align:center;
+    }
+
+    .activity{
+      background:#f7f5ff;
+      border-left:5px solid #6c5ce7;
+      padding:20px;
+      border-radius:12px;
+      margin:20px 0;
+    }
+
+    .summary{
+      background:#1d3557;
+      color:white;
+      padding:30px;
+      border-radius:12px;
+      margin-top:50px;
+    }
+
+    .summary h2{
+      color:white;
+      border:none;
+      padding:0;
+      margin-top:0;
+    }
+
+    footer{
+      text-align:center;
+      padding:40px;
+      color:#666;
+    }
+
+    @media(max-width:768px){
+      header h1{ font-size:2rem; }
+      .container{ width:95%; }
+    }
   </style>
 </head>
+
 <body>
   <main class="container">
     <p><a href="./index.html">← 返回 Module 1</a></p>
-    <section class="card">
-      <h1>Lesson 3: Index Numbers and Real Data</h1>
-      <p class="muted">对应考纲：3.2.1.2 Macroeconomic indicators；3.5 Quantitative skills。</p>
+<header>
+  <h1>Lesson 3</h1>
+  <p>Index Numbers and Real Values</p>
+</header>
 
-      <h2>核心知识点</h2>
-      <ul>
-        <li>Index numbers</li>
-        <li>Base year</li>
-        <li>Weights</li>
-        <li>CPI 的基本计算逻辑</li>
-        <li>Nominal value 转换为 real value</li>
-        <li>Percentage change</li>
-        <li>Using index numbers to compare economic data</li>
-      </ul>
+<div class="container">
 
-      <h2>学生需要掌握</h2>
-      <p>这一课建议单独拆出来，因为 index numbers 和 real terms calculation 经常出现在计算题里。</p>
-    </section>
-  </main>
+  <div class="lesson-info">
+    <h3>Specification Reference</h3>
+    <p>
+      OxfordAQA AS Economics Unit 2 — 3.2.1.2 Macroeconomic indicators and 3.5 Quantitative skills
+    </p>
+
+    <h3>Learning Objectives</h3>
+    <ul>
+      <li>Understand what index numbers are and why economists use them</li>
+      <li>Explain base year, basket of goods and weights</li>
+      <li>Calculate a price index for an individual item</li>
+      <li>Calculate a weighted price index</li>
+      <li>Use a price index to convert nominal values into real values</li>
+      <li>Use index numbers to compare changes in economic variables</li>
+    </ul>
+  </div>
+
+  <section class="mindmap-section">
+    <h2>1. Mind Map Overview</h2>
+
+    <div class="mindmap-diagram">
+
+      <div class="mindmap-root">
+        Index numbers help economists compare economic data over time and remove the effects of inflation
+      </div>
+
+      <div class="mindmap-level-1">
+
+        <div class="mindmap-branch">
+          <div class="branch-title index">Index Numbers</div>
+
+          <div class="sub-branch index-box">
+            <h4>Base value</h4>
+            <p>The starting point is given a value of 100.</p>
+          </div>
+
+          <div class="sub-branch index-box">
+            <h4>Purpose</h4>
+            <p>Used to measure changes in related variables over time.</p>
+          </div>
+
+          <div class="sub-branch index-box">
+            <h4>Formula</h4>
+            <p>New price index = New price ÷ Original price × 100</p>
+          </div>
+        </div>
+
+        <div class="mindmap-branch">
+          <div class="branch-title cpi">CPI and Inflation</div>
+
+          <div class="sub-branch cpi-box">
+            <h4>Basket of goods</h4>
+            <p>Goods and services bought by households.</p>
+          </div>
+
+          <div class="sub-branch cpi-box">
+            <h4>Weights</h4>
+            <p>Reflect the relative importance of each item.</p>
+          </div>
+
+          <div class="sub-branch cpi-box">
+            <h4>CPI</h4>
+            <p>Measures changes in the average price level.</p>
+          </div>
+        </div>
+
+        <div class="mindmap-branch">
+          <div class="branch-title real">Real Values</div>
+
+          <div class="sub-branch real-box">
+            <h4>Nominal values</h4>
+            <p>Measured in current money terms.</p>
+          </div>
+
+          <div class="sub-branch real-box">
+            <h4>Real values</h4>
+            <p>Adjusted for inflation.</p>
+          </div>
+
+          <div class="sub-branch real-box">
+            <h4>Purpose</h4>
+            <p>Shows changes in the quantity or volume of goods and services.</p>
+          </div>
+        </div>
+
+        <div class="mindmap-branch">
+          <div class="branch-title compare">Comparisons</div>
+
+          <div class="sub-branch compare-box">
+            <h4>Over time</h4>
+            <p>Compare changes in GDP, prices, exports and spending.</p>
+          </div>
+
+          <div class="sub-branch compare-box">
+            <h4>Between countries</h4>
+            <p>Compare productivity or living standards at one point in time.</p>
+          </div>
+
+          <div class="sub-branch compare-box">
+            <h4>Care needed</h4>
+            <p>Index point change is not always the same as percentage change.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="mindmap-note">
+        This mind map shows the logic of Lesson 3: index numbers, CPI, real values and economic comparisons.
+      </p>
+
+    </div>
+  </section>
+
+  <h2>2. What are Index Numbers?</h2>
+
+  <div class="box">
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      An index number is a statistic, with a base value of 100, used to measure changes in a selection of related variables.
+    </div>
+
+    <p>
+      Index numbers are used to measure changes over time. Economists often use index numbers because they make large or complicated data easier to compare.
+    </p>
+
+    <p>
+      The starting point for an index is called the base year. The base year is given a value of 100.
+    </p>
+
+    <div class="example">
+      <strong>Example:</strong><br>
+      If a price index rises from 100 to 120, this means the price has increased by 20% compared with the base year.
+    </div>
+  </div>
+
+  <h2>3. Key Terms</h2>
+
+  <div class="box">
+    <div class="definition">
+      <strong>Base year:</strong> the starting point for an index, where the value is 100.
+    </div>
+
+    <div class="definition">
+      <strong>Consumer Price Index, CPI:</strong> a measure of the price level and inflation.
+    </div>
+
+    <div class="definition">
+      <strong>Basket of goods:</strong> the goods and services included in a price index.
+    </div>
+
+    <div class="definition">
+      <strong>Weight:</strong> a way to reflect the relative importance of each item in an index.
+    </div>
+  </div>
+
+  <h2>4. CPI, Basket of Goods and Weights</h2>
+
+  <div class="box">
+    <h3>4.1 Consumer Price Index</h3>
+
+    <p>
+      The Consumer Price Index measures changes in the average price of a weighted basket of consumer goods and services purchased by households.
+    </p>
+
+    <p>
+      CPI is the most commonly used measure of inflation.
+    </p>
+
+    <h3>4.2 Basket of Goods</h3>
+
+    <p>
+      To construct the CPI, economists first decide which goods and services should be included in the basket.
+      This is often done by asking households to record their spending over a period of time.
+    </p>
+
+    <div class="example">
+      <strong>Example:</strong><br>
+      Many years ago, CDs may have been included in a typical basket of goods. Today, music downloads or streaming services are more likely to be included instead.
+    </div>
+
+    <h3>4.3 Weights</h3>
+
+    <p>
+      Weights are used because households spend more on some goods than others.
+      The greater the percentage of total spending on an item, the larger the weight attached to that item.
+    </p>
+
+    <div class="example">
+      <strong>Example:</strong><br>
+      If a typical household spends 12.3% of its income on an item, and the total weights are set at 1000, the item will be given a weight of 123.
+    </div>
+
+    <div class="evaluation">
+      The use of weights means that a given percentage increase in the price of an important item has a greater effect on the overall price index.
+    </div>
+  </div>
+
+  <h2>5. Calculating a New Price Index for One Item</h2>
+
+  <div class="box">
+    <p>
+      If the price of one item changes, its new price index can be calculated using the formula below.
+    </p>
+
+    <div class="formula">
+      New price index = New price / Original price × 100
+    </div>
+
+    <div class="example">
+      <strong>Example: Chicken price index</strong><br><br>
+      Base year price of chicken = $3.00<br>
+      Current year price of chicken = $3.60<br><br>
+      New price index = 3.60 / 3.00 × 100 = 120
+    </div>
+
+    <p>
+      This means the price of chicken has increased by 20% compared with the base year.
+    </p>
+  </div>
+
+  <h2>6. Constructing a Weighted Price Index</h2>
+
+  <div class="box">
+    <p>
+      A weighted price index takes account of the relative importance of different items in the basket of goods.
+    </p>
+
+    <div class="formula">
+      Weighted price index = Sum of index × weight / Sum of weights
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>Item</th>
+          <th>Price in Year 1</th>
+          <th>Index in Year 1</th>
+          <th>Price in Year 2</th>
+          <th>Index in Year 2</th>
+          <th>Weight</th>
+          <th>Index in Year 2 × Weight</th>
+        </tr>
+
+        <tr>
+          <td>Coffee</td>
+          <td>$2.00</td>
+          <td>100</td>
+          <td>$2.20</td>
+          <td>110</td>
+          <td>30</td>
+          <td>3300</td>
+        </tr>
+
+        <tr>
+          <td>Milk</td>
+          <td>$0.80</td>
+          <td>100</td>
+          <td>$1.00</td>
+          <td>125</td>
+          <td>20</td>
+          <td>2500</td>
+        </tr>
+
+        <tr>
+          <td>Sugar</td>
+          <td>$1.20</td>
+          <td>100</td>
+          <td>$0.96</td>
+          <td>80</td>
+          <td>10</td>
+          <td>800</td>
+        </tr>
+
+        <tr>
+          <td>Tea</td>
+          <td>$1.50</td>
+          <td>100</td>
+          <td>$1.95</td>
+          <td>130</td>
+          <td>40</td>
+          <td>5200</td>
+        </tr>
+
+        <tr>
+          <td colspan="5"><strong>Total</strong></td>
+          <td><strong>100</strong></td>
+          <td><strong>11800</strong></td>
+        </tr>
+
+        <tr>
+          <td colspan="6"><strong>Overall price index</strong></td>
+          <td><strong>118</strong></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="example">
+      <strong>Calculation:</strong><br><br>
+      Overall price index = 11800 ÷ 100 = 118
+    </div>
+
+    <p>
+      This means the weighted average price level has increased by 18% compared with the base year.
+    </p>
+  </div>
+
+  <h2>7. Steps for Constructing a Price Index</h2>
+
+  <div class="box">
+    <h3>Base Year</h3>
+
+    <ul>
+      <li>Decide which goods and services should be included in the basket.</li>
+      <li>Decide on the base year.</li>
+      <li>Find out the price of each item in the base year.</li>
+      <li>Find out the percentage of income spent on each item.</li>
+      <li>Use spending patterns to determine the weight of each item.</li>
+      <li>Give each item a base year index of 100.</li>
+    </ul>
+
+    <h3>Current Year</h3>
+
+    <ul>
+      <li>Find the price of each item in the current year.</li>
+      <li>Calculate the new index for each item.</li>
+      <li>Multiply each new index by its weight.</li>
+      <li>Add the totals.</li>
+      <li>Divide by the sum of the weights.</li>
+    </ul>
+  </div>
+
+  <h2>8. Using a Price Index to Remove the Effects of Inflation</h2>
+
+  <div class="box">
+    <div class="definition">
+      <strong>Nominal value:</strong> a value measured in current money terms, without adjusting for inflation.
+    </div>
+
+    <div class="definition">
+      <strong>Real value:</strong> a value adjusted for inflation.
+    </div>
+
+    <p>
+      Data measured in real terms removes the effects of inflation and shows what has happened to the actual quantity or volume of goods and services.
+    </p>
+
+    <div class="formula">
+      Real value = Nominal value × Base year price index / Current year price index
+    </div>
+  </div>
+
+  <h2>9. Example: Government Spending in Real Terms</h2>
+
+  <div class="box">
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>Year</th>
+          <th>Government spending</th>
+          <th>Price index</th>
+        </tr>
+
+        <tr>
+          <td>2017</td>
+          <td>$500 million</td>
+          <td>100</td>
+        </tr>
+
+        <tr>
+          <td>2018</td>
+          <td>$560 million</td>
+          <td>108</td>
+        </tr>
+
+        <tr>
+          <td>2019</td>
+          <td>$600 million</td>
+          <td>112</td>
+        </tr>
+      </table>
+    </div>
+
+    <h3>2018 government spending at 2017 prices</h3>
+
+    <div class="formula">
+      $560 × 100 / 108 = $518.52 million
+    </div>
+
+    <p>
+      In nominal terms, government spending increased from $500 million to $560 million.
+      This is an increase of $60 million, or 12%.
+    </p>
+
+    <p>
+      However, in real terms, spending only increased from $500 million to $518.52 million.
+      This is an increase of $18.52 million, or 3.7%.
+    </p>
+
+    <h3>2019 government spending at 2017 prices</h3>
+
+    <div class="formula">
+      $600 × 100 / 112 = $535.71 million
+    </div>
+
+    <p>
+      This shows that government spending increased by 7.14% in real terms between 2017 and 2019.
+    </p>
+  </div>
+
+  <h2>10. Using Index Numbers to Show Economic Changes</h2>
+
+  <div class="box">
+    <p>
+      Index numbers can be used to show changes in many economic variables, such as production, exports, consumer spending and real GDP.
+    </p>
+
+    <p>
+      Index numbers do not have units. For example, even if the original data is measured in dollars or tonnes, the index number itself has no unit.
+    </p>
+  </div>
+
+  <h2>11. Example: Real GDP Index</h2>
+
+  <div class="box">
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>Year</th>
+          <th>Real GDP (£ million)</th>
+          <th>Index of real GDP</th>
+        </tr>
+
+        <tr>
+          <td>2014</td>
+          <td>1,912,866</td>
+          <td>97.70</td>
+        </tr>
+
+        <tr>
+          <td>2015</td>
+          <td>1,957,920</td>
+          <td>100.00</td>
+        </tr>
+
+        <tr>
+          <td>2016</td>
+          <td>1,995,478</td>
+          <td>101.92</td>
+        </tr>
+
+        <tr>
+          <td>2017</td>
+          <td>2,033,234</td>
+          <td>103.85</td>
+        </tr>
+
+        <tr>
+          <td>2018</td>
+          <td>2,061,408</td>
+          <td>105.29</td>
+        </tr>
+      </table>
+    </div>
+
+    <p>
+      It is correct to say that real GDP increased by 1.92% between 2015 and 2016 because 2015 is the base year.
+    </p>
+
+    <p>
+      It is also correct to say that real GDP increased by 5.29% between 2015 and 2018.
+    </p>
+
+    <div class="warning">
+      <strong>Important:</strong><br>
+      The change in index points is not always the same as the percentage change.
+    </div>
+
+    <h3>Calculating percentage change from 2017 to 2018</h3>
+
+    <div class="formula">
+      Percentage change = Change in index / Original index × 100
+    </div>
+
+    <div class="formula">
+      Percentage change = (105.29 - 103.85) / 103.85 × 100 = 1.39%
+    </div>
+
+    <p>
+      Although the index increased by 1.44 points, the percentage increase was 1.39%.
+    </p>
+  </div>
+
+  <h2>12. Comparing Data at One Point in Time</h2>
+
+  <div class="box">
+    <p>
+      Index numbers can also be used to compare countries at a single point in time.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>Country A</th>
+          <th>Country B</th>
+          <th>Country C</th>
+          <th>Country D</th>
+        </tr>
+
+        <tr>
+          <td>90</td>
+          <td>100</td>
+          <td>113</td>
+          <td>127</td>
+        </tr>
+      </table>
+    </div>
+
+    <p>
+      Country B is the base value, with an index of 100.
+    </p>
+
+    <ul>
+      <li>Country A has labour productivity 10% lower than Country B.</li>
+      <li>Country C has labour productivity 13% higher than Country B.</li>
+      <li>Country D has labour productivity 27% higher than Country B.</li>
+    </ul>
+  </div>
+
+  <h2>13. Activity</h2>
+
+  <div class="activity">
+    <h3>Create Your Own Basket of Goods</h3>
+
+    <p>
+      Choose six goods and services that you would include in a basket of goods used to calculate inflation for yourself or your family.
+    </p>
+
+    <p>
+      Estimate the weight you would attach to each item. Make sure the total weight equals 100.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>Item</th>
+          <th>Estimated weight</th>
+          <th>Reason for weight</th>
+        </tr>
+
+        <tr>
+          <td>1.</td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>2.</td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>3.</td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>4.</td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>5.</td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>6.</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <h2>14. Common Mistakes</h2>
+
+  <div class="box">
+    <div class="warning">
+      <strong>Mistake 1:</strong><br>
+      Thinking that index point change is always the same as percentage change.
+    </div>
+
+    <div class="warning">
+      <strong>Mistake 2:</strong><br>
+      Forgetting to divide by the sum of weights when calculating a weighted index.
+    </div>
+
+    <div class="warning">
+      <strong>Mistake 3:</strong><br>
+      Confusing nominal values with real values.
+    </div>
+
+    <div class="warning">
+      <strong>Mistake 4:</strong><br>
+      Saying nominal spending has increased without checking whether real spending has increased.
+    </div>
+  </div>
+
+  <h2>15. Exam-style Questions</h2>
+
+  <div class="box">
+    <ul>
+      <li>What is meant by the base year?</li>
+      <li>Explain why items in an index are often given a weight.</li>
+      <li>What does the CPI measure?</li>
+      <li>Calculate the new price index if the price of a good rises from $4 to $5.</li>
+      <li>Explain why a weighted price index is more useful than a simple average price index.</li>
+      <li>Explain the difference between nominal government spending and real government spending.</li>
+      <li>Why is care needed when using index numbers to calculate percentage changes?</li>
+    </ul>
+  </div>
+
+  <div class="summary">
+    <h2>Lesson Summary</h2>
+
+    <ul>
+      <li>Index numbers are used to measure changes in related variables.</li>
+      <li>The base year is given an index value of 100.</li>
+      <li>CPI measures changes in the average price level of a weighted basket of goods and services.</li>
+      <li>Weights reflect the relative importance of items in the basket.</li>
+      <li>Nominal values are measured in current money terms.</li>
+      <li>Real values remove the effects of inflation.</li>
+      <li>Index numbers can be used to compare economic variables over time or between countries.</li>
+      <li>Index point changes are not always the same as percentage changes.</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  AS Economics Unit 2 | Lesson 3 Notes
+</footer>
+
 </body>
 </html>
