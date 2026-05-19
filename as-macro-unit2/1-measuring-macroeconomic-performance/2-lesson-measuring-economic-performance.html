@@ -1,41 +1,827 @@
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lesson 2: Measuring Economic Performance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson 2 - Measuring Economic Performance</title>
+
   <style>
-    body { font-family: Inter, "Noto Sans SC", sans-serif; background:#f4f7fb; color:#1f2937; margin:0; }
-    .container { max-width: 980px; margin: 0 auto; padding: 24px; }
-    .card { background:#fff; border:1px solid #dbe3ef; border-radius:12px; padding:18px; }
-    .muted { color:#6b7280; }
-    h1,h2 { margin:0 0 10px; }
-    ul { margin:0; padding-left:20px; }
-    a { color:#1d4ed8; }
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      line-height:1.7;
+      background:#f5f7fb;
+      color:#222;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+      padding:40px 0;
+    }
+
+    header{
+      background:#1d3557;
+      color:white;
+      padding:60px 20px;
+      text-align:center;
+    }
+
+    header h1{
+      font-size:3rem;
+      margin-bottom:10px;
+    }
+
+    header p{
+      font-size:1.1rem;
+      opacity:0.9;
+    }
+
+    .lesson-info{
+      background:white;
+      padding:25px;
+      margin-top:-30px;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    h2{
+      margin-top:50px;
+      margin-bottom:20px;
+      color:#1d3557;
+      border-left:6px solid #457b9d;
+      padding-left:15px;
+    }
+
+    h3{
+      margin-top:30px;
+      margin-bottom:15px;
+      color:#2a5d84;
+    }
+
+    h4{
+      margin-bottom:10px;
+      color:#1d3557;
+    }
+
+    p{
+      margin-bottom:15px;
+    }
+
+    ul{
+      margin-left:25px;
+      margin-bottom:20px;
+    }
+
+    li{
+      margin-bottom:10px;
+    }
+
+    .box{
+      background:white;
+      padding:25px;
+      border-radius:12px;
+      margin-bottom:25px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .definition{
+      background:#edf6ff;
+      border-left:5px solid #457b9d;
+      padding:15px;
+      margin:20px 0;
+    }
+
+    .example{
+      background:#fff8e7;
+      border-left:5px solid #f4a261;
+      padding:15px;
+      margin:20px 0;
+    }
+
+    .evaluation{
+      background:#eefbea;
+      border-left:5px solid #4caf50;
+      padding:15px;
+      margin:20px 0;
+    }
+
+    .formula{
+      background:#1d3557;
+      color:white;
+      padding:12px 18px;
+      border-radius:8px;
+      font-family:monospace;
+      margin:15px 0;
+      display:inline-block;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin:20px 0;
+      background:white;
+    }
+
+    th, td{
+      border:1px solid #d7e0ea;
+      padding:12px;
+      text-align:left;
+      vertical-align:top;
+    }
+
+    th{
+      background:#1d3557;
+      color:white;
+    }
+
+    .mindmap-section{
+      margin-top:50px;
+    }
+
+    .mindmap-diagram{
+      background:white;
+      padding:30px 20px 40px;
+      border-radius:16px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.05);
+      overflow-x:auto;
+    }
+
+    .mindmap-root{
+      position:relative;
+      max-width:560px;
+      margin:0 auto 50px;
+      background:#1d3557;
+      color:white;
+      text-align:center;
+      padding:18px 20px;
+      border-radius:14px;
+      font-weight:bold;
+      font-size:1.1rem;
+      line-height:1.5;
+    }
+
+    .mindmap-root::after{
+      content:"";
+      position:absolute;
+      left:50%;
+      bottom:-32px;
+      transform:translateX(-50%);
+      width:3px;
+      height:32px;
+      background:#9bb7d4;
+    }
+
+    .mindmap-level-1{
+      position:relative;
+      display:grid;
+      grid-template-columns:repeat(5, minmax(210px, 1fr));
+      gap:20px;
+      min-width:1150px;
+      padding-top:35px;
+    }
+
+    .mindmap-level-1::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:6%;
+      right:6%;
+      height:3px;
+      background:#9bb7d4;
+      border-radius:3px;
+    }
+
+    .mindmap-branch{
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+    .mindmap-branch::before{
+      content:"";
+      position:absolute;
+      top:-35px;
+      left:50%;
+      transform:translateX(-50%);
+      width:3px;
+      height:35px;
+      background:#9bb7d4;
+    }
+
+    .branch-title{
+      width:100%;
+      text-align:center;
+      color:white;
+      padding:14px 12px;
+      border-radius:12px;
+      font-weight:bold;
+      margin-bottom:16px;
+      line-height:1.4;
+    }
+
+    .growth{
+      background:#457b9d;
+    }
+
+    .price{
+      background:#e76f51;
+    }
+
+    .employment{
+      background:#2a9d8f;
+    }
+
+    .external{
+      background:#6c5ce7;
+    }
+
+    .welfare{
+      background:#f4a261;
+      color:#1d3557;
+    }
+
+    .sub-branch{
+      width:100%;
+      border-radius:12px;
+      padding:14px 14px 12px;
+      margin-bottom:14px;
+      border:1px solid #d9e7f4;
+      border-left:5px solid #457b9d;
+      background:#f8fbff;
+    }
+
+    .sub-branch ul{
+      margin:0 0 0 18px;
+      padding:0;
+    }
+
+    .sub-branch li{
+      margin-bottom:6px;
+      font-size:0.95rem;
+    }
+
+    .sub-branch p{
+      margin:0;
+      font-size:0.95rem;
+    }
+
+    .growth-box{
+      border-left-color:#457b9d;
+      background:#f8fbff;
+    }
+
+    .price-box{
+      border-left-color:#e76f51;
+      background:#fff8f6;
+    }
+
+    .employment-box{
+      border-left-color:#2a9d8f;
+      background:#f4fffd;
+    }
+
+    .external-box{
+      border-left-color:#6c5ce7;
+      background:#f7f5ff;
+    }
+
+    .welfare-box{
+      border-left-color:#f4a261;
+      background:#fff9ef;
+    }
+
+    .mindmap-note{
+      margin-top:20px;
+      font-size:0.95rem;
+      color:#555;
+      text-align:center;
+    }
+
+    .summary{
+      background:#1d3557;
+      color:white;
+      padding:30px;
+      border-radius:12px;
+      margin-top:50px;
+    }
+
+    .summary h2{
+      color:white;
+      border:none;
+      padding:0;
+      margin-top:0;
+    }
+
+    footer{
+      text-align:center;
+      padding:40px;
+      color:#666;
+    }
+
+    @media(max-width:768px){
+      header h1{
+        font-size:2rem;
+      }
+
+      .container{
+        width:95%;
+      }
+    }
   </style>
 </head>
+
 <body>
   <main class="container">
     <p><a href="./index.html">← 返回 Module 1</a></p>
-    <section class="card">
-      <h1>Lesson 2: Measuring Economic Performance</h1>
-      <p class="muted">对应考纲：3.2.1.2 Macroeconomic indicators。</p>
+<header>
+  <h1>Lesson 2</h1>
+  <p>Measuring Economic Performance</p>
+</header>
 
-      <h2>核心知识点</h2>
-      <ul>
-        <li>Real GDP</li>
-        <li>Real GDP per capita</li>
-        <li>Gini coefficient</li>
-        <li>Consumer Price Index (CPI)</li>
-        <li>Unemployment measures</li>
-        <li>Productivity</li>
-        <li>Balance of payments on current account</li>
-        <li>Nominal data vs real data</li>
-      </ul>
+<div class="container">
 
-      <h2>学生需要掌握</h2>
-      <p>学生需要能够判断不同指标衡量什么，以及每个指标的局限性。</p>
-    </section>
-  </main>
+  <div class="lesson-info">
+    <h3>Specification Reference</h3>
+    <p>
+      OxfordAQA AS Economics Unit 2 — 3.2.1.2 Macroeconomic indicators
+    </p>
+
+    <h3>Learning Objectives</h3>
+    <ul>
+      <li>Understand the main data used to measure economic performance</li>
+      <li>Explain the difference between nominal GDP and real GDP</li>
+      <li>Explain how real GDP per capita measures average living standards</li>
+      <li>Understand CPI as a measure of inflation</li>
+      <li>Understand measures of unemployment, productivity and the current account</li>
+      <li>Evaluate the limitations of different macroeconomic indicators</li>
+    </ul>
+  </div>
+
+  <section class="mindmap-section">
+    <h2>1. Mind Map Overview</h2>
+
+    <div class="mindmap-diagram">
+
+      <div class="mindmap-root">
+        Economic indicators are used to measure how well an economy is achieving its macroeconomic objectives
+      </div>
+
+      <div class="mindmap-level-1">
+
+        <div class="mindmap-branch">
+          <div class="branch-title growth">Economic Growth</div>
+
+          <div class="sub-branch growth-box">
+            <h4>Real GDP</h4>
+            <p>Measures the value of output adjusted for inflation.</p>
+          </div>
+
+          <div class="sub-branch growth-box">
+            <h4>Real GDP per capita</h4>
+            <p>Measures average real income or output per person.</p>
+          </div>
+
+          <div class="sub-branch growth-box">
+            <h4>Productivity</h4>
+            <p>Measures output per unit of input, such as output per worker.</p>
+          </div>
+        </div>
+
+        <div class="mindmap-branch">
+          <div class="branch-title price">Price Stability</div>
+
+          <div class="sub-branch price-box">
+            <h4>Consumer Price Index</h4>
+            <p>Measures changes in the average price level of a basket of goods and services.</p>
+          </div>
+
+          <div class="sub-branch price-box">
+            <h4>Inflation rate</h4>
+            <p>Calculated from the percentage change in CPI.</p>
+          </div>
+        </div>
+
+        <div class="mindmap-branch">
+          <div class="branch-title employment">Low Unemployment</div>
+
+          <div class="sub-branch employment-box">
+            <h4>Unemployment rate</h4>
+            <p>Measures the percentage of the labour force that is unemployed.</p>
+          </div>
+
+          <div class="sub-branch employment-box">
+            <h4>ILO measure</h4>
+            <p>ILO use surveys to count the number of people who are unemployment.</p>
+          </div>
+
+          <div class="sub-branch employment-box">
+            <h4>Unemployment Benefits measure</h4>
+            <p>Counts people without work by checking the number of people who claims unemployment benefits.</p>
+          </div>
+        </div>
+
+        <div class="mindmap-branch">
+          <div class="branch-title external">Stable Current Account</div>
+
+          <div class="sub-branch external-box">
+            <h4>Balance of payments on current account</h4>
+            <p>Records trade in goods, trade in services, primary income and secondary income.</p>
+          </div>
+
+          <div class="sub-branch external-box">
+            <h4>Deficit or surplus</h4>
+            <p>Shows whether more money flows out or into the economy through current account transactions.</p>
+          </div>
+        </div>
+
+        <div class="mindmap-branch">
+          <div class="branch-title welfare">Other Objectives</div>
+
+          <div class="sub-branch welfare-box">
+            <h4>Gini coefficient</h4>
+            <p>Measures income inequality in an economy.</p>
+          </div>
+
+          <div class="sub-branch welfare-box">
+            <h4>Living standards</h4>
+            <p>Can be judged using real GDP per capita, inequality, unemployment and inflation together.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="mindmap-note">
+        This mind map organises macroeconomic indicators according to the objective they help measure.
+      </p>
+
+    </div>
+  </section>
+
+  <h2>2. Why Do Economists Use Macroeconomic Indicators?</h2>
+
+  <div class="box">
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Macroeconomic indicators are data used to measure the performance of an economy.
+    </div>
+
+    <p>
+      Governments, central banks, firms and economists use macroeconomic indicators to judge whether an economy is performing well.
+    </p>
+
+    <p>
+      These indicators help answer questions such as:
+    </p>
+
+    <ul>
+      <li>Is the economy growing?</li>
+      <li>Are prices stable?</li>
+      <li>Is unemployment low?</li>
+      <li>Is the country competitive internationally?</li>
+      <li>Are income and living standards improving?</li>
+    </ul>
+  </div>
+
+  <h2>3. Measuring Economic Growth</h2>
+
+  <div class="box">
+    <h3>3.1 Gross Domestic Product, GDP</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      GDP is the total value of goods and services produced in an economy over a period of time.
+    </div>
+
+    <p>
+      GDP is one of the most common measures of economic activity.
+      If GDP increases, it suggests that the economy is producing more output.
+    </p>
+
+    <div class="example">
+      <strong>Example:</strong><br>
+      If a country produces more cars, food, financial services and education services than before, its GDP is likely to increase.
+    </div>
+  </div>
+
+  <div class="box">
+    <h3>3.2 Nominal GDP</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Nominal GDP is GDP measured using current prices, without adjusting for inflation.
+    </div>
+
+    <p>
+      Nominal GDP can rise because output has increased, but it can also rise simply because prices have increased.
+    </p>
+
+    <div class="evaluation">
+      Nominal GDP may exaggerate economic growth if inflation is high.
+    </div>
+  </div>
+
+  <div class="box">
+    <h3>3.3 Real GDP</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Real GDP is GDP adjusted for inflation.
+    </div>
+
+    <p>
+      Real GDP is more useful than nominal GDP when measuring economic growth because it shows whether actual output has increased.
+    </p>
+
+    <div class="formula">
+      Real GDP = Nominal GDP / Price index × 100
+    </div>
+
+    <div class="example">
+      <strong>Example:</strong><br>
+      If nominal GDP increases by 8% but inflation is 5%, real GDP has increased by approximately 3%.
+    </div>
+  </div>
+
+  <div class="box">
+    <h3>3.4 Real GDP per Capita</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Real GDP per capita is real GDP divided by the population.
+    </div>
+
+    <div class="formula">
+      Real GDP per capita = Real GDP / Population
+    </div>
+
+    <p>
+      Real GDP per capita is often used as a measure of average living standards.
+    </p>
+
+    <div class="evaluation">
+      However, it is only an average. It does not show how income is distributed.
+    </div>
+  </div>
+
+  <h2>4. Measuring Price Stability</h2>
+
+  <div class="box">
+    <h3>4.1 Consumer Price Index, CPI</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      The Consumer Price Index measures changes in the average price of a basket of goods and services bought by households.
+    </div>
+
+    <p>
+      CPI is used to calculate inflation.
+      A base year is given an index value of 100.
+    </p>
+
+    <div class="example">
+      <strong>Example:</strong><br>
+      If CPI rises from 100 to 110, the average price level has increased by 10% compared with the base year.
+    </div>
+  </div>
+
+  <div class="box">
+    <h3>4.2 Inflation Rate</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Inflation is a sustained increase in the general price level.
+    </div>
+
+    <div class="formula">
+      Inflation rate = Current CPI - Previous CPI / Previous CPI × 100
+    </div>
+
+    <div class="example">
+      <strong>Example:</strong><br>
+      If CPI rises from 120 to 126, inflation is:
+      <br><br>
+      (126 - 120) / 120 × 100 = 5%
+    </div>
+
+    <div class="evaluation">
+      CPI may not perfectly measure every household’s cost of living because different households buy different goods and services.
+    </div>
+  </div>
+
+  <h2>5. Measuring Unemployment</h2>
+
+  <div class="box">
+    <h3>5.1 Unemployment</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Unemployment occurs when people who are willing and able to work cannot find a job.
+    </div>
+
+    <p>
+      Unemployment is an important indicator of economic performance because it shows whether labour resources are being fully used.
+    </p>
+  </div>
+
+  <div class="box">
+    <h3>5.2 ILO Measure of Unemployment</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      The ILO measure counts people as unemployed if they are without work, available to start work and actively seeking employment.
+    </div>
+
+    <div class="formula">
+      Unemployment rate = Number unemployed / Labour force × 100
+    </div>
+
+    <div class="evaluation">
+      The unemployment rate may not show underemployment, where people work fewer hours than they would like or are overqualified for their jobs.
+    </div>
+  </div>
+
+  <h2>6. Measuring Productivity</h2>
+
+  <div class="box">
+    <h3>6.1 Productivity</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Productivity measures output per unit of input.
+    </div>
+
+    <p>
+      The most common measure is labour productivity.
+    </p>
+
+    <div class="formula">
+      Labour productivity = Output / Number of workers
+    </div>
+
+    <div class="example">
+      <strong>Example:</strong><br>
+      If 10 workers produce 1,000 units, labour productivity is 100 units per worker.
+    </div>
+
+    <div class="evaluation">
+      Higher productivity can increase long-run economic growth, reduce costs and improve international competitiveness.
+    </div>
+  </div>
+
+  <h2>7. Measuring the Current Account</h2>
+
+  <div class="box">
+    <h3>7.1 Balance of Payments on Current Account</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      The current account records a country’s trade in goods, trade in services, primary income and secondary income with the rest of the world.
+    </div>
+
+    <p>
+      A current account deficit means more money is flowing out than flowing in through current account transactions.
+    </p>
+
+    <p>
+      A current account surplus means more money is flowing in than flowing out.
+    </p>
+
+    <div class="example">
+      <strong>Example:</strong><br>
+      If a country imports more goods and services than it exports, this may contribute to a current account deficit.
+    </div>
+
+    <div class="evaluation">
+      A current account deficit is not always bad. It may reflect strong domestic demand or imports of capital goods that support future growth.
+    </div>
+  </div>
+
+  <h2>8. Measuring Inequality</h2>
+
+  <div class="box">
+    <h3>8.1 Gini Coefficient</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      The Gini coefficient is a measure of income inequality within an economy.
+    </div>
+
+    <p>
+      A lower Gini coefficient indicates a more equal distribution of income.
+      A higher Gini coefficient indicates a more unequal distribution of income.
+    </p>
+
+    <div class="evaluation">
+      Real GDP per capita may rise, but if inequality also rises, many people may not experience higher living standards.
+    </div>
+  </div>
+
+  <h2>9. Summary Table</h2>
+
+  <div class="box">
+    <table>
+      <tr>
+        <th>Objective</th>
+        <th>Indicator</th>
+        <th>What it measures</th>
+        <th>Key limitation</th>
+      </tr>
+
+      <tr>
+        <td>Economic growth</td>
+        <td>Real GDP</td>
+        <td>Total output adjusted for inflation</td>
+        <td>Does not show distribution of income</td>
+      </tr>
+
+      <tr>
+        <td>Living standards</td>
+        <td>Real GDP per capita</td>
+        <td>Average real output or income per person</td>
+        <td>Only an average</td>
+      </tr>
+
+      <tr>
+        <td>Price stability</td>
+        <td>CPI</td>
+        <td>Changes in the average price level</td>
+        <td>May not reflect every household’s spending pattern</td>
+      </tr>
+
+      <tr>
+        <td>Low unemployment</td>
+        <td>Unemployment rate</td>
+        <td>Percentage of labour force unemployed</td>
+        <td>May ignore underemployment</td>
+      </tr>
+
+      <tr>
+        <td>Efficiency and competitiveness</td>
+        <td>Productivity</td>
+        <td>Output per unit of input</td>
+        <td>Does not show quality of work or working conditions</td>
+      </tr>
+
+      <tr>
+        <td>Stable external performance</td>
+        <td>Current account balance</td>
+        <td>Transactions with the rest of the world</td>
+        <td>Deficit or surplus is not always good or bad</td>
+      </tr>
+
+      <tr>
+        <td>Equity</td>
+        <td>Gini coefficient</td>
+        <td>Income inequality</td>
+        <td>Does not explain causes of inequality</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>10. Exam-style Questions</h2>
+
+  <div class="box">
+    <h3>Quick Check</h3>
+
+    <ul>
+      <li>Explain the difference between nominal GDP and real GDP.</li>
+      <li>Why is real GDP per capita useful when comparing living standards?</li>
+      <li>Why might CPI not accurately measure the cost of living for every household?</li>
+      <li>Explain one limitation of using the unemployment rate as a measure of economic performance.</li>
+      <li>Why can a current account deficit be a concern for a government?</li>
+      <li>Explain why a rise in real GDP may not improve living standards for everyone.</li>
+    </ul>
+  </div>
+
+  <div class="summary">
+    <h2>Lesson Summary</h2>
+
+    <ul>
+      <li>Macroeconomic indicators help measure how well an economy is performing.</li>
+      <li>Real GDP measures economic growth after adjusting for inflation.</li>
+      <li>Real GDP per capita gives an average measure of living standards.</li>
+      <li>CPI is used to calculate inflation and assess price stability.</li>
+      <li>Unemployment measures show how fully labour resources are used.</li>
+      <li>Productivity is important for long-run growth and competitiveness.</li>
+      <li>The current account measures external economic performance.</li>
+      <li>The Gini coefficient helps measure income inequality.</li>
+      <li>No single indicator gives a complete picture of economic performance.</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  AS Economics Unit 2 | Lesson 2 Notes
+</footer>
+
 </body>
 </html>
