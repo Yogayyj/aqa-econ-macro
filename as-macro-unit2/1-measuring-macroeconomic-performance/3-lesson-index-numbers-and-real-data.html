@@ -289,8 +289,97 @@
       header h1{ font-size:2rem; }
       .container{ width:95%; }
     }
+    .clicker-box{
+      background:#f8fbff;
+      border:1px solid #d9e7f4;
+      border-radius:12px;
+      padding:20px;
+      margin:20px 0;
+    }
+
+    .step{
+      display:none;
+      background:white;
+      border-left:5px solid #457b9d;
+      padding:14px;
+      margin:12px 0;
+      border-radius:8px;
+    }
+
+    .step.show{
+      display:block;
+    }
+
+    .clicker-btn{
+      background:#1d3557;
+      color:white;
+      border:none;
+      padding:10px 16px;
+      border-radius:8px;
+      cursor:pointer;
+      margin-top:10px;
+      font-weight:bold;
+    }
+
+    .clicker-btn:hover{
+      background:#2a5d84;
+    }
+
+    input.fill-blank{
+      width:100%;
+      padding:8px;
+      border:1px solid #c7d6e5;
+      border-radius:6px;
+      font-size:0.95rem;
+    }
+
+    textarea.fill-blank{
+      width:100%;
+      min-height:60px;
+      padding:8px;
+      border:1px solid #c7d6e5;
+      border-radius:6px;
+      font-size:0.95rem;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    .reset-btn{
+      background:#e76f51;
+      color:white;
+      border:none;
+      padding:10px 16px;
+      border-radius:8px;
+      cursor:pointer;
+      margin-left:8px;
+      font-weight:bold;
+    }
+
+    .reset-btn:hover{
+      background:#c9553d;
+    }
   </style>
 </head>
+<script>
+  function showNextStep(groupId) {
+    const steps = document.querySelectorAll(`[data-step-group="${groupId}"]`);
+    for (let i = 0; i < steps.length; i++) {
+      if (!steps[i].classList.contains("show")) {
+        steps[i].classList.add("show");
+        break;
+      }
+    }
+  }
+
+  function resetSteps(groupId) {
+    const steps = document.querySelectorAll(`[data-step-group="${groupId}"]`);
+    steps.forEach(step => step.classList.remove("show"));
+  }
+
+  function clearActivityInputs() {
+    const inputs = document.querySelectorAll(".fill-blank");
+    inputs.forEach(input => input.value = "");
+  }
+</script>
 
 <body>
   <main class="container">
@@ -509,12 +598,42 @@
     <div class="formula">
       New price index = New price / Original price × 100
     </div>
+    
+    <div class="clicker-box">
+      <h3>Clicker Example: Chicken Price Index</h3>
 
-    <div class="example">
-      <strong>Example: Chicken price index</strong><br><br>
-      Base year price of chicken = $3.00<br>
-      Current year price of chicken = $3.60<br><br>
-      New price index = 3.60 / 3.00 × 100 = 120
+      <p>
+        Base year price of chicken = $3.00<br>
+        Current year price of chicken = $3.60
+      </p>
+
+      <button class="clicker-btn" onclick="showNextStep('chicken-index')">
+        Show next step
+      </button>
+
+      <button class="reset-btn" onclick="resetSteps('chicken-index')">
+        Reset
+      </button>
+
+      <div class="step" data-step-group="chicken-index">
+        <strong>Step 1: Write the formula</strong><br>
+        New price index = New price ÷ Original price × 100
+      </div>
+
+      <div class="step" data-step-group="chicken-index">
+        <strong>Step 2: Substitute the numbers</strong><br>
+        New price index = 3.60 ÷ 3.00 × 100
+      </div>
+
+      <div class="step" data-step-group="chicken-index">
+        <strong>Step 3: Calculate</strong><br>
+        3.60 ÷ 3.00 × 100 = 120
+      </div>
+
+      <div class="step" data-step-group="chicken-index">
+        <strong>Step 4: Interpret the answer</strong><br>
+        The price index is 120, so the price of chicken increased by 20% compared with the base year.
+      </div>
     </div>
 
     <p>
@@ -598,14 +717,48 @@
       </table>
     </div>
 
-    <div class="example">
-      <strong>Calculation:</strong><br><br>
-      Overall price index = 11800 ÷ 100 = 118
-    </div>
+    <div class="clicker-box">
+      <h3>Clicker Example: Weighted Price Index</h3>
 
-    <p>
-      This means the weighted average price level has increased by 18% compared with the base year.
-    </p>
+      <p>
+        Use the final column of the table to calculate the overall weighted price index.
+      </p>
+
+      <button class="clicker-btn" onclick="showNextStep('weighted-index')">
+        Show next step
+      </button>
+
+      <button class="reset-btn" onclick="resetSteps('weighted-index')">
+        Reset
+      </button>
+
+      <div class="step" data-step-group="weighted-index">
+        <strong>Step 1: Multiply each item index by its weight</strong><br>
+        Coffee: 110 × 30 = 3300<br>
+        Milk: 125 × 20 = 2500<br>
+        Sugar: 80 × 10 = 800<br>
+        Tea: 130 × 40 = 5200
+      </div>
+
+      <div class="step" data-step-group="weighted-index">
+        <strong>Step 2: Add the weighted values</strong><br>
+        3300 + 2500 + 800 + 5200 = 11800
+      </div>
+
+      <div class="step" data-step-group="weighted-index">
+        <strong>Step 3: Add the weights</strong><br>
+        30 + 20 + 10 + 40 = 100
+      </div>
+
+      <div class="step" data-step-group="weighted-index">
+        <strong>Step 4: Divide by the sum of weights</strong><br>
+        Weighted price index = 11800 ÷ 100 = 118
+      </div>
+
+      <div class="step" data-step-group="weighted-index">
+        <strong>Step 5: Interpret the answer</strong><br>
+        The overall price index is 118, so the weighted average price level has increased by 18% compared with the base year.
+      </div>
   </div>
 
   <h2>7. Steps for Constructing a Price Index</h2>
@@ -686,30 +839,48 @@
 
     <h3>2018 government spending at 2017 prices</h3>
 
-    <div class="formula">
-      $560 × 100 / 108 = $518.52 million
+    <div class="clicker-box">
+      <h3>Clicker Example: 2018 Government Spending at 2017 Prices</h3>
+
+      <p>
+        Government spending in 2018 = $560 million<br>
+        Base year price index = 100<br>
+        2018 price index = 108
+      </p>
+
+      <button class="clicker-btn" onclick="showNextStep('real-spending-2018')">
+        Show next step
+      </button>
+
+      <button class="reset-btn" onclick="resetSteps('real-spending-2018')">
+        Reset
+      </button>
+
+      <div class="step" data-step-group="real-spending-2018">
+        <strong>Step 1: Write the formula</strong><br>
+        Real value = Nominal value × Base year price index ÷ Current year price index
+      </div>
+
+      <div class="step" data-step-group="real-spending-2018">
+        <strong>Step 2: Substitute the numbers</strong><br>
+        Real government spending = 560 × 100 ÷ 108
+      </div>
+
+      <div class="step" data-step-group="real-spending-2018">
+        <strong>Step 3: Calculate</strong><br>
+        560 × 100 ÷ 108 = 518.52
+      </div>
+
+      <div class="step" data-step-group="real-spending-2018">
+        <strong>Step 4: Add units</strong><br>
+        Real government spending in 2018 = $518.52 million at 2017 prices
+      </div>
+
+      <div class="step" data-step-group="real-spending-2018">
+        <strong>Step 5: Interpret</strong><br>
+        Nominal spending increased by 12%, but real spending increased by only 3.7%.
+      </div>
     </div>
-
-    <p>
-      In nominal terms, government spending increased from $500 million to $560 million.
-      This is an increase of $60 million, or 12%.
-    </p>
-
-    <p>
-      However, in real terms, spending only increased from $500 million to $518.52 million.
-      This is an increase of $18.52 million, or 3.7%.
-    </p>
-
-    <h3>2019 government spending at 2017 prices</h3>
-
-    <div class="formula">
-      $600 × 100 / 112 = $535.71 million
-    </div>
-
-    <p>
-      This shows that government spending increased by 7.14% in real terms between 2017 and 2019.
-    </p>
-  </div>
 
   <h2>10. Using Index Numbers to Show Economic Changes</h2>
 
