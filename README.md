@@ -1,13 +1,21 @@
-# AS Economics Paper 2 宏观教学站
+# OxfordAQA Economics 教学站
 
-这是一个面向课堂教学的最小版本，当前只包含两部分：
+## 网站结构
 
-1. 核心知识点（用于授课讲解）
-2. 思维导图（用于课堂导入与复盘）
+- `index.html`：首页（四个可点击板块）
+- `as-micro-unit1/index.html`：AS Micro（Unit 1）详细知识点
+- `as-macro-unit2/index.html`：AS Macro（Unit 2）详细知识点
+- `a2-micro-unit3/index.html`：A2 Micro（Unit 3）详细知识点
+- `a2-macro-unit4/index.html`：A2 Macro（Unit 4）详细知识点
 
 ## 使用
 
-直接打开 `index.html` 即可。
+点击对应板块进入单元页面。
+
+# 网站跟新
+
+目前只跟新AS Macro的部分
+
 
 ## 后续扩展建议
 
