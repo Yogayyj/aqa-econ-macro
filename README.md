@@ -1,22 +1,13 @@
-# OxfordAQA Economics 教学站（知识点 + 思维导图）
+# OxfordAQA Economics 教学站
 
-这是面向教学场景的静态版本，当前只做两件事：
+## 网站结构
 
-1. 完整课程知识点总览（AS + A2，Micro + Macro）
-2. 四大板块思维导图（Unit 1/2/3/4）
+- `index.html`：首页（四个可点击板块）
+- `as-micro-unit1/index.html`：AS Micro（Unit 1）详细知识点
+- `as-macro-unit2/index.html`：AS Macro（Unit 2）详细知识点
+- `a2-micro-unit3/index.html`：A2 Micro（Unit 3）详细知识点
+- `a2-macro-unit4/index.html`：A2 Macro（Unit 4）详细知识点
 
 ## 使用
 
-直接在浏览器打开 `index.html`。
-
-## 当前适用场景
-
-- 备课时快速定位本单元知识点。
-- 课堂导入时展示整章框架。
-- 考前复盘时做跨单元串联。
-
-## 后续可扩展
-
-- 每个 Unit 独立页面（可深挖到子知识点）
-- 每个主题加入课堂案例与考试表达模板
-- 加入可打印讲义模式与课堂互动问题
+直接打开 `index.html`，点击对应板块进入单元页面。

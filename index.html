@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OxfordAQA Economics 教学总览（知识点 + 思维导图）</title>
+  <title>OxfordAQA Economics 教学站</title>
   <style>
     :root {
       --bg: #f4f7fb;
@@ -21,7 +21,7 @@
       color: var(--text);
       line-height: 1.6;
     }
-    .container { max-width: 1240px; margin: 0 auto; padding: 24px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
     .hero {
       background: linear-gradient(120deg, #dbeafe, #eef2ff);
       border: 1px solid #bfd0ff;
@@ -29,225 +29,80 @@
       padding: 24px;
       margin-bottom: 18px;
     }
-    h1, h2, h3 { margin: 0 0 10px; }
-    h2 { color: #0f172a; }
     .muted { color: var(--muted); }
-    .tag {
-      display: inline-block;
-      margin-right: 8px;
-      margin-top: 8px;
-      font-size: 12px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      border: 1px solid #bfdbfe;
-      background: #eff6ff;
-      color: #1d4ed8;
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 16px;
     }
-    .layout { display: grid; grid-template-columns: 1fr; gap: 16px; }
-    .card {
+    @media (min-width: 900px) {
+      .cards { grid-template-columns: 1fr 1fr; }
+    }
+    .card-link {
+      display: block;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 18px;
-      box-shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
+      text-decoration: none;
+      color: inherit;
+      transition: transform .15s ease, box-shadow .15s ease;
     }
-    .units { display: grid; grid-template-columns: 1fr; gap: 12px; }
-    @media (min-width: 960px) {
-      .units { grid-template-columns: 1fr 1fr; }
+    .card-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(29, 78, 216, 0.12);
+      border-color: #93c5fd;
     }
-    .unit { border-left: 4px solid var(--primary); padding-left: 12px; }
-    details { margin-top: 10px; }
-    summary { cursor: pointer; font-weight: 700; }
-    .mindmaps { display: grid; grid-template-columns: 1fr; gap: 16px; }
-    @media (min-width: 1100px) {
-      .mindmaps { grid-template-columns: 1fr 1fr; }
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid #bfdbfe;
+      background: #eff6ff;
+      color: #1d4ed8;
+      margin-bottom: 8px;
     }
-    .mindmap-wrap { overflow-x: auto; }
-    .footer { margin-top: 18px; color: var(--muted); font-size: 14px; }
+    h1, h2, h3 { margin: 0 0 10px; }
+    ul { margin: 0; padding-left: 20px; }
   </style>
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true, theme: 'default' });
-  </script>
 </head>
 <body>
   <main class="container">
     <section class="hero">
-      <h1>OxfordAQA AS & A-level Economics 教学总览</h1>
-      <p class="muted">当前版本按你的要求，专注于 <strong>知识点总览 + 思维导图</strong>，适合备课、课堂导入与考前串讲。</p>
-      <span class="tag">Syllabus overview</span>
-      <span class="tag">Teacher-first</span>
-      <span class="tag">Mind maps included</span>
+      <h1>OxfordAQA AS & A-level Economics 教学站</h1>
+      <p class="muted">首页改为四个可点击板块：点击后进入每个 Unit 的详细知识点总览页面。</p>
     </section>
 
-    <section class="layout">
-      <article class="card">
-        <h2>一页式知识点总览（四大板块）</h2>
-        <p class="muted">对应你提供的完整考纲：Unit 1/2（AS）+ Unit 3/4（A2），并补充 Quantitative Skills。</p>
+    <section>
+      <h2>选择教学单元</h2>
+      <div class="cards">
+        <a class="card-link" href="./as-micro-unit1/index.html">
+          <span class="badge">Unit 1</span>
+          <h3>AS Micro（Unit 1）</h3>
+          <p class="muted">市场机制、弹性、市场失灵、政府干预。</p>
+        </a>
 
-        <div class="units">
-          <div class="unit">
-            <h3>AS Microeconomics（Unit 1）</h3>
-            <ul>
-              <li>经济问题与方法：scarcity, choice, opportunity cost, PPC, positive vs normative。</li>
-              <li>市场机制：demand, supply, PED/YED/XED/PES, market equilibrium, interrelated markets。</li>
-              <li>成本收益利润：SR/LR、固定/可变成本、规模经济、TR/AR/profit。</li>
-              <li>市场结构与政府：competition, monopoly power, market failure, government intervention, government failure。</li>
-            </ul>
-          </div>
+        <a class="card-link" href="./as-macro-unit2/index.html">
+          <span class="badge">Unit 2</span>
+          <h3>AS Macro（Unit 2）</h3>
+          <p class="muted">宏观指标、AD/AS、失业、通胀、宏观政策。</p>
+        </a>
 
-          <div class="unit">
-            <h3>AS Macroeconomics（Unit 2）</h3>
-            <ul>
-              <li>宏观目标与指标：real GDP, CPI, unemployment, productivity, current account。</li>
-              <li>宏观运行：circular flow, AD= C+I+G+X−M, multiplier, SRAS/LRAS, shocks。</li>
-              <li>宏观表现：growth & cycle, output gap, inflation/deflation/disinflation, unemployment types。</li>
-              <li>宏观政策：monetary, fiscal, supply-side；并评价政策时滞、条件与副作用。</li>
-            </ul>
-          </div>
+        <a class="card-link" href="./a2-micro-unit3/index.html">
+          <span class="badge">Unit 3</span>
+          <h3>A2 Micro（Unit 3）</h3>
+          <p class="muted">企业理论、市场结构、效率、劳动市场、分配。</p>
+        </a>
 
-          <div class="unit">
-            <h3>A2 Microeconomics（Unit 3）</h3>
-            <ul>
-              <li>消费者与企业目标：utility, behavioural economics, satisficing, ownership/control separation。</li>
-              <li>企业理论深化：MC/AVC/ATC/LRAC, MR-AR-TR, normal vs abnormal profit。</li>
-              <li>市场结构深化：perfect competition, monopolistic competition, oligopoly, monopoly, price discrimination。</li>
-              <li>效率/福利与分配：consumer surplus, deadweight loss, labour market, poverty & inequality。</li>
-            </ul>
-          </div>
-
-          <div class="unit">
-            <h3>A2 Macroeconomics（Unit 4）</h3>
-            <ul>
-              <li>全球化与贸易：comparative advantage, protectionism, trading blocs, WTO。</li>
-              <li>国际金融：BOP 全账户、exchange rate regimes、financial markets、systemic risk。</li>
-              <li>发展经济学：growth vs development, HDI/IHDI/MPI, PPP, inequality measures。</li>
-              <li>发展政策比较：market-based vs interventionist, aid/debt relief/microfinance/FDI。</li>
-            </ul>
-          </div>
-        </div>
-
-        <details>
-          <summary>Quantitative Skills（跨全课程）</summary>
-          <ul>
-            <li>Ratios/fractions, percentages, mean/median, quantiles。</li>
-            <li>Index numbers, real terms conversion, elasticity calculations。</li>
-            <li>Cost/revenue/profit calculations, graphical + numerical interpretation。</li>
-          </ul>
-        </details>
-      </article>
-
-      <article class="card">
-        <h2>教学思维导图（按四大板块）</h2>
-        <p class="muted">每个导图可独立用于一节“章节导览课”，也可四图联动用于学期总复盘。</p>
-
-        <div class="mindmaps">
-          <div class="mindmap-wrap">
-            <h3>AS Micro（Unit 1）</h3>
-            <pre class="mermaid">
-mindmap
-  root((AS Micro U1))
-    Economic Problem
-      Scarcity
-      PPC
-      Opportunity Cost
-    Market Mechanism
-      Demand
-      Supply
-      Elasticities
-      Equilibrium
-    Firms and Costs
-      Productivity
-      Costs
-      Revenue
-      Profit
-    Market Failure
-      Public Goods
-      Externalities
-      Government Intervention
-            </pre>
-          </div>
-
-          <div class="mindmap-wrap">
-            <h3>AS Macro（Unit 2）</h3>
-            <pre class="mermaid">
-mindmap
-  root((AS Macro U2))
-    Objectives
-      Growth
-      Inflation
-      Unemployment
-      Current Account
-    AD-AS Model
-      AD Components
-      SRAS
-      LRAS
-      Shocks
-    Performance
-      Economic Cycle
-      Output Gap
-      Inflation Types
-      Unemployment Types
-    Policies
-      Monetary
-      Fiscal
-      Supply-side
-            </pre>
-          </div>
-
-          <div class="mindmap-wrap">
-            <h3>A2 Micro（Unit 3）</h3>
-            <pre class="mermaid">
-mindmap
-  root((A2 Micro U3))
-    Consumer & Firm Objectives
-      Utility
-      Behavioural Economics
-      Satisficing
-    Market Structures
-      Perfect Competition
-      Monopolistic Competition
-      Oligopoly
-      Monopoly
-    Efficiency & Welfare
-      Consumer Surplus
-      Deadweight Loss
-      X-inefficiency
-    Labour & Distribution
-      Wages
-      Monopsony
-      Poverty & Inequality
-            </pre>
-          </div>
-
-          <div class="mindmap-wrap">
-            <h3>A2 Macro（Unit 4）</h3>
-            <pre class="mermaid">
-mindmap
-  root((A2 Macro U4))
-    Globalisation and Trade
-      Comparative Advantage
-      Protectionism
-      Trading Blocs
-    External Sector
-      BOP
-      Exchange Rates
-      Financial Markets
-    Development
-      Growth vs Development
-      HDI IHDI MPI
-      Inequality
-    Development Policies
-      Market-based
-      Interventionist
-      Aid Debt Relief FDI
-            </pre>
-          </div>
-        </div>
-      </article>
+        <a class="card-link" href="./a2-macro-unit4/index.html">
+          <span class="badge">Unit 4</span>
+          <h3>A2 Macro（Unit 4）</h3>
+          <p class="muted">全球化、贸易、汇率、金融市场、发展经济学。</p>
+        </a>
+      </div>
     </section>
-
-    <p class="footer">下一步（你确认后我可继续做）：每个 Unit 做成可点击展开的课件页 + 每个知识点配“考试语言模板”。</p>
   </main>
 </body>
 </html>
