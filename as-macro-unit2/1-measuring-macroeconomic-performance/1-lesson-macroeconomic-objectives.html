@@ -1,44 +1,875 @@
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lesson 1: Macroeconomic Objectives</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson 1 - Macroeconomic Objectives and Policies</title>
+
   <style>
-    body { font-family: Inter, "Noto Sans SC", sans-serif; background:#f4f7fb; color:#1f2937; margin:0; }
-    .container { max-width: 980px; margin: 0 auto; padding: 24px; }
-    .card { background:#fff; border:1px solid #dbe3ef; border-radius:12px; padding:18px; }
-    .muted { color:#6b7280; }
-    h1,h2,h3 { margin:0 0 10px; }
-    ul { margin:0; padding-left:20px; }
-    a { color:#1d4ed8; }
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      line-height:1.7;
+      background:#f5f7fb;
+      color:#222;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+      padding:40px 0;
+    }
+
+    header{
+      background:#1d3557;
+      color:white;
+      padding:60px 20px;
+      text-align:center;
+    }
+
+    header h1{
+      font-size:3rem;
+      margin-bottom:10px;
+    }
+
+    header p{
+      font-size:1.1rem;
+      opacity:0.9;
+    }
+
+    .lesson-info{
+      background:white;
+      padding:25px;
+      margin-top:-30px;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    h2{
+      margin-top:50px;
+      margin-bottom:20px;
+      color:#1d3557;
+      border-left:6px solid #457b9d;
+      padding-left:15px;
+    }
+
+    h3{
+      margin-top:30px;
+      margin-bottom:15px;
+      color:#2a5d84;
+    }
+
+    p{
+      margin-bottom:15px;
+    }
+
+    ul{
+      margin-left:25px;
+      margin-bottom:20px;
+    }
+
+    li{
+      margin-bottom:10px;
+    }
+
+    .box{
+      background:white;
+      padding:25px;
+      border-radius:12px;
+      margin-bottom:25px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .definition{
+      background:#edf6ff;
+      border-left:5px solid #457b9d;
+      padding:15px;
+      margin:20px 0;
+    }
+
+    .example{
+      background:#fff8e7;
+      border-left:5px solid #f4a261;
+      padding:15px;
+      margin:20px 0;
+    }
+
+    .evaluation{
+      background:#eefbea;
+      border-left:5px solid #4caf50;
+      padding:15px;
+      margin:20px 0;
+    }
+
+    .mindmap{
+      background:white;
+      padding:30px;
+      border-radius:12px;
+      overflow-x:auto;
+      box-shadow:0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .mindmap ul{
+      list-style:none;
+      margin-left:0;
+    }
+
+    .mindmap li{
+      margin:10px 0;
+      padding-left:20px;
+    }
+
+    .mindmap strong{
+      color:#1d3557;
+    }
+
+    .formula{
+      background:#1d3557;
+      color:white;
+      padding:12px 18px;
+      border-radius:8px;
+      font-family:monospace;
+      margin:15px 0;
+      display:inline-block;
+    }
+
+    .summary{
+      background:#1d3557;
+      color:white;
+      padding:30px;
+      border-radius:12px;
+      margin-top:50px;
+    }
+
+    footer{
+      text-align:center;
+      padding:40px;
+      color:#666;
+    }
+
+    @media(max-width:768px){
+
+      header h1{
+        font-size:2rem;
+      }
+
+      .container{
+        width:95%;
+      }
+
+    }
+    
+    .mindmap-section{
+      margin-top: 50px;
+    }
+
+    .mindmap-diagram{
+      background: white;
+      padding: 30px 20px 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      overflow-x: auto;
+    }
+
+    .mindmap-root{
+      position: relative;
+      max-width: 520px;
+      margin: 0 auto 50px;
+      background: #1d3557;
+      color: white;
+      text-align: center;
+      padding: 18px 20px;
+      border-radius: 14px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .mindmap-root::after{
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -32px;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 32px;
+      background: #9bb7d4;
+    }
+
+    .mindmap-level-1{
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(220px, 1fr));
+      gap: 20px;
+      min-width: 980px;
+      padding-top: 35px;
+    }
+
+    .mindmap-level-1::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 8%;
+      right: 8%;
+      height: 3px;
+      background: #9bb7d4;
+      border-radius: 3px;
+    }
+
+    .mindmap-branch{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .mindmap-branch::before{
+      content: "";
+      position: absolute;
+      top: -35px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 35px;
+      background: #9bb7d4;
+    }
+
+    .branch-title{
+      width: 100%;
+      text-align: center;
+      color: white;
+      padding: 14px 12px;
+      border-radius: 12px;
+      font-weight: bold;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .branch-title.objectives{
+      background: #457b9d;
+    }
+
+    .branch-title.policies{
+      background: #2a9d8f;
+    }
+
+    .branch-title.conflicts{
+      background: #e76f51;
+    }
+
+    .branch-title.importance{
+      background: #6c5ce7;
+    }
+
+    .sub-branch{
+      width: 100%;
+      background: #f8fbff;
+      border: 1px solid #d9e7f4;
+      border-left: 5px solid #457b9d;
+      border-radius: 12px;
+      padding: 14px 14px 12px;
+      margin-bottom: 14px;
+    }
+
+    .sub-branch h4{
+      margin: 0 0 10px 0;
+      font-size: 0.98rem;
+      color: #1d3557;
+    }
+
+    .sub-branch ul{
+      margin: 0 0 0 18px;
+      padding: 0;
+    }
+
+    .sub-branch li{
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+
+    .sub-branch p{
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .sub-branch.conflict-box{
+      border-left-color: #e76f51;
+      background: #fff8f6;
+    }
+
+    .sub-branch.policy-box{
+      border-left-color: #2a9d8f;
+      background: #f4fffd;
+    }
+
+    .sub-branch.importance-box{
+      border-left-color: #6c5ce7;
+      background: #f7f5ff;
+    }
+
+    .sub-branch.objective-box{
+      border-left-color: #457b9d;
+      background: #f8fbff;
+    }
+
+    .mindmap-note{
+      margin-top: 20px;
+      font-size: 0.95rem;
+      color: #555;
+      text-align: center;
+    }
+
+    @media (max-width: 1100px){
+      .mindmap-diagram{
+        overflow-x: auto;
+      }
+    }
   </style>
 </head>
+
 <body>
   <main class="container">
     <p><a href="./index.html">← 返回 Module 1</a></p>
-    <section class="card">
-      <h1>Lesson 1: Macroeconomic Objectives</h1>
-      <p class="muted">对应考纲：3.2.1.1 The objectives of government economic policy。</p>
+<header>
+  <h1>Lesson 1</h1>
+  <p>Macroeconomic Objectives and Policies</p>
+</header>
 
-      <h2>核心知识点</h2>
-      <ul>
-        <li>什么是 macroeconomics（研究整个经济体的运行）。</li>
-        <li>Government macroeconomic objectives：
+<div class="container">
+
+  <div class="lesson-info">
+    <h3>Specification Reference</h3>
+    <p>
+      OxfordAQA AS Economics Unit 2 — 3.2.1.1 The objectives of government economic policy
+    </p>
+
+    <h3>Learning Objectives</h3>
+    <ul>
+      <li>Understand main and other objectives of government macroeconomic policy
+      <li>Recognise the possibility of conflicts arising when attempting to achieve these objectives
+      <li>Understand the importance attached to different objectives will affect the policies adopted by the government
+    </ul>
+  </div>
+
+  <section class="mindmap-section">
+  <h2>1. Mind Map Overview</h2>
+
+  <div class="mindmap-diagram">
+
+    <div class="mindmap-root">
+      Governments use macroeconomic policies to achieve economic objectives
+    </div>
+
+    <div class="mindmap-level-1">
+
+      <!-- Branch 1 -->
+      <div class="mindmap-branch">
+        <div class="branch-title objectives">Economic Objectives</div>
+
+        <div class="sub-branch objective-box">
+          <h4>Main objectives</h4>
           <ul>
             <li>Economic growth</li>
             <li>Price stability</li>
             <li>Minimising unemployment</li>
             <li>Stable balance of payments on current account</li>
           </ul>
-        </li>
-        <li>其他政策目标：budget balance、income equality、environmental protection。</li>
-        <li>不同目标之间可能冲突（如高增长与低通胀之间的短期权衡）。</li>
-      </ul>
+        </div>
 
-      <h2>学生需要掌握</h2>
-      <p>学生需要能够解释政府为什么追求这些宏观目标，并初步理解这些目标不一定能同时实现。</p>
-    </section>
-  </main>
+        <div class="sub-branch objective-box">
+          <h4>Other objectives</h4>
+          <ul>
+            <li>Balancing the government budget</li>
+            <li>Reducing income and wealth inequality</li>
+            <li>Protecting the environment</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Branch 2 -->
+      <div class="mindmap-branch">
+        <div class="branch-title policies">Macroeconomic Policies</div>
+
+        <div class="sub-branch policy-box">
+          <h4>Fiscal policy</h4>
+          <ul>
+            <li>Government spending</li>
+            <li>Taxation</li>
+            <li>Budget balance</li>
+          </ul>
+        </div>
+
+        <div class="sub-branch policy-box">
+          <h4>Monetary policy</h4>
+          <ul>
+            <li>Interest rates</li>
+            <li>Money supply</li>
+            <li>Credit</li>
+            <li>Exchange rate</li>
+          </ul>
+        </div>
+
+        <div class="sub-branch policy-box">
+          <h4>Supply-side policy</h4>
+          <ul>
+            <li>Education and training</li>
+            <li>Infrastructure investment</li>
+            <li>Deregulation</li>
+            <li>Tax incentives</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Branch 3 -->
+      <div class="mindmap-branch">
+        <div class="branch-title conflicts">Conflicts Between Objectives</div>
+
+        <div class="sub-branch conflict-box">
+          <h4>1. Examples</h4>
+          <ul>
+            <li>Growth vs inflation</li>
+            <li>Growth vs current account</li>
+            <li>Growth vs environment</li>
+            <li>Low unemployment vs low inflation</li>
+          </ul>
+        </div>
+
+        <div class="sub-branch conflict-box">
+          <h4>2. Short run and long run</h4>
+          <p>
+            Objectives may conflict in the short run, but they may become more compatible in the long run.
+          </p>
+        </div>
+
+        <div class="sub-branch conflict-box">
+          <h4>3. Conditions</h4>
+          <ul>
+            <li>Spare capacity / output gap</li>
+            <li>Cause of growth</li>
+            <li>Cause of inflation</li>
+            <li>Global economic conditions</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Branch 4 -->
+      <div class="mindmap-branch">
+        <div class="branch-title importance">Importance Attached to Objectives</div>
+
+        <div class="sub-branch importance-box">
+          <h4>Why it matters</h4>
+          <p>
+            The priority given to different objectives affects the policies chosen by the government.
+          </p>
+        </div>
+
+        <div class="sub-branch importance-box">
+          <h4>Examples</h4>
+          <ul>
+            <li>Inflation priority → contractionary policy</li>
+            <li>Growth priority → expansionary policy</li>
+            <li>Long-run growth priority → supply-side policy</li>
+            <li>Environment priority → green taxes and regulation</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="mindmap-note">
+      This mind map shows the overall logic of Lesson 1: objectives, policies, conflicts and policy priorities.
+    </p>
+
+  </div>
+</section>
+
+  <h2>2. What are Macroeconomic Objectives?</h2>
+
+  <div class="box">
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Macroeconomic objectives are the goals that governments aim to achieve in order to improve economic performance and economic welfare.
+    </div>
+
+    <p>
+      Governments try to improve the overall performance of the economy. 
+      To do this, they use different macroeconomic policies to achieve a range of economic objectives.
+    </p>
+
+    <p>
+      However, governments cannot usually achieve all objectives perfectly at the same time. 
+      As a result, policymakers must make choices and trade-offs.
+    </p>
+
+  </div>
+
+  <h2>3. Main Macroeconomic Objectives</h2>
+
+  <div class="box">
+
+    <h3>3.1 Economic Growth</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Economic growth means an increase in real GDP over time.
+    </div>
+
+    <p>
+      Economic growth is important because it may increase incomes, employment and living standards.
+    </p>
+
+    <div class="example">
+      <strong>Example:</strong><br>
+      If real GDP rises from $800bn to $840bn, the economy has experienced economic growth.
+    </div>
+
+    <div class="evaluation">
+      Economic growth may also create problems such as inflation, environmental damage and current account deficits.
+    </div>
+
+  </div>
+
+  <div class="box">
+
+    <h3>3.2 Price Stability</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Price stability means keeping inflation low and stable.
+    </div>
+
+    <p>
+      Stable prices help consumers and firms plan for the future with greater confidence.
+    </p>
+
+    <div class="example">
+      <strong>Example:</strong><br>
+      Central banks often target inflation around 2%.
+    </div>
+
+    <div class="evaluation">
+      Very low inflation may support confidence, but deflation can reduce spending and investment.
+    </div>
+
+  </div>
+
+  <div class="box">
+
+    <h3>3.3 Minimising Unemployment</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Unemployment occurs when people who are willing and able to work cannot find a job.
+    </div>
+
+    <p>
+      Low unemployment improves living standards and reduces government welfare spending.
+    </p>
+
+    <div class="evaluation">
+      However, extremely low unemployment may increase wage pressure and inflation.
+    </div>
+
+  </div>
+
+  <div class="box">
+
+    <h3>3.4 Stable Balance of Payments on Current Account</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      The current account records trade in goods, trade in services, primary income and secondary income between a country and the rest of the world.
+    </div>
+
+    <p>
+      Governments usually want to avoid very large current account deficits.
+    </p>
+
+    <div class="example">
+      <strong>Example:</strong><br>
+      Rapid economic growth may increase imports and worsen the current account balance.
+    </div>
+
+  </div>
+
+  <h2>4. Other Economic Objectives</h2>
+
+  <div class="box">
+
+    <h3>4.1 Balancing the Government Budget</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      A balanced budget occurs when government spending equals tax revenue.
+    </div>
+
+    <p>
+      Persistent budget deficits may increase national debt.
+    </p>
+
+  </div>
+
+  <div class="box">
+
+    <h3>4.2 Reducing Inequality</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Inequality refers to an uneven distribution of income and wealth.
+    </div>
+
+    <p>
+      Governments may use progressive taxation and welfare spending to reduce inequality.
+    </p>
+
+    <div class="evaluation">
+      However, higher taxes may reduce incentives to work and invest.
+    </div>
+
+  </div>
+
+  <div class="box">
+
+    <h3>4.3 Protecting the Environment</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Environmental protection means reducing the negative impact of economic activity on the natural environment.
+    </div>
+
+    <p>
+      Economic growth may increase pollution, resource depletion and carbon emissions.
+    </p>
+
+  </div>
+
+  <h2>5. Macroeconomic Policies</h2>
+
+  <div class="box">
+
+    <h3>5.1 Fiscal Policy</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Fiscal policy is the use of government spending, taxation and the budget balance to influence the economy.
+    </div>
+
+    <div class="formula">
+      Government spending ↑ / Tax ↓ → AD ↑ → Real GDP ↑ → Unemployment ↓
+    </div>
+
+    <p>
+      Expansionary fiscal policy aims to increase aggregate demand.
+    </p>
+
+    <div class="evaluation">
+      Expansionary fiscal policy may increase inflationary pressure and government debt.
+    </div>
+
+  </div>
+
+  <div class="box">
+
+    <h3>5.2 Monetary Policy</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Monetary policy is the use of interest rates, money supply and credit by the central bank to influence the economy.
+    </div>
+
+    <div class="formula">
+      Interest rates ↓ → Consumption and Investment ↑ → AD ↑
+    </div>
+
+    <p>
+      Lower interest rates encourage borrowing and spending.
+    </p>
+
+    <div class="evaluation">
+      Monetary policy may become less effective if confidence is low.
+    </div>
+
+  </div>
+
+  <div class="box">
+
+    <h3>5.3 Supply-side Policies</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Supply-side policies aim to increase the productive potential of the economy.
+    </div>
+
+    <div class="formula">
+      Productivity ↑ → LRAS shifts right → Long-run growth ↑
+    </div>
+
+    <p>
+      Supply-side policies include education, infrastructure and deregulation.
+    </p>
+
+    <div class="evaluation">
+      Supply-side policies may take a long time to have an effect.
+    </div>
+
+  </div>
+
+  <h2>6. Conflicts Between Objectives</h2>
+
+  <div class="box">
+
+    <h3>6.1 Growth vs Inflation</h3>
+
+    <div class="formula">
+      AD ↑ → Real GDP ↑ → Price level ↑
+    </div>
+
+    <p>
+      Higher economic growth may create inflationary pressure, especially when the economy is close to full capacity.
+    </p>
+
+  </div>
+
+  <div class="box">
+
+    <h3>6.2 Growth vs Current Account</h3>
+
+    <div class="formula">
+      Economic growth ↑ → Income ↑ → Imports ↑ → Current account deficit ↑
+    </div>
+
+    <p>
+      Rising incomes often increase demand for imported goods and services.
+    </p>
+
+  </div>
+
+  <div class="box">
+
+    <h3>6.3 Growth vs Environment</h3>
+
+    <div class="formula">
+      Output ↑ → Pollution ↑ → Environmental damage ↑
+    </div>
+
+    <p>
+      Economic growth may increase resource use and environmental problems.
+    </p>
+
+  </div>
+
+  <h2>7. Short Run vs Long Run</h2>
+
+  <div class="box">
+
+    <h3>Short Run</h3>
+
+    <p>
+      In the short run, demand-side policies may create conflicts between objectives.
+    </p>
+
+    <div class="example">
+      <strong>Example:</strong><br>
+      Expansionary fiscal policy may reduce unemployment but increase inflation.
+    </div>
+
+    <h3>Long Run</h3>
+
+    <p>
+      In the long run, supply-side improvements may reduce these conflicts.
+    </p>
+
+    <div class="example">
+      <strong>Example:</strong><br>
+      Higher productivity may increase growth without causing strong inflationary pressure.
+    </div>
+
+  </div>
+
+  <h2>8. It Depends on Conditions</h2>
+
+  <div class="box">
+
+    <h3>Spare Capacity</h3>
+
+    <p>
+      If the economy has spare capacity, AD may increase output without much inflation.
+    </p>
+
+    <h3>Cause of Growth</h3>
+
+    <p>
+      Growth caused by higher productivity is more sustainable than growth caused purely by rising AD.
+    </p>
+
+    <h3>Global Economy</h3>
+
+    <p>
+      Strong global demand may increase exports and improve growth.
+    </p>
+
+    <h3>Time Period</h3>
+
+    <p>
+      Objectives may conflict in the short run but become compatible in the long run.
+    </p>
+
+  </div>
+
+  <h2>9. Importance Attached to Different Objectives</h2>
+
+  <div class="box">
+
+    <p>
+      Governments may prioritise different objectives depending on economic conditions and political beliefs.
+    </p>
+
+    <div class="example">
+      <strong>During high inflation:</strong><br>
+      Governments may prioritise price stability and use contractionary policies.
+    </div>
+
+    <div class="example">
+      <strong>During recession:</strong><br>
+      Governments may prioritise growth and employment using expansionary policies.
+    </div>
+
+    <div class="example">
+      <strong>During environmental concerns:</strong><br>
+      Governments may prioritise sustainability using green taxes and regulation.
+    </div>
+
+  </div>
+
+  <div class="summary">
+
+    <h2 style="color:white;border:none;padding:0;margin-bottom:20px;">
+      Lesson Summary
+    </h2>
+
+    <ul>
+      <li>Governments use macroeconomic policies to achieve economic objectives.</li>
+      <li>Main objectives include growth, low inflation, low unemployment and a stable current account.</li>
+      <li>Fiscal, monetary and supply-side policies influence the economy in different ways.</li>
+      <li>Macroeconomic objectives may conflict with each other.</li>
+      <li>Whether objectives conflict often depends on conditions and time period.</li>
+      <li>The importance attached to different objectives affects policy choices.</li>
+    </ul>
+
+  </div>
+
+</div>
+
+<footer>
+  AS Economics Unit 2 | Lesson 1 Notes
+</footer>
+
 </body>
 </html>
