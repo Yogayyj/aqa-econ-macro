@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson 4 - The Circular Flow of Income</title>
+
+  <style>
+    *{ margin:0; padding:0; box-sizing:border-box; }
+
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      line-height:1.7;
+      background:#f5f7fb;
+      color:#222;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+      padding:40px 0;
+    }
+
+    header{
+      background:#1d3557;
+      color:white;
+      padding:60px 20px;
+      text-align:center;
+    }
+
+    header h1{ font-size:3rem; margin-bottom:10px; }
+    header p{ font-size:1.1rem; opacity:0.9; }
+
+    .lesson-info{
+      background:white;
+      padding:25px;
+      margin-top:-30px;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    h2{
+      margin-top:50px;
+      margin-bottom:20px;
+      color:#1d3557;
+      border-left:6px solid #457b9d;
+      padding-left:15px;
+    }
+
+    h3{
+      margin-top:30px;
+      margin-bottom:15px;
+      color:#2a5d84;
+    }
+
+    p{ margin-bottom:15px; }
+
+    ul{
+      margin-left:25px;
+      margin-bottom:20px;
+    }
+
+    li{ margin-bottom:10px; }
+
+    .box{
+      background:white;
+      padding:25px;
+      border-radius:12px;
+      margin-bottom:25px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .definition{
+      background:#edf6ff;
+      border-left:5px solid #457b9d;
+      padding:15px;
+      margin:20px 0;
+    }
+
+    .example{
+      background:#fff8e7;
+      border-left:5px solid #f4a261;
+      padding:15px;
+      margin:20px 0;
+    }
+
+    .evaluation{
+      background:#eefbea;
+      border-left:5px solid #4caf50;
+      padding:15px;
+      margin:20px 0;
+    }
+
+    .formula{
+      background:#1d3557;
+      color:white;
+      padding:12px 18px;
+      border-radius:8px;
+      font-family:monospace;
+      margin:15px 0;
+      display:inline-block;
+      max-width:100%;
+      overflow-x:auto;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin:20px 0;
+      background:white;
+    }
+
+    th, td{
+      border:1px solid #d7e0ea;
+      padding:12px;
+      text-align:left;
+      vertical-align:top;
+    }
+
+    th{
+      background:#1d3557;
+      color:white;
+    }
+
+    .table-wrap{
+      overflow-x:auto;
+    }
+
+    .mindmap-diagram{
+      background:white;
+      padding:30px 20px 40px;
+      border-radius:16px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.05);
+      overflow-x:auto;
+    }
+
+    .mindmap-root{
+      position:relative;
+      max-width:560px;
+      margin:0 auto 50px;
+      background:#1d3557;
+      color:white;
+      text-align:center;
+      padding:18px 20px;
+      border-radius:14px;
+      font-weight:bold;
+      font-size:1.1rem;
+      line-height:1.5;
+    }
+
+    .mindmap-root::after{
+      content:"";
+      position:absolute;
+      left:50%;
+      bottom:-32px;
+      transform:translateX(-50%);
+      width:3px;
+      height:32px;
+      background:#9bb7d4;
+    }
+
+    .mindmap-level-1{
+      position:relative;
+      display:grid;
+      grid-template-columns:repeat(4, minmax(230px, 1fr));
+      gap:20px;
+      min-width:1050px;
+      padding-top:35px;
+    }
+
+    .mindmap-level-1::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:8%;
+      right:8%;
+      height:3px;
+      background:#9bb7d4;
+      border-radius:3px;
+    }
+
+    .mindmap-branch{
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+    .mindmap-branch::before{
+      content:"";
+      position:absolute;
+      top:-35px;
+      left:50%;
+      transform:translateX(-50%);
+      width:3px;
+      height:35px;
+      background:#9bb7d4;
+    }
+
+    .branch-title{
+      width:100%;
+      text-align:center;
+      color:white;
+      padding:14px 12px;
+      border-radius:12px;
+      font-weight:bold;
+      margin-bottom:16px;
+      line-height:1.4;
+    }
+
+    .measure{ background:#457b9d; }
+    .model{ background:#2a9d8f; }
+    .leakage{ background:#e76f51; }
+    .equilibrium{ background:#6c5ce7; }
+
+    .sub-branch{
+      width:100%;
+      border-radius:12px;
+      padding:14px;
+      margin-bottom:14px;
+      border:1px solid #d9e7f4;
+      border-left:5px solid #457b9d;
+      background:#f8fbff;
+    }
+
+    .measure-box{ border-left-color:#457b9d; background:#f8fbff; }
+    .model-box{ border-left-color:#2a9d8f; background:#f4fffd; }
+    .leakage-box{ border-left-color:#e76f51; background:#fff8f6; }
+    .equilibrium-box{ border-left-color:#6c5ce7; background:#f7f5ff; }
+
+    .flow-diagram{
+      background:white;
+      border-radius:16px;
+      padding:30px;
+      margin:25px 0;
+      box-shadow:0 4px 10px rgba(0,0,0,0.05);
+      overflow-x:auto;
+    }
+
+    .flow-grid{
+      min-width:750px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      grid-template-rows:auto auto;
+      gap:35px;
+      align-items:center;
+      position:relative;
+    }
+
+    .flow-card{
+      padding:22px;
+      border-radius:14px;
+      text-align:center;
+      font-weight:bold;
+      color:white;
+    }
+
+    .households{ background:#457b9d; }
+    .firms{ background:#2a9d8f; }
+
+    .flow-arrow{
+      text-align:center;
+      background:#f8fbff;
+      border:1px solid #d9e7f4;
+      border-radius:12px;
+      padding:16px;
+      color:#1d3557;
+      font-weight:bold;
+    }
+
+    .flow-note{
+      text-align:center;
+      margin-top:20px;
+      color:#555;
+    }
+
+    .clicker-box{
+      background:#f8fbff;
+      border:1px solid #d9e7f4;
+      border-radius:12px;
+      padding:20px;
+      margin:20px 0;
+    }
+
+    .step{
+      display:none;
+      background:white;
+      border-left:5px solid #457b9d;
+      padding:14px;
+      margin:12px 0;
+      border-radius:8px;
+    }
+
+    .step.show{ display:block; }
+
+    .clicker-btn{
+      background:#1d3557;
+      color:white;
+      border:none;
+      padding:10px 16px;
+      border-radius:8px;
+      cursor:pointer;
+      margin-top:10px;
+      font-weight:bold;
+    }
+
+    .reset-btn{
+      background:#e76f51;
+      color:white;
+      border:none;
+      padding:10px 16px;
+      border-radius:8px;
+      cursor:pointer;
+      margin-left:8px;
+      font-weight:bold;
+    }
+
+    input.fill-blank{
+      width:100%;
+      padding:8px;
+      border:1px solid #c7d6e5;
+      border-radius:6px;
+      font-size:0.95rem;
+    }
+
+    .activity{
+      background:#f7f5ff;
+      border-left:5px solid #6c5ce7;
+      padding:20px;
+      border-radius:12px;
+      margin:20px 0;
+    }
+
+    .summary{
+      background:#1d3557;
+      color:white;
+      padding:30px;
+      border-radius:12px;
+      margin-top:50px;
+    }
+
+    .summary h2{
+      color:white;
+      border:none;
+      padding:0;
+      margin-top:0;
+    }
+
+    footer{
+      text-align:center;
+      padding:40px;
+      color:#666;
+    }
+
+    @media(max-width:768px){
+      header h1{ font-size:2rem; }
+      .container{ width:95%; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <p><a href="./index.html">← 返回 Module 1</a></p>
+
+<header>
+  <h1>Lesson 4</h1>
+  <p>The Circular Flow of Income</p>
+</header>
+
+<div class="container">
+
+  <div class="lesson-info">
+    <h3>Specification Reference</h3>
+    <p>
+      OxfordAQA AS Economics Unit 2 — 3.2.2.1 The circular flow of income
+    </p>
+
+    <h3>Learning Objectives</h3>
+    <ul>
+      <li>Understand what national income measures</li>
+      <li>Distinguish between nominal income and real income</li>
+      <li>Explain why real national income is used as an indicator of economic performance</li>
+      <li>Understand the circular flow of income model</li>
+      <li>Explain the equation income = output = expenditure</li>
+      <li>Understand equilibrium income and full employment income</li>
+      <li>Distinguish between injections and withdrawals</li>
+      <li>Analyse how changes in injections and withdrawals affect national income</li>
+    </ul>
+  </div>
+
+  <section>
+    <h2>1. Mind Map Overview</h2>
+
+    <div class="mindmap-diagram">
+      <div class="mindmap-root">
+        The circular flow of income explains how income, output and expenditure move through the macroeconomy
+      </div>
+
+      <div class="mindmap-level-1">
+
+        <div class="mindmap-branch">
+          <div class="branch-title measure">Measuring National Income</div>
+
+          <div class="sub-branch measure-box">
+            <h4>National income</h4>
+            <p>Total income earned by factors of production in an economy.</p>
+          </div>
+
+          <div class="sub-branch measure-box">
+            <h4>Nominal income</h4>
+            <p>Measured in current money terms.</p>
+          </div>
+
+          <div class="sub-branch measure-box">
+            <h4>Real income</h4>
+            <p>Adjusted for inflation.</p>
+          </div>
+        </div>
+
+        <div class="mindmap-branch">
+          <div class="branch-title model">Circular Flow Model</div>
+
+          <div class="sub-branch model-box">
+            <h4>Households</h4>
+            <p>Provide factors of production and receive income.</p>
+          </div>
+
+          <div class="sub-branch model-box">
+            <h4>Firms</h4>
+            <p>Produce goods and services and pay factor incomes.</p>
+          </div>
+
+          <div class="sub-branch model-box">
+            <h4>Core equation</h4>
+            <p>Income = Output = Expenditure</p>
+          </div>
+        </div>
+
+        <div class="mindmap-branch">
+          <div class="branch-title leakage">Injections and Withdrawals</div>
+
+          <div class="sub-branch leakage-box">
+            <h4>Injections</h4>
+            <p>Investment, government spending and exports.</p>
+          </div>
+
+          <div class="sub-branch leakage-box">
+            <h4>Withdrawals</h4>
+            <p>Saving, taxation and imports.</p>
+          </div>
+
+          <div class="sub-branch leakage-box">
+            <h4>Impact</h4>
+            <p>More injections increase income; more withdrawals reduce income.</p>
+          </div>
+        </div>
+
+        <div class="mindmap-branch">
+          <div class="branch-title equilibrium">Equilibrium Income</div>
+
+          <div class="sub-branch equilibrium-box">
+            <h4>Equilibrium income</h4>
+            <p>Occurs when injections equal withdrawals.</p>
+          </div>
+
+          <div class="sub-branch equilibrium-box">
+            <h4>Full employment income</h4>
+            <p>Income level when resources are fully employed.</p>
+          </div>
+
+          <div class="sub-branch equilibrium-box">
+            <h4>Output gap</h4>
+            <p>Actual income may be below or above full employment income.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <h2>2. What Does National Income Measure?</h2>
+
+  <div class="box">
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      National income measures the total income earned by factors of production in an economy over a period of time.
+    </div>
+
+    <p>
+      National income is closely linked to the total value of output produced in the economy.
+      When firms produce goods and services, they pay incomes to households in the form of wages, rent, interest and profit.
+    </p>
+
+    <div class="formula">
+      National income = Total income earned from producing goods and services
+    </div>
+
+    <div class="example">
+      <strong>Example:</strong><br>
+      If firms produce more output, they usually need more labour and other resources. This increases the income paid to households.
+    </div>
+  </div>
+
+  <h2>3. Nominal Income and Real Income</h2>
+
+  <div class="box">
+    <h3>3.1 Nominal Income</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Nominal income is income measured in current money terms, without adjusting for inflation.
+    </div>
+
+    <p>
+      Nominal income may rise simply because prices have increased.
+    </p>
+
+    <h3>3.2 Real Income</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Real income is income adjusted for inflation.
+    </div>
+
+    <p>
+      Real income is more useful for measuring economic performance because it shows whether people can actually buy more goods and services.
+    </p>
+
+    <div class="formula">
+      Real income = Nominal income / Price index × 100
+    </div>
+
+    <div class="example">
+      <strong>Example:</strong><br>
+      If nominal national income rises by 8% but prices rise by 5%, real national income rises by approximately 3%.
+    </div>
+  </div>
+
+  <h2>4. Real National Income as an Indicator of Economic Performance</h2>
+
+  <div class="box">
+    <p>
+      Real national income is an important indicator because it measures the value of output after removing the effects of inflation.
+    </p>
+
+    <p>
+      If real national income increases, it suggests that the economy is producing more goods and services.
+    </p>
+
+    <div class="evaluation">
+      However, real national income does not show income distribution, environmental costs, unpaid work or changes in quality of life.
+    </div>
+  </div>
+
+  <h2>5. The Circular Flow of Income Model</h2>
+
+  <div class="flow-diagram">
+    <div class="flow-grid">
+      <div class="flow-card households">Households</div>
+      <div class="flow-arrow">Spending on goods and services →</div>
+
+      <div class="flow-arrow">← Income: wages, rent, interest, profit</div>
+      <div class="flow-card firms">Firms</div>
+    </div>
+
+    <p class="flow-note">
+      Households provide factors of production to firms. Firms produce goods and services and pay income to households.
+    </p>
+  </div>
+
+  <div class="box">
+    <p>
+      In the simplest circular flow model, there are two main groups:
+    </p>
+
+    <ul>
+      <li><strong>Households</strong> own factors of production and receive income.</li>
+      <li><strong>Firms</strong> use factors of production to produce goods and services.</li>
+    </ul>
+
+    <p>
+      Households spend their income on goods and services produced by firms.
+      Firms then use this revenue to pay households for the factors of production.
+    </p>
+  </div>
+
+  <h2>6. Income = Output = Expenditure</h2>
+
+  <div class="box">
+    <div class="definition">
+      <strong>Key idea:</strong><br>
+      The value of national income, national output and national expenditure should be equal.
+    </div>
+
+    <div class="formula">
+      Income = Output = Expenditure
+    </div>
+
+    <p>
+      This is because one person’s spending becomes another person’s income.
+      When firms sell output, they receive expenditure from households.
+      This revenue is then paid out as income to workers and owners of factors of production.
+    </p>
+
+    <div class="example">
+      <strong>Example:</strong><br>
+      A student spends $10 on lunch. This $10 is expenditure for the student, revenue for the firm and income for workers or business owners.
+    </div>
+  </div>
+
+  <h2>7. Equilibrium Income and Full Employment Income</h2>
+
+  <div class="box">
+    <h3>7.1 Equilibrium Income</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Equilibrium income is the level of national income where planned injections equal planned withdrawals.
+    </div>
+
+    <div class="formula">
+      Injections = Withdrawals
+    </div>
+
+    <p>
+      At equilibrium, there is no tendency for national income to change.
+    </p>
+
+    <h3>7.2 Full Employment Income</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Full employment income is the level of national income where the economy is using its resources fully.
+    </div>
+
+    <p>
+      Equilibrium income does not always equal full employment income.
+      An economy can be in equilibrium while still having unemployment.
+    </p>
+
+    <div class="evaluation">
+      If equilibrium income is below full employment income, there is likely to be a negative output gap and cyclical unemployment.
+    </div>
+  </div>
+
+  <h2>8. Injections and Withdrawals</h2>
+
+  <div class="box">
+    <h3>8.1 Injections</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Injections are additions of spending into the circular flow of income.
+    </div>
+
+    <ul>
+      <li><strong>Investment:</strong> spending by firms on capital goods</li>
+      <li><strong>Government spending:</strong> spending by the government on goods and services</li>
+      <li><strong>Exports:</strong> spending by foreign consumers and firms on domestic goods and services</li>
+    </ul>
+
+    <div class="formula">
+      Injections = I + G + X
+    </div>
+
+    <h3>8.2 Withdrawals</h3>
+
+    <div class="definition">
+      <strong>Definition:</strong><br>
+      Withdrawals are leakages of income from the circular flow.
+    </div>
+
+    <ul>
+      <li><strong>Saving:</strong> income not spent by households</li>
+      <li><strong>Taxation:</strong> income taken by the government</li>
+      <li><strong>Imports:</strong> spending on foreign goods and services</li>
+    </ul>
+
+    <div class="formula">
+      Withdrawals = S + T + M
+    </div>
+  </div>
+
+  <h2>9. Effects of Changes in Injections and Withdrawals</h2>
+
+  <div class="box">
+    <h3>When injections increase</h3>
+
+    <div class="formula">
+      I / G / X ↑ → AD ↑ → National income ↑ → Employment ↑
+    </div>
+
+    <p>
+      An increase in injections adds extra spending to the circular flow.
+      This increases aggregate demand and can increase national income.
+    </p>
+
+    <h3>When withdrawals increase</h3>
+
+    <div class="formula">
+      S / T / M ↑ → Spending in circular flow ↓ → National income ↓
+    </div>
+
+    <p>
+      An increase in withdrawals removes spending from the circular flow.
+      This can reduce aggregate demand and lower national income.
+    </p>
+
+    <div class="evaluation">
+      The final effect depends on the size of the change, the multiplier, spare capacity and business confidence.
+    </div>
+  </div>
+
+  <h2>10. Clicker Example: Equilibrium Income</h2>
+
+  <div class="clicker-box">
+    <h3>Example</h3>
+
+    <p>
+      In an economy:<br>
+      Investment = $40bn<br>
+      Government spending = $60bn<br>
+      Exports = $30bn<br>
+      Saving = $50bn<br>
+      Taxation = $55bn<br>
+      Imports = $25bn
+    </p>
+
+    <button class="clicker-btn" onclick="showNextStep('equilibrium')">Show next step</button>
+    <button class="reset-btn" onclick="resetSteps('equilibrium')">Reset</button>
+
+    <div class="step" data-step-group="equilibrium">
+      <strong>Step 1: Calculate injections</strong><br>
+      I + G + X = 40 + 60 + 30 = $130bn
+    </div>
+
+    <div class="step" data-step-group="equilibrium">
+      <strong>Step 2: Calculate withdrawals</strong><br>
+      S + T + M = 50 + 55 + 25 = $130bn
+    </div>
+
+    <div class="step" data-step-group="equilibrium">
+      <strong>Step 3: Compare injections and withdrawals</strong><br>
+      Injections = Withdrawals
+    </div>
+
+    <div class="step" data-step-group="equilibrium">
+      <strong>Step 4: Interpret</strong><br>
+      The economy is in equilibrium because planned injections equal planned withdrawals.
+    </div>
+  </div>
+
+  <h2>11. Fill-in Activity</h2>
+
+  <div class="activity">
+    <h3>Classify Each Item</h3>
+
+    <p>
+      Fill in whether each item is an injection or a withdrawal.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>Item</th>
+          <th>Injection or Withdrawal?</th>
+          <th>Reason</th>
+        </tr>
+
+        <tr>
+          <td>Investment by firms</td>
+          <td><input class="fill-blank" type="text" placeholder="Injection / Withdrawal"></td>
+          <td><input class="fill-blank" type="text" placeholder="Explain why"></td>
+        </tr>
+
+        <tr>
+          <td>Household saving</td>
+          <td><input class="fill-blank" type="text" placeholder="Injection / Withdrawal"></td>
+          <td><input class="fill-blank" type="text" placeholder="Explain why"></td>
+        </tr>
+
+        <tr>
+          <td>Government spending</td>
+          <td><input class="fill-blank" type="text" placeholder="Injection / Withdrawal"></td>
+          <td><input class="fill-blank" type="text" placeholder="Explain why"></td>
+        </tr>
+
+        <tr>
+          <td>Imports</td>
+          <td><input class="fill-blank" type="text" placeholder="Injection / Withdrawal"></td>
+          <td><input class="fill-blank" type="text" placeholder="Explain why"></td>
+        </tr>
+
+        <tr>
+          <td>Exports</td>
+          <td><input class="fill-blank" type="text" placeholder="Injection / Withdrawal"></td>
+          <td><input class="fill-blank" type="text" placeholder="Explain why"></td>
+        </tr>
+      </table>
+    </div>
+
+    <button class="reset-btn" onclick="clearActivityInputs()">Clear answers</button>
+  </div>
+
+  <h2>12. Exam-style Questions</h2>
+
+  <div class="box">
+    <ul>
+      <li>What does national income measure?</li>
+      <li>Explain the difference between nominal income and real income.</li>
+      <li>Why is real national income a better indicator of economic performance than nominal national income?</li>
+      <li>Explain the meaning of income = output = expenditure.</li>
+      <li>Explain the difference between injections and withdrawals.</li>
+      <li>Analyse how an increase in government spending may affect national income.</li>
+      <li>Explain why equilibrium income may be below full employment income.</li>
+    </ul>
+  </div>
+
+  <div class="summary">
+    <h2>Lesson Summary</h2>
+
+    <ul>
+      <li>National income measures the total income generated from production.</li>
+      <li>Nominal income is measured in current money terms.</li>
+      <li>Real income is adjusted for inflation.</li>
+      <li>In the circular flow model, income = output = expenditure.</li>
+      <li>Injections add spending to the circular flow.</li>
+      <li>Withdrawals remove spending from the circular flow.</li>
+      <li>Equilibrium income occurs when injections equal withdrawals.</li>
+      <li>Full employment income occurs when resources are fully used.</li>
+      <li>Changes in injections and withdrawals affect national income.</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  AS Economics Unit 2 | Lesson 4 Notes
+</footer>
+
+<script>
+  function showNextStep(groupId) {
+    const steps = document.querySelectorAll(`[data-step-group="${groupId}"]`);
+    for (let i = 0; i < steps.length; i++) {
+      if (!steps[i].classList.contains("show")) {
+        steps[i].classList.add("show");
+        break;
+      }
+    }
+  }
+
+  function resetSteps(groupId) {
+    const steps = document.querySelectorAll(`[data-step-group="${groupId}"]`);
+    steps.forEach(step => step.classList.remove("show"));
+  }
+
+  function clearActivityInputs() {
+    const inputs = document.querySelectorAll(".fill-blank");
+    inputs.forEach(input => input.value = "");
+  }
+</script>
+
+</body>
+</html>
