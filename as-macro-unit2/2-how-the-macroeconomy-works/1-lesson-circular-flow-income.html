@@ -888,38 +888,39 @@
       C + I = Y &nbsp;&nbsp;and&nbsp;&nbsp; S = I
     </div>
 
-    <div class="flow-diagram">
-      <svg viewBox="0 0 980 420" role="img" aria-label="Equilibrium income in a two-sector economy with households and firms">
-        <defs>
-          <marker id="twoSectorArrowHead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="#1f2937"></polygon>
-          </marker>
-        </defs>
+<div class="flow-diagram">
+    <svg viewBox="0 0 980 470" role="img" aria-label="Equilibrium income in two sector economy">
+      <defs>
+        <marker id="openEconomyArrowHead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#1f2937"></polygon>
+        </marker>
+      </defs>
 
-        <rect class="flow-box" x="90" y="165" width="220" height="90"></rect>
-        <text class="flow-title" x="200" y="210">Households</text>
+      <rect class="flow-box" x="90" y="185" width="220" height="90"></rect>
+      <text class="flow-title" x="200" y="230">Households</text>
 
-        <rect class="flow-box" x="670" y="165" width="220" height="90"></rect>
-        <text class="flow-title" x="780" y="210">Firms</text>
+      <rect class="flow-box" x="670" y="185" width="220" height="90"></rect>
+      <text class="flow-title" x="780" y="230">Firms</text>
 
-        <path d="M310 195 C430 120, 560 120, 670 195" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#twoSectorArrowHead)"></path>
-        <text class="flow-label" x="490" y="115">Consumption (C)</text>
+      <path d="M310 215 C430 140, 560 140, 670 215" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#openEconomyArrowHead)"></path>
+      <text class="flow-label" x="490" y="136">Consumption (C)</text>
 
-        <path d="M670 175 C560 90, 430 90, 310 175" fill="none" stroke="#059669" stroke-width="3" marker-end="url(#twoSectorArrowHead)"></path>
-        <text class="flow-label" x="490" y="72">Income (Y) to households</text>
+      <path d="M670 245 C560 325, 430 325, 310 245" fill="none" stroke="#059669" stroke-width="3" marker-end="url(#openEconomyArrowHead)"></path>
+      <text class="flow-label" x="490" y="350">Income (Y)</text>
 
-        <text class="flow-label" x="200" y="120">Withdrawal: S</text>
-        <path d="M200 175 L200 120" fill="none" stroke="#dc2626" stroke-width="3" marker-end="url(#twoSectorArrowHead)"></path>
+      <text class="flow-label" x="180" y="95">Withdrawals (W): Saving (S)</text>
+      <path d="M200 178 L200 120" fill="none" stroke="#dc2626" stroke-width="3" marker-end="url(#openEconomyArrowHead)"></path>
 
-        <text class="flow-label" x="780" y="120">Injection: I</text>
-        <path d="M780 120 L780 175" fill="none" stroke="#7c3aed" stroke-width="3" marker-end="url(#twoSectorArrowHead)"></path>
+      <text class="flow-label" x="780" y="95">Injections (J): Investment (I)</text>
+      <path d="M780 120 L780 178" fill="none" stroke="#7c3aed" stroke-width="3" marker-end="url(#openEconomyArrowHead)"></path>
 
-        <text class="flow-label" x="490" y="24">Equilibrium condition: S = I and C + I = Y</text>
-      </svg>
-      <p class="flow-note">
-        In the two-sector model, equilibrium income occurs when savings withdrawals are exactly matched by investment injections.
-      </p>
-    </div>
+      <text class="flow-label" x="490" y="405">AD = C + I </text>
+      <text class="flow-label" x="490" y="432">Equilibrium: I = S  and AD = Y</text>
+    </svg>
+    <p class="flow-note">
+      In simple two-sector model of economy, equilibrium still requires total injections to equal total withdrawals.
+    </p>
+  </div>
 
     <h3>8.4 Two Disequilibrium Cases in a Two-Sector Economy</h3>
     <p>
@@ -967,7 +968,8 @@
     </div>
   </div>
 
-  <div class="flow-diagram">
+
+<div class="flow-diagram">
     <svg viewBox="0 0 980 470" role="img" aria-label="Equilibrium income in an open economy with government and foreign trade sectors">
       <defs>
         <marker id="openEconomyArrowHead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
