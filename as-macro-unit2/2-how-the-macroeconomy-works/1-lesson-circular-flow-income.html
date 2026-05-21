@@ -238,36 +238,41 @@
       overflow-x:auto;
     }
 
-    .flow-grid{
-      min-width:750px;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      grid-template-rows:auto auto;
-      gap:35px;
-      align-items:center;
-      position:relative;
+    .flow-diagram svg{
+      min-width:980px;
+      width:100%;
+      height:auto;
     }
 
-    .flow-card{
-      padding:22px;
-      border-radius:14px;
-      text-align:center;
-      font-weight:bold;
-      color:white;
+    .flow-box{
+      fill:#f8fafc;
+      stroke:#334155;
+      stroke-width:2;
+      rx:12;
     }
 
-    .households{ background:#457b9d; }
-    .firms{ background:#2a9d8f; }
+    .flow-title{
+      font-size:18px;
+      font-weight:700;
+      fill:#111827;
+      text-anchor:middle;
+    }
+
+    .flow-label{
+      font-size:14px;
+      fill:#374151;
+      text-anchor:middle;
+    }
 
     .flow-arrow{
-      text-align:center;
-      background:#f8fbff;
-      border:1px solid #d9e7f4;
-      border-radius:12px;
-      padding:16px;
-      color:#1d3557;
-      font-weight:bold;
+      stroke:#1f2937;
+      stroke-width:2.2;
+      fill:none;
+      marker-end:url(#flowArrowHead);
     }
+
+    .flow-blue{ stroke:#2563eb; }
+    .flow-green{ stroke:#16a34a; }
 
     .flow-note{
       text-align:center;
@@ -404,18 +409,23 @@
           <div class="branch-title measure">Measuring National Income</div>
 
           <div class="sub-branch measure-box">
-            <h4>National income</h4>
-            <p>Total income earned by factors of production in an economy.</p>
+            <h4>Output method (value added)</h4>
+            <p>Add the value added of each industry to avoid double counting of intermediate goods.</p>
           </div>
 
           <div class="sub-branch measure-box">
-            <h4>Nominal income</h4>
-            <p>Measured in current money terms.</p>
+            <h4>Income method</h4>
+            <p>Add wages, rent, interest and profit earned by factors of production.</p>
           </div>
 
           <div class="sub-branch measure-box">
-            <h4>Real income</h4>
-            <p>Adjusted for inflation.</p>
+            <h4>Expenditure method</h4>
+            <p>Calculate C + I + G + X − M, including stock changes in investment.</p>
+          </div>
+
+          <div class="sub-branch measure-box">
+            <h4>Key principle</h4>
+            <p>Output = Income = Expenditure (allowing for statistical differences).</p>
           </div>
         </div>
 
@@ -503,6 +513,155 @@
     </div>
   </div>
 
+  <div class="box">
+    <h3>2.1 Measuring National Income: Output Method</h3>
+
+    <div class="definition">
+      <strong>Output method:</strong><br>
+      Statisticians estimate output across industries (for example retail, hairdressing, insurance and manufacturing), then add each industry's <strong>value added</strong>.
+    </div>
+
+    <div class="formula">
+      Value added = Value of output − Value of intermediate inputs
+    </div>
+
+    <p>
+      Value added is used to avoid <strong>double counting</strong>. If we simply add total sales from every firm, the same input can be counted more than once when it is sold between firms.
+    </p>
+
+    <div class="definition">
+      <strong>Value added in the circular flow:</strong>
+      Firms receive spending, transform inputs into final output, and create value added.
+      This value added is distributed as factor incomes (wages, rent, interest and profit), linking output to income.
+    </div>
+
+    <div class="example">
+      <strong>Quick example:</strong><br>
+      A bakery sells output worth $500 and buys intermediate inputs worth $220.<br>
+      Value added = $500 − $220 = <strong>$280</strong>.
+    </div>
+
+    <div class="example">
+      <strong>Example:</strong><br>
+      Sugar is sold to a biscuit firm. If we add both firms' total sales, sugar is counted twice. Using value added at each stage removes this problem.
+    </div>
+
+    <p>
+      Output is measured in <strong>money terms</strong> because money provides a common unit. Different products (such as laptops and tea) cannot be added meaningfully unless converted into monetary value.
+    </p>
+  </div>
+
+  <div class="box">
+    <h3>2.2 Income Method</h3>
+    <p>
+      Output creates incomes for factors of production. National income can therefore be calculated by summing:
+      wages, rent, interest and profit.
+    </p>
+    <div class="formula">
+      National income (income method) = wages + rent + interest + profit
+    </div>
+    <p>
+      The monetary value of output should create an equal amount of income.
+    </p>
+  </div>
+
+  <div class="box">
+    <h3>2.3 Expenditure Method</h3>
+    <p>
+      Output also equals expenditure because produced output is purchased by households, firms, government or foreign buyers.
+      Stock (inventory) changes are included in investment, so unsold output is treated as firms buying their own output.
+    </p>
+
+    <div class="formula">
+      Expenditure method = C + I + G + X − M
+    </div>
+
+    <ul>
+      <li><strong>C:</strong> household consumption expenditure.</li>
+      <li><strong>I:</strong> firms' investment spending, including stock changes.</li>
+      <li><strong>G:</strong> government spending on goods and services (excluding transfer payments).</li>
+      <li><strong>X:</strong> exports.</li>
+      <li><strong>M:</strong> imports (subtracted because they are not domestic output).</li>
+    </ul>
+
+    <div class="evaluation">
+      In theory all three methods should give the same figure: output = income = expenditure.
+      In practice, statisticians may observe small differences because of data and measurement errors.
+    </div>
+  </div>
+
+  <div class="box">
+    <h3>2.3.1 Common Question: Why is export positive and import negative?</h3>
+    <p>
+      In the expenditure approach, we count spending on <strong>domestic output</strong>.
+      Exports (X) are spending on domestically produced goods and services by foreigners, so they are added.
+      Imports (M) are spending on foreign-produced goods and services, so they are subtracted.
+    </p>
+    <div class="formula">
+      Expenditure on domestic output = C + I + G + X − M
+    </div>
+    <div class="example">
+      <strong>Quick intuition:</strong><br>
+      If households buy imported phones, that spending appears in consumption (C), but it is not domestic output.
+      Subtracting M removes this foreign-output part and keeps the total focused on domestic production.
+    </div>
+  </div>
+
+  <div class="box">
+    <h3>2.4 The Difference Between GDP, GNP and NNP</h3>
+
+    <p>
+      <strong>Gross domestic product (GDP)</strong> measures the value of output produced within a country.
+      <strong>Gross national product (GNP)</strong> is GDP plus net income from abroad.
+    </p>
+
+    <div class="formula">
+      GNP = GDP + net income from abroad
+    </div>
+
+    <p>
+      Net income from abroad is income earned by domestic residents from abroad minus income earned by foreign residents from the domestic economy.
+      One example is interest earned on money deposited in a foreign bank.
+    </p>
+
+    <p>
+      <strong>Net national product (NNP)</strong> adjusts GNP by subtracting depreciation (capital consumption).
+      Over time, part of output is needed to replace worn-out or obsolete capital.
+    </p>
+
+    <div class="formula">
+      NNP = GNP − depreciation
+    </div>
+
+    <p>
+      National income can also be measured at <strong>market prices</strong> or <strong>factor cost</strong>.
+      Indirect taxes raise market prices, while subsidies lower market prices relative to factor cost.
+    </p>
+
+    <div class="definition">
+      <strong>Difference between market price and factor cost:</strong><br>
+      Market price is what buyers pay in the market (including indirect taxes and the effect of subsidies).
+      Factor cost is what producers receive for supplying factors of production, excluding those tax/subsidy distortions.
+    </div>
+
+    <div class="formula">
+      National income at factor cost = national income at market prices − indirect taxes + subsidies
+    </div>
+
+    <div class="evaluation">
+      <strong>Common question: why is tax negative and subsidy positive in this formula?</strong><br>
+      Tax is negative because indirect taxes are included in market prices but are not income earned by factors of production, so we subtract them.<br>
+      Subsidy is positive because subsidies reduce market prices below factor earnings, so we add them back to recover factor-cost income.
+    </div>
+
+    <p>
+      For example:
+      NNP at factor cost = NNP at market prices − indirect taxes + subsidies.
+      NNP at factor cost is also called <strong>net national income (NNI)</strong>.
+      <strong>NNI per capita</strong> is often used as an indicator of living standards.
+    </p>
+  </div>
+
   <h2>3. Nominal Income and Real Income</h2>
 
   <div class="box">
@@ -557,13 +716,31 @@
   <h2>5. The Circular Flow of Income Model</h2>
 
   <div class="flow-diagram">
-    <div class="flow-grid">
-      <div class="flow-card households">Households</div>
-      <div class="flow-arrow">Spending on goods and services →</div>
+    <svg viewBox="0 0 980 500" role="img" aria-label="Circular flow of income between households and firms">
+      <defs>
+        <marker id="flowArrowHead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#1f2937"></polygon>
+        </marker>
+      </defs>
 
-      <div class="flow-arrow">← Income: wages, rent, interest, profit</div>
-      <div class="flow-card firms">Firms</div>
-    </div>
+      <rect class="flow-box" x="80" y="210" width="220" height="80"></rect>
+      <text class="flow-title" x="190" y="258">Households</text>
+
+      <rect class="flow-box" x="680" y="210" width="220" height="80"></rect>
+      <text class="flow-title" x="790" y="258">Firms</text>
+
+      <path class="flow-arrow flow-blue" d="M300 258 C430 120, 560 120, 680 258"></path>
+      <text class="flow-label" x="490" y="110">Consumption expenditure</text>
+
+      <path class="flow-arrow flow-blue" d="M680 242 C560 380, 430 380, 300 242"></path>
+      <text class="flow-label" x="490" y="402">Goods and services</text>
+
+      <path class="flow-arrow flow-green" d="M300 228 C430 60, 560 60, 680 228"></path>
+      <text class="flow-label" x="490" y="62">Factors of production (labour, land, capital, enterprise)</text>
+
+      <path class="flow-arrow flow-green" d="M680 272 C560 440, 430 440, 300 272"></path>
+      <text class="flow-label" x="490" y="462">Factor incomes: wages, rent, interest, profit</text>
+    </svg>
 
     <p class="flow-note">
       Households provide factors of production to firms. Firms produce goods and services and pay income to households.
@@ -584,6 +761,7 @@
       Households spend their income on goods and services produced by firms.
       Firms then use this revenue to pay households for the factors of production.
     </p>
+
   </div>
 
   <h2>6. Income = Output = Expenditure</h2>
