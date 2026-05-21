@@ -238,36 +238,41 @@
       overflow-x:auto;
     }
 
-    .flow-grid{
-      min-width:750px;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      grid-template-rows:auto auto;
-      gap:35px;
-      align-items:center;
-      position:relative;
+    .flow-diagram svg{
+      min-width:980px;
+      width:100%;
+      height:auto;
     }
 
-    .flow-card{
-      padding:22px;
-      border-radius:14px;
-      text-align:center;
-      font-weight:bold;
-      color:white;
+    .flow-box{
+      fill:#f8fafc;
+      stroke:#334155;
+      stroke-width:2;
+      rx:12;
     }
 
-    .households{ background:#457b9d; }
-    .firms{ background:#2a9d8f; }
+    .flow-title{
+      font-size:18px;
+      font-weight:700;
+      fill:#111827;
+      text-anchor:middle;
+    }
+
+    .flow-label{
+      font-size:14px;
+      fill:#374151;
+      text-anchor:middle;
+    }
 
     .flow-arrow{
-      text-align:center;
-      background:#f8fbff;
-      border:1px solid #d9e7f4;
-      border-radius:12px;
-      padding:16px;
-      color:#1d3557;
-      font-weight:bold;
+      stroke:#1f2937;
+      stroke-width:2.2;
+      fill:none;
+      marker-end:url(#flowArrowHead);
     }
+
+    .flow-blue{ stroke:#2563eb; }
+    .flow-green{ stroke:#16a34a; }
 
     .flow-note{
       text-align:center;
@@ -557,13 +562,31 @@
   <h2>5. The Circular Flow of Income Model</h2>
 
   <div class="flow-diagram">
-    <div class="flow-grid">
-      <div class="flow-card households">Households</div>
-      <div class="flow-arrow">Spending on goods and services →</div>
+    <svg viewBox="0 0 980 500" role="img" aria-label="Circular flow of income between households and firms">
+      <defs>
+        <marker id="flowArrowHead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#1f2937"></polygon>
+        </marker>
+      </defs>
 
-      <div class="flow-arrow">← Income: wages, rent, interest, profit</div>
-      <div class="flow-card firms">Firms</div>
-    </div>
+      <rect class="flow-box" x="80" y="210" width="220" height="80"></rect>
+      <text class="flow-title" x="190" y="258">Households</text>
+
+      <rect class="flow-box" x="680" y="210" width="220" height="80"></rect>
+      <text class="flow-title" x="790" y="258">Firms</text>
+
+      <path class="flow-arrow flow-blue" d="M300 258 C430 120, 560 120, 680 258"></path>
+      <text class="flow-label" x="490" y="110">Consumption expenditure</text>
+
+      <path class="flow-arrow flow-blue" d="M680 242 C560 380, 430 380, 300 242"></path>
+      <text class="flow-label" x="490" y="402">Goods and services</text>
+
+      <path class="flow-arrow flow-green" d="M300 228 C430 60, 560 60, 680 228"></path>
+      <text class="flow-label" x="490" y="62">Factors of production (labour, land, capital, enterprise)</text>
+
+      <path class="flow-arrow flow-green" d="M680 272 C560 440, 430 440, 300 272"></path>
+      <text class="flow-label" x="490" y="462">Factor incomes: wages, rent, interest, profit</text>
+    </svg>
 
     <p class="flow-note">
       Households provide factors of production to firms. Firms produce goods and services and pay income to households.
@@ -584,6 +607,24 @@
       Households spend their income on goods and services produced by firms.
       Firms then use this revenue to pay households for the factors of production.
     </p>
+
+    <h3>5.1 Value Added in the Circular Flow</h3>
+    <div class="definition">
+      <strong>Value added:</strong>
+      the extra value created by firms at each production stage.
+    </div>
+    <div class="formula">
+      Value added = Output value − Cost of intermediate goods
+    </div>
+    <p>
+      In the circular flow, firms receive spending from households, transform inputs into final output, and create value added.
+      This value added is then distributed as factor incomes (wages, rent, interest and profit), linking the output and income sides of GDP.
+    </p>
+    <div class="example">
+      <strong>Quick example:</strong><br>
+      A bakery sells output worth $500 and buys intermediate inputs worth $220.<br>
+      Value added = $500 − $220 = <strong>$280</strong>.
+    </div>
   </div>
 
   <h2>6. Income = Output = Expenditure</h2>
