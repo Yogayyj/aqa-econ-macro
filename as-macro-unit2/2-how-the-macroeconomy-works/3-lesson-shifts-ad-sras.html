@@ -16,6 +16,23 @@
     .diagram{background:#ffffff;border:1px solid #dbe3ef;border-radius:12px;padding:12px;margin:14px 0;overflow-x:auto}
     .diagram svg{max-width:100%;height:auto;display:block;margin:auto}
     .diagram-title{font-weight:700;color:#1d3557;margin-bottom:8px}
+    .quiz-intro{margin-bottom:16px}
+    .quiz-list{display:grid;gap:14px;margin-top:14px}
+    .quiz-item{border:1px solid #dbe3ef;border-radius:10px;background:#f8fafc;padding:14px}
+    .quiz-question{font-weight:700;margin:0 0 10px}
+    .quiz-options{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px}
+    .quiz-options button{border:1px solid #94a3b8;background:#fff;border-radius:8px;color:#1f2937;cursor:pointer;font-weight:700;padding:8px 12px}
+    .quiz-options button:hover,.quiz-options button:focus{border-color:#2563eb;outline:2px solid #bfdbfe}
+    .quiz-options button.selected{background:#dbeafe;border-color:#2563eb;color:#1d4ed8}
+    .quiz-feedback{border-radius:8px;display:none;font-weight:700;margin-top:8px;padding:8px 10px}
+    .quiz-feedback.correct{background:#dcfce7;color:#166534;display:block}
+    .quiz-feedback.incorrect{background:#fee2e2;color:#991b1b;display:block}
+    .quiz-reason{color:#475569;display:none;margin:8px 0 0}
+    .quiz-reason.visible{display:block}
+    .quiz-controls{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .quiz-controls button{background:#1d4ed8;border:0;border-radius:8px;color:#fff;cursor:pointer;font-weight:700;padding:10px 14px}
+    .quiz-controls button.secondary{background:#64748b}
+    .quiz-score{font-weight:700;margin-top:12px}
   </style>
 </head>
 <body>
@@ -77,8 +94,148 @@
     </ul>
   </section>
 
+
+  <section class="card" id="supply-shock-quiz">
+    <h2>5) Supply-side Shock Judgement Quiz (Student Version)</h2>
+    <p class="quiz-intro">Choose whether each situation is <strong>A. Positive Supply-side Shock</strong> or <strong>B. Negative Supply-side Shock</strong>. Press an answer button to check whether it is correct.</p>
+    <div class="quiz-list">
+      <div class="quiz-item" data-answer="positive" data-reason="Oil is a production cost. Lower oil prices reduce firms' costs.">
+        <p class="quiz-question">1. The world price of oil falls significantly in a country that imports most of its oil.</p>
+        <div class="quiz-options">
+          <button type="button" data-choice="positive">A. Positive Supply-side Shock</button>
+          <button type="button" data-choice="negative">B. Negative Supply-side Shock</button>
+        </div>
+        <div class="quiz-feedback" aria-live="polite"></div>
+        <p class="quiz-reason"></p>
+      </div>
+      <div class="quiz-item" data-answer="negative" data-reason="Energy costs increase.">
+        <p class="quiz-question">2. The world price of oil rises sharply in a country that imports oil.</p>
+        <div class="quiz-options">
+          <button type="button" data-choice="positive">A. Positive Supply-side Shock</button>
+          <button type="button" data-choice="negative">B. Negative Supply-side Shock</button>
+        </div>
+        <div class="quiz-feedback" aria-live="polite"></div>
+        <p class="quiz-reason"></p>
+      </div>
+      <div class="quiz-item" data-answer="positive" data-reason="Imported steel is a production input. A lower input price reduces production costs.">
+        <p class="quiz-question">3. The price of imported steel falls for a country that relies on imported steel.</p>
+        <div class="quiz-options">
+          <button type="button" data-choice="positive">A. Positive Supply-side Shock</button>
+          <button type="button" data-choice="negative">B. Negative Supply-side Shock</button>
+        </div>
+        <div class="quiz-feedback" aria-live="polite"></div>
+        <p class="quiz-reason"></p>
+      </div>
+      <div class="quiz-item" data-answer="negative" data-reason="Wheat is an important input for many food producers. Higher input costs shift SRAS left.">
+        <p class="quiz-question">4. The price of imported wheat rises significantly.</p>
+        <div class="quiz-options">
+          <button type="button" data-choice="positive">A. Positive Supply-side Shock</button>
+          <button type="button" data-choice="negative">B. Negative Supply-side Shock</button>
+        </div>
+        <div class="quiz-feedback" aria-live="polite"></div>
+        <p class="quiz-reason"></p>
+      </div>
+      <div class="quiz-item" data-answer="negative" data-reason="Labour costs rise.">
+        <p class="quiz-question">5. Money wages unexpectedly increase by 10%.</p>
+        <div class="quiz-options">
+          <button type="button" data-choice="positive">A. Positive Supply-side Shock</button>
+          <button type="button" data-choice="negative">B. Negative Supply-side Shock</button>
+        </div>
+        <div class="quiz-feedback" aria-live="polite"></div>
+        <p class="quiz-reason"></p>
+      </div>
+      <div class="quiz-item" data-answer="positive" data-reason="Lower money wages reduce firms' labour costs.">
+        <p class="quiz-question">6. Money wages unexpectedly decrease.</p>
+        <div class="quiz-options">
+          <button type="button" data-choice="positive">A. Positive Supply-side Shock</button>
+          <button type="button" data-choice="negative">B. Negative Supply-side Shock</button>
+        </div>
+        <div class="quiz-feedback" aria-live="polite"></div>
+        <p class="quiz-reason"></p>
+      </div>
+      <div class="quiz-item" data-answer="negative" data-reason="Usually negative because labour costs increase. Evaluation: if higher wages greatly improve productivity, the effect may be less negative.">
+        <p class="quiz-question">7. The government introduces a national minimum wage that is much higher than before.</p>
+        <div class="quiz-options">
+          <button type="button" data-choice="positive">A. Positive Supply-side Shock</button>
+          <button type="button" data-choice="negative">B. Negative Supply-side Shock</button>
+        </div>
+        <div class="quiz-feedback" aria-live="polite"></div>
+        <p class="quiz-reason"></p>
+      </div>
+      <div class="quiz-item" data-answer="positive" data-reason="Lower minimum wages can reduce firms' labour costs.">
+        <p class="quiz-question">8. The government reduces the national minimum wage.</p>
+        <div class="quiz-options">
+          <button type="button" data-choice="positive">A. Positive Supply-side Shock</button>
+          <button type="button" data-choice="negative">B. Negative Supply-side Shock</button>
+        </div>
+        <div class="quiz-feedback" aria-live="polite"></div>
+        <p class="quiz-reason"></p>
+      </div>
+      <div class="quiz-item" data-answer="negative" data-reason="Production costs rise. Examples include a VAT increase, carbon tax, or excise duties.">
+        <p class="quiz-question">9. An unexpected increase in indirect taxes on firms.</p>
+        <div class="quiz-options">
+          <button type="button" data-choice="positive">A. Positive Supply-side Shock</button>
+          <button type="button" data-choice="negative">B. Negative Supply-side Shock</button>
+        </div>
+        <div class="quiz-feedback" aria-live="polite"></div>
+        <p class="quiz-reason"></p>
+      </div>
+      <div class="quiz-item" data-answer="positive" data-reason="Lower indirect taxes reduce costs for firms.">
+        <p class="quiz-question">10. An unexpected reduction in indirect taxes.</p>
+        <div class="quiz-options">
+          <button type="button" data-choice="positive">A. Positive Supply-side Shock</button>
+          <button type="button" data-choice="negative">B. Negative Supply-side Shock</button>
+        </div>
+        <div class="quiz-feedback" aria-live="polite"></div>
+        <p class="quiz-reason"></p>
+      </div>
+      <div class="quiz-item" data-answer="positive" data-reason="Costs fall because the subsidy helps producers cover production costs.">
+        <p class="quiz-question">11. The government introduces a subsidy to producers.</p>
+        <div class="quiz-options">
+          <button type="button" data-choice="positive">A. Positive Supply-side Shock</button>
+          <button type="button" data-choice="negative">B. Negative Supply-side Shock</button>
+        </div>
+        <div class="quiz-feedback" aria-live="polite"></div>
+        <p class="quiz-reason"></p>
+      </div>
+      <div class="quiz-item" data-answer="negative" data-reason="Removing producer subsidies raises firms' effective costs.">
+        <p class="quiz-question">12. Producer subsidies are removed.</p>
+        <div class="quiz-options">
+          <button type="button" data-choice="positive">A. Positive Supply-side Shock</button>
+          <button type="button" data-choice="negative">B. Negative Supply-side Shock</button>
+        </div>
+        <div class="quiz-feedback" aria-live="polite"></div>
+        <p class="quiz-reason"></p>
+      </div>
+      <div class="quiz-item" data-answer="positive" data-reason="Better technology raises labour productivity, so firms can produce more with the same resources.">
+        <p class="quiz-question">13. Labour productivity increases due to better technology.</p>
+        <div class="quiz-options">
+          <button type="button" data-choice="positive">A. Positive Supply-side Shock</button>
+          <button type="button" data-choice="negative">B. Negative Supply-side Shock</button>
+        </div>
+        <div class="quiz-feedback" aria-live="polite"></div>
+        <p class="quiz-reason"></p>
+      </div>
+      <div class="quiz-item" data-answer="negative" data-reason="Less training can reduce productivity, increasing unit costs and shifting SRAS left.">
+        <p class="quiz-question">14. Labour productivity falls because workers receive less training.</p>
+        <div class="quiz-options">
+          <button type="button" data-choice="positive">A. Positive Supply-side Shock</button>
+          <button type="button" data-choice="negative">B. Negative Supply-side Shock</button>
+        </div>
+        <div class="quiz-feedback" aria-live="polite"></div>
+        <p class="quiz-reason"></p>
+      </div>
+    </div>
+    <div class="quiz-controls">
+      <button type="button" id="show-supply-shock-answers">Show all answers</button>
+      <button type="button" class="secondary" id="reset-supply-shock-quiz">Reset quiz</button>
+    </div>
+    <p class="quiz-score" id="supply-shock-score" aria-live="polite"></p>
+  </section>
+
+
   <section class="card">
-    <h2>5) common questions: Long run and short run</h2>
+    <h2>6) common questions: Long run and short run</h2>
     <div class="note"><strong>These two statements do not conflict</strong> because they describe <strong>two different “beyond-capacity” situations</strong>.</div>
     <h3>Situation A: Cannot go beyond current maximum capacity (sustainable limit)</h3>
     <p>When the economy is already at full capacity (long-run potential output), real output cannot keep increasing in the short run without changing productive capacity. Long-run growth requires <strong>LRAS shifting right</strong> (better productivity, more capital, more resources, better technology).</p>
@@ -87,5 +244,61 @@
     <div class="box"><strong>One-line summary for students:</strong> Sustainable long-run growth needs LRAS to shift right; temporary over-capacity output is possible in the short run but is inflationary and unsustainable.</div>
   </section>
 </main>
+<script>
+  const quizItems = document.querySelectorAll('#supply-shock-quiz .quiz-item');
+  const score = document.getElementById('supply-shock-score');
+
+  function updateScore() {
+    const answered = [...quizItems].filter((item) => item.dataset.answered === 'true');
+    const correct = answered.filter((item) => item.dataset.correct === 'true').length;
+    score.textContent = answered.length
+      ? `Score: ${correct}/${answered.length} answered correctly (${quizItems.length} questions total).`
+      : '';
+  }
+
+  function markAnswer(item, choice) {
+    const answer = item.dataset.answer;
+    const isCorrect = choice === answer;
+    const feedback = item.querySelector('.quiz-feedback');
+    const reason = item.querySelector('.quiz-reason');
+
+    item.dataset.answered = 'true';
+    item.dataset.correct = String(isCorrect);
+    item.querySelectorAll('button[data-choice]').forEach((button) => {
+      button.classList.toggle('selected', button.dataset.choice === choice);
+    });
+
+    feedback.className = `quiz-feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+    feedback.textContent = isCorrect
+      ? 'Correct!'
+      : `Try again. The answer is ${answer === 'positive' ? 'Positive' : 'Negative'} Supply-side Shock.`;
+    reason.textContent = `Reason: ${item.dataset.reason}`;
+    reason.classList.add('visible');
+    updateScore();
+  }
+
+  quizItems.forEach((item) => {
+    item.querySelectorAll('button[data-choice]').forEach((button) => {
+      button.addEventListener('click', () => markAnswer(item, button.dataset.choice));
+    });
+  });
+
+  document.getElementById('show-supply-shock-answers').addEventListener('click', () => {
+    quizItems.forEach((item) => markAnswer(item, item.dataset.answer));
+  });
+
+  document.getElementById('reset-supply-shock-quiz').addEventListener('click', () => {
+    quizItems.forEach((item) => {
+      delete item.dataset.answered;
+      delete item.dataset.correct;
+      item.querySelectorAll('button[data-choice]').forEach((button) => button.classList.remove('selected'));
+      item.querySelector('.quiz-feedback').className = 'quiz-feedback';
+      item.querySelector('.quiz-feedback').textContent = '';
+      item.querySelector('.quiz-reason').classList.remove('visible');
+      item.querySelector('.quiz-reason').textContent = '';
+    });
+    updateScore();
+  });
+</script>
 </body>
 </html>
