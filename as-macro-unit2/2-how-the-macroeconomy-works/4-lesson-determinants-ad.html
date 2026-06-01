@@ -171,6 +171,116 @@
       color: #64748b;
       font-size: 0.9rem;
     }
+
+    .mindmap-diagram {
+      background: #ffffff;
+      border: 1px solid #dbe3ef;
+      border-radius: 18px;
+      padding: 30px 20px 38px;
+      margin-top: 18px;
+      overflow-x: auto;
+    }
+
+    .mindmap-root {
+      position: relative;
+      max-width: 650px;
+      margin: 0 auto 48px;
+      background: #1d4ed8;
+      color: white;
+      text-align: center;
+      padding: 18px 20px;
+      border-radius: 16px;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+
+    .mindmap-root::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -31px;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 31px;
+      background: #93c5fd;
+    }
+
+    .mindmap-level-1 {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(225px, 1fr));
+      gap: 18px;
+      min-width: 1000px;
+      padding-top: 34px;
+    }
+
+    .mindmap-level-1::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 8%;
+      right: 8%;
+      height: 3px;
+      background: #93c5fd;
+      border-radius: 3px;
+    }
+
+    .mindmap-branch {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .mindmap-branch::before {
+      content: "";
+      position: absolute;
+      top: -34px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 34px;
+      background: #93c5fd;
+    }
+
+    .branch-title {
+      width: 100%;
+      text-align: center;
+      color: white;
+      padding: 14px 12px;
+      border-radius: 14px;
+      font-weight: bold;
+      margin-bottom: 14px;
+      line-height: 1.35;
+    }
+
+    .branch-consumption { background: #2563eb; }
+    .branch-investment { background: #0f766e; }
+    .branch-government { background: #ea580c; }
+    .branch-trade { background: #4f46e5; }
+
+    .sub-branch {
+      width: 100%;
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 12px;
+      border: 1px solid #dbeafe;
+      border-left: 5px solid #2563eb;
+      background: #f8fafc;
+    }
+
+    .sub-branch h4 {
+      margin: 0 0 6px;
+      color: #1e40af;
+    }
+
+    .sub-branch p { margin: 0; }
+
+    .consumption-box { border-left-color: #2563eb; background: #eff6ff; }
+    .investment-box { border-left-color: #0f766e; background: #f0fdfa; }
+    .government-box { border-left-color: #ea580c; background: #fff7ed; }
+    .trade-box { border-left-color: #4f46e5; background: #eef2ff; }
+
   </style>
 </head>
 
@@ -196,6 +306,40 @@
         <li>how changes in these factors shift aggregate demand</li>
       </ul>
     </section>
+
+    <section class="lesson-section">
+      <h2>Mind Map Overview</h2>
+      <div class="mindmap-diagram">
+        <div class="mindmap-root">Aggregate demand changes when any component of AD changes: consumption, investment, government spending, exports or imports.</div>
+        <div class="mindmap-level-1">
+          <div class="mindmap-branch">
+            <div class="branch-title branch-consumption">Consumption and Savings</div>
+            <div class="sub-branch consumption-box"><h4>Disposable income</h4><p>Higher post-tax income usually raises consumption and can shift AD right.</p></div>
+            <div class="sub-branch consumption-box"><h4>Confidence and wealth</h4><p>Optimism or rising asset prices encourage households to spend more.</p></div>
+            <div class="sub-branch consumption-box"><h4>Savings</h4><p>Higher saving reduces current consumption, lowering AD in the short run.</p></div>
+          </div>
+          <div class="mindmap-branch">
+            <div class="branch-title branch-investment">Investment</div>
+            <div class="sub-branch investment-box"><h4>Interest rates</h4><p>Lower borrowing costs make more investment projects profitable.</p></div>
+            <div class="sub-branch investment-box"><h4>Business confidence</h4><p>Expected future demand influences firms' willingness to invest.</p></div>
+            <div class="sub-branch investment-box"><h4>Technology</h4><p>Innovation can create profitable opportunities for capital spending.</p></div>
+          </div>
+          <div class="mindmap-branch">
+            <div class="branch-title branch-government">Government Spending</div>
+            <div class="sub-branch government-box"><h4>Fiscal policy</h4><p>More government purchases directly increase G and shift AD right.</p></div>
+            <div class="sub-branch government-box"><h4>Taxation</h4><p>Lower income tax can raise disposable income and consumption.</p></div>
+            <div class="sub-branch government-box"><h4>Budget priorities</h4><p>Purchases may target infrastructure, health or education; cash benefits are transfer payments.</p></div>
+          </div>
+          <div class="mindmap-branch">
+            <div class="branch-title branch-trade">Exports and Imports</div>
+            <div class="sub-branch trade-box"><h4>Exchange rate</h4><p>Depreciation can make exports cheaper and imports dearer, raising net exports.</p></div>
+            <div class="sub-branch trade-box"><h4>World income</h4><p>Stronger overseas growth increases demand for exports.</p></div>
+            <div class="sub-branch trade-box"><h4>Import spending</h4><p>Higher imports are a withdrawal from domestic AD, reducing net exports.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <section class="lesson-section">
       <h2>Class Main Points</h2>
@@ -378,13 +522,23 @@
         <h3>4. Government Spending</h3>
         <p>
           Government spending is spending by the state on goods and services, such as education,
-          healthcare, infrastructure, defence and welfare.
+          healthcare, infrastructure and defence. In the AD formula, <strong>G</strong> refers to
+          government purchases of goods and services, not direct cash payments to individuals.
         </p>
+
+        <div class="key-term">
+          <strong>Transfer payments 转移支付:</strong> In A-Level Economics, this means money the
+          government gives directly to households or individuals. Examples include
+          <strong>unemployment benefits 失业救济金</strong>, <strong>pensions 养老金</strong>,
+          <strong>child benefits 儿童补助</strong> and <strong>income support 低收入补助</strong>.
+          Transfer payments are not counted as <strong>G</strong> because the government is not buying
+          newly produced goods or services; they affect AD indirectly if recipients spend the money.
+        </div>
 
         <p>
           The level of government spending is often determined by social and political priorities.
-          For example, a government may spend more to improve public services or support people
-          on low incomes.
+          For example, a government may spend more to improve public services or provide transfer
+          payments that support people on low incomes.
         </p>
 
         <p>
