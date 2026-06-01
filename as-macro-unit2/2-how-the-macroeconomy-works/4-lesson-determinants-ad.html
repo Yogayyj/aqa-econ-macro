@@ -281,6 +281,50 @@
     .government-box { border-left-color: #ea580c; background: #fff7ed; }
     .trade-box { border-left-color: #4f46e5; background: #eef2ff; }
 
+    .diagram-section {
+      background: #ffffff;
+      border: 1px solid #dbeafe;
+      border-radius: 18px;
+      padding: 24px;
+      margin: 22px 0;
+    }
+
+    .diagram-section h2 {
+      margin-top: 0;
+      color: #1d4ed8;
+      font-size: 1.45rem;
+      border-bottom: 2px solid #dbeafe;
+      padding-bottom: 10px;
+    }
+
+    .diagram-container {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      margin: 20px 0;
+      overflow-x: auto;
+      padding: 16px;
+    }
+
+    .mei-diagram {
+      display: block;
+      min-width: 640px;
+      width: 100%;
+      height: auto;
+    }
+
+    .diagram-explanation {
+      background: #eff6ff;
+      border-left: 5px solid #2563eb;
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .diagram-explanation h3 {
+      margin-top: 0;
+      color: #1e40af;
+    }
+
   </style>
 </head>
 
@@ -474,6 +518,137 @@
           Lower interest rates reduce the cost of borrowing, making more investment projects
           profitable. Higher interest rates increase borrowing costs and may reduce investment.
         </p>
+
+        <section class="diagram-section">
+          <h2>MEI and Planned Investment</h2>
+
+          <p>
+            The marginal efficiency of investment, or MEI, shows the expected rate of return
+            from additional investment projects. A project is profitable if its expected rate
+            of return is higher than the interest rate.
+          </p>
+
+          <div class="diagram-container">
+            <svg viewBox="0 0 700 500" class="mei-diagram">
+
+              <!-- Arrow marker -->
+              <defs>
+                <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+                  <path d="M0,0 L0,6 L7,3 Z" fill="#1e293b" />
+                </marker>
+              </defs>
+
+              <!-- Axes -->
+              <line x1="90" y1="420" x2="620" y2="420"
+                    stroke="#1e293b" stroke-width="3" marker-end="url(#arrow)" />
+              <line x1="90" y1="420" x2="90" y2="60"
+                    stroke="#1e293b" stroke-width="3" marker-end="url(#arrow)" />
+
+              <!-- Axis labels -->
+              <text x="625" y="425" font-size="16" fill="#1e293b">
+                Planned investment
+              </text>
+
+              <text x="20" y="55" font-size="16" fill="#1e293b">
+                MEI / interest rate
+              </text>
+
+              <text x="75" y="445" font-size="16" fill="#1e293b">
+                O
+              </text>
+
+              <!-- MEI line: this line passes exactly through (290,190) and (430,300) -->
+              <line x1="178" y1="102" x2="556" y2="399"
+                    stroke="#2563eb" stroke-width="4" />
+
+              <text x="560" y="392" font-size="18" fill="#2563eb" font-weight="bold">
+                MEI
+              </text>
+
+              <!-- R1 horizontal line -->
+              <line x1="90" y1="190" x2="290" y2="190"
+                    stroke="#ef4444" stroke-width="2.5" stroke-dasharray="8 6" />
+
+              <!-- I1 vertical line -->
+              <line x1="290" y1="190" x2="290" y2="420"
+                    stroke="#ef4444" stroke-width="2.5" stroke-dasharray="8 6" />
+
+              <!-- Point 1 on MEI -->
+              <circle cx="290" cy="190" r="5" fill="#ef4444" />
+
+              <!-- R2 horizontal line -->
+              <line x1="90" y1="300" x2="430" y2="300"
+                    stroke="#16a34a" stroke-width="2.5" stroke-dasharray="8 6" />
+
+              <!-- I2 vertical line -->
+              <line x1="430" y1="300" x2="430" y2="420"
+                    stroke="#16a34a" stroke-width="2.5" stroke-dasharray="8 6" />
+
+              <!-- Point 2 on MEI -->
+              <circle cx="430" cy="300" r="5" fill="#16a34a" />
+
+              <!-- Labels for interest rates -->
+              <text x="58" y="195" font-size="17" fill="#ef4444" font-weight="bold">
+                R1
+              </text>
+
+              <text x="58" y="305" font-size="17" fill="#16a34a" font-weight="bold">
+                R2
+              </text>
+
+              <!-- Labels for investment -->
+              <text x="282" y="445" font-size="17" fill="#ef4444" font-weight="bold">
+                I1
+              </text>
+
+              <text x="422" y="445" font-size="17" fill="#16a34a" font-weight="bold">
+                I2
+              </text>
+
+              <!-- Direction arrow from I1 to I2 -->
+              <line x1="315" y1="455" x2="405" y2="455"
+                    stroke="#1e293b" stroke-width="2.5"
+                    marker-end="url(#arrow)" />
+
+              <text x="315" y="480" font-size="15" fill="#1e293b">
+                Investment increases
+              </text>
+
+              <!-- Explanation label -->
+              <rect x="350" y="90" width="275" height="85" rx="12"
+                    fill="#eff6ff" stroke="#bfdbfe" />
+
+              <text x="367" y="120" font-size="14" fill="#1e3a8a">
+                Interest rate falls from R1 to R2
+              </text>
+
+              <text x="367" y="145" font-size="14" fill="#1e3a8a">
+                More projects become profitable
+              </text>
+
+              <text x="367" y="165" font-size="14" fill="#1e3a8a">
+                Planned investment rises from I1 to I2
+              </text>
+
+            </svg>
+          </div>
+
+          <div class="diagram-explanation">
+            <h3>Explanation</h3>
+
+            <p>
+              At interest rate <strong>R1</strong>, planned investment is <strong>I1</strong>.
+              When the interest rate falls to <strong>R2</strong>, more investment projects
+              have an expected rate of return above the cost of borrowing.
+              Therefore, planned investment increases to <strong>I2</strong>.
+            </p>
+
+            <p>
+              This shows an inverse relationship between the interest rate and planned investment:
+              when interest rates fall, investment tends to rise.
+            </p>
+          </div>
+        </section>
 
         <h4>Cost of Capital</h4>
         <p>
