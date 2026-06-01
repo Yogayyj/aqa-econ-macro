@@ -1,12 +1,676 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lesson 4 - Merged into Lesson 3</title>
-  <meta http-equiv="refresh" content="0; url=./3-lesson-shifts-ad-sras.html" />
+  <title>Lesson 7.3 Determinants of Aggregate Demand</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1d4ed8, #2563eb);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.4rem;
+    }
+
+    header p {
+      margin-top: 12px;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px 50px;
+    }
+
+    .lesson-section {
+      background: white;
+      padding: 28px;
+      margin-bottom: 28px;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+    }
+
+    .lesson-section h2 {
+      margin-top: 0;
+      color: #1d4ed8;
+      font-size: 1.7rem;
+      border-bottom: 2px solid #dbeafe;
+      padding-bottom: 10px;
+    }
+
+    .point-card {
+      background: #f8fafc;
+      padding: 22px;
+      margin-top: 18px;
+      border-radius: 16px;
+      border-left: 6px solid #2563eb;
+    }
+
+    .point-card h3 {
+      margin-top: 0;
+      color: #1e40af;
+      font-size: 1.35rem;
+    }
+
+    .point-card h4 {
+      margin-bottom: 8px;
+      margin-top: 22px;
+      color: #0f766e;
+      font-size: 1.1rem;
+    }
+
+    ul {
+      padding-left: 24px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .formula {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #075985;
+      padding: 10px 16px;
+      margin: 8px 0;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .key-term {
+      background: #ecfdf5;
+      border-left: 5px solid #10b981;
+      padding: 14px 18px;
+      margin: 16px 0;
+      border-radius: 12px;
+    }
+
+    .exam-tip {
+      background: #fff7ed;
+      border-left: 6px solid #f97316;
+      padding: 24px;
+      border-radius: 18px;
+      margin-top: 20px;
+    }
+
+    .exam-tip h3 {
+      margin-top: 0;
+      color: #c2410c;
+    }
+
+    .summary-box {
+      background: #eef2ff;
+      border-left: 6px solid #4f46e5;
+      padding: 22px;
+      border-radius: 18px;
+      margin-top: 20px;
+    }
+
+    .summary-box h3 {
+      margin-top: 0;
+      color: #3730a3;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #dbeafe;
+      color: #1e3a8a;
+    }
+
+    .activity {
+      background: #fefce8;
+      border-left: 6px solid #eab308;
+      padding: 22px;
+      border-radius: 18px;
+      margin-top: 20px;
+    }
+
+    .activity h3 {
+      margin-top: 0;
+      color: #854d0e;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
+
 <body>
-  <p>This content has been merged into <a href="./3-lesson-shifts-ad-sras.html">Lesson 3</a>.</p>
+
+  <header>
+    <h1>Lesson 7.3: Determinants of Aggregate Demand</h1>
+    <p>Class Main Points for A-Level Economics</p>
+  </header>
+
+  <main>
+
+    <section class="lesson-section">
+      <h2>Learning Objectives</h2>
+      <p>By the end of this lesson, students should be able to explain:</p>
+      <ul>
+        <li>the meaning of aggregate demand</li>
+        <li>the components of aggregate demand</li>
+        <li>the determinants of consumption, investment, government spending, exports and imports</li>
+        <li>the determinants of savings</li>
+        <li>how changes in these factors shift aggregate demand</li>
+      </ul>
+    </section>
+
+    <section class="lesson-section">
+      <h2>Class Main Points</h2>
+
+      <div class="point-card">
+        <h3>1. Aggregate Demand</h3>
+        <p>
+          Aggregate demand is the total spending on goods and services in an economy
+          at a given price level over a period of time.
+        </p>
+
+        <p class="formula">
+          AD = C + I + G + (X − M)
+        </p>
+
+        <ul>
+          <li><strong>C</strong> = Consumption</li>
+          <li><strong>I</strong> = Investment</li>
+          <li><strong>G</strong> = Government spending</li>
+          <li><strong>X</strong> = Exports</li>
+          <li><strong>M</strong> = Imports</li>
+        </ul>
+
+        <p>
+          If consumption, investment, government spending or exports increase,
+          aggregate demand is likely to increase. If imports increase, aggregate demand may fall
+          because spending leaves the domestic economy.
+        </p>
+      </div>
+
+      <div class="point-card">
+        <h3>2. Determinants of Consumption</h3>
+        <p>
+          Consumption is household spending on goods and services. It is often the largest
+          component of aggregate demand in many economies.
+        </p>
+
+        <h4>Income</h4>
+        <p>
+          Income is one of the most important determinants of consumption. Other things being equal,
+          when national income increases, household consumption is likely to increase.
+        </p>
+
+        <p>
+          The marginal propensity to consume, or MPC, measures the proportion of a change in income
+          that is spent on consumption.
+        </p>
+
+        <p class="formula">
+          MPC = Change in Consumption ÷ Change in Income
+        </p>
+
+        <p>
+          Example: If national income increases by $100 million and MPC is 0.6,
+          consumption will increase by $60 million.
+        </p>
+
+        <p class="formula">
+          Change in Consumption = MPC × Change in Income
+        </p>
+
+        <h4>Wealth</h4>
+        <p>
+          Wealth refers to the value of assets owned by households, such as houses, savings
+          and shares. If households become wealthier, they may feel more financially secure
+          and increase consumption.
+        </p>
+
+        <p>
+          For example, rising house prices may make households feel richer, so they may spend more
+          on consumer durables such as cars, furniture and washing machines.
+        </p>
+
+        <h4>Taxation</h4>
+        <p>
+          Taxation affects disposable income. Higher income tax reduces disposable income,
+          so households have less money available for consumption.
+        </p>
+
+        <p class="formula">
+          Disposable Income = Gross Income + Cash Welfare Benefits − Income Taxes
+        </p>
+
+        <p>
+          Lower income tax or lower indirect taxes can increase consumption because households
+          have more income available to spend.
+        </p>
+
+        <h4>Consumer Confidence</h4>
+        <p>
+          Consumer confidence refers to how optimistic households feel about their future income,
+          job security and the general state of the economy.
+        </p>
+
+        <p>
+          If consumers are confident, they are more likely to spend. If they expect unemployment
+          or lower income in the future, they may reduce consumption and increase saving.
+        </p>
+
+        <h4>Interest Rates</h4>
+        <p>
+          Interest rates are the cost of borrowing and the reward for saving.
+          Higher interest rates make saving more attractive and borrowing more expensive.
+        </p>
+
+        <p>
+          Therefore, higher interest rates usually reduce consumption, especially spending on
+          expensive consumer durables that are often bought using credit.
+        </p>
+
+        <h4>Availability of Credit</h4>
+        <p>
+          The availability of credit refers to how easy it is for households to borrow money
+          from banks or other financial institutions.
+        </p>
+
+        <p>
+          When credit is easy to obtain, households can borrow more easily and consumption may rise.
+          When credit is difficult to obtain, consumption is likely to fall.
+        </p>
+      </div>
+
+      <div class="point-card">
+        <h3>3. Determinants of Investment</h3>
+        <p>
+          Investment is spending by firms on capital goods, such as machinery, equipment,
+          factories and buildings. Investment can increase the productive capacity of the economy.
+        </p>
+
+        <h4>Interest Rates</h4>
+        <p>
+          Lower interest rates reduce the cost of borrowing, making more investment projects
+          profitable. Higher interest rates increase borrowing costs and may reduce investment.
+        </p>
+
+        <h4>Cost of Capital</h4>
+        <p>
+          If the cost of machinery, buildings or equipment increases, fewer investment projects
+          will be profitable. Therefore, investment may fall.
+        </p>
+
+        <h4>Expectations and Business Confidence</h4>
+        <p>
+          If firms are optimistic about future demand and profits, they are more likely to invest.
+          If firms expect a recession, they may delay or cancel investment projects.
+        </p>
+
+        <h4>Growth of National Income</h4>
+        <p>
+          When national income is growing, firms may expect higher demand for their products.
+          This encourages them to invest in more capital to increase output.
+        </p>
+
+        <h4>Spare Capacity</h4>
+        <p>
+          If firms have a lot of spare capacity, they can increase output without investing in
+          new capital. If the economy is close to full capacity, firms are more likely to invest.
+        </p>
+
+        <h4>Changes in Technology</h4>
+        <p>
+          New technology can encourage investment because firms may need new machines or systems
+          to remain efficient and competitive.
+        </p>
+
+        <h4>Profits and Availability of Finance</h4>
+        <p>
+          Firms often use retained profits to finance investment. If profits are high or finance
+          is easy to obtain, investment is more likely to increase.
+        </p>
+
+        <h4>Taxes and Subsidies</h4>
+        <p>
+          Lower taxes on company profits can encourage investment. Government subsidies for
+          investment can also reduce firms’ costs and increase investment.
+        </p>
+      </div>
+
+      <div class="point-card">
+        <h3>4. Government Spending</h3>
+        <p>
+          Government spending is spending by the state on goods and services, such as education,
+          healthcare, infrastructure, defence and welfare.
+        </p>
+
+        <p>
+          The level of government spending is often determined by social and political priorities.
+          For example, a government may spend more to improve public services or support people
+          on low incomes.
+        </p>
+
+        <p>
+          Government spending can also be used to influence aggregate demand. During a recession,
+          the government may increase spending to offset falling consumption and investment.
+        </p>
+      </div>
+
+      <div class="point-card">
+        <h3>5. Determinants of Exports</h3>
+        <p>
+          Exports are goods and services sold to other countries. Exports are an injection into
+          the circular flow of income because they add demand from abroad.
+        </p>
+
+        <h4>Relative Prices</h4>
+        <p>
+          If a country’s goods become relatively cheaper than foreign goods, exports may increase.
+          If domestic inflation is higher than inflation in other countries, exports may become
+          less competitive.
+        </p>
+
+        <h4>Exchange Rate</h4>
+        <p>
+          A fall in the exchange rate makes exports cheaper for foreign buyers. This may increase
+          the volume of exports.
+        </p>
+
+        <p>
+          A rise in the exchange rate makes exports more expensive for foreign buyers, which may
+          reduce exports.
+        </p>
+
+        <h4>Quality and Non-Price Competitiveness</h4>
+        <p>
+          Exports are not only affected by price. Quality, design, reputation, branding and customer
+          service can also affect international demand.
+        </p>
+
+        <h4>Growth in Export Markets</h4>
+        <p>
+          If other countries are experiencing economic growth, their consumers and firms may buy
+          more foreign goods and services. This can increase exports.
+        </p>
+
+        <h4>Trade Restrictions</h4>
+        <p>
+          Tariffs, quotas and other trade barriers can reduce exports. If trade restrictions are reduced,
+          exports may increase.
+        </p>
+      </div>
+
+      <div class="point-card">
+        <h3>6. Determinants of Imports</h3>
+        <p>
+          Imports are goods and services bought from other countries. Imports are a withdrawal
+          from the circular flow of income because spending goes abroad.
+        </p>
+
+        <h4>Relative Prices</h4>
+        <p>
+          If domestic goods become more expensive compared with foreign goods, consumers may buy
+          more imports.
+        </p>
+
+        <h4>Exchange Rate</h4>
+        <p>
+          A fall in the exchange rate makes imports more expensive in domestic currency.
+          This may reduce imports.
+        </p>
+
+        <p>
+          A rise in the exchange rate makes imports cheaper in domestic currency.
+          This may increase imports.
+        </p>
+
+        <h4>Domestic Income and Economic Growth</h4>
+        <p>
+          When the domestic economy grows, consumers and firms spend more. Some of this extra spending
+          will be on imported goods, raw materials and components.
+        </p>
+
+        <h4>Quality and Design</h4>
+        <p>
+          Consumers may buy imports if foreign products are seen as higher quality, better designed
+          or more reliable.
+        </p>
+
+        <h4>Trade Restrictions</h4>
+        <p>
+          Tariffs and quotas can reduce imports by making foreign goods more expensive or limiting
+          the amount that can be imported.
+        </p>
+      </div>
+
+      <div class="point-card">
+        <h3>7. Determinants of Savings</h3>
+        <p>
+          Savings are income not spent on current consumption. Savings are a withdrawal from
+          the circular flow of income, so higher savings may reduce aggregate demand in the short run.
+        </p>
+
+        <h4>Income</h4>
+        <p>
+          As income increases, total household saving is likely to increase. However, the proportion
+          of income saved may vary between households and countries.
+        </p>
+
+        <p class="formula">
+          Savings Ratio = Household Savings ÷ Household Disposable Income × 100
+        </p>
+
+        <h4>Interest Rates</h4>
+        <p>
+          Higher interest rates make saving more rewarding, so households may save more.
+          However, households are more likely to consider the real interest rate.
+        </p>
+
+        <p class="formula">
+          Real Interest Rate = Nominal Interest Rate − Inflation Rate
+        </p>
+
+        <h4>Expectations and Confidence</h4>
+        <p>
+          If households are worried about unemployment or future income, they may increase saving
+          for precautionary reasons.
+        </p>
+
+        <h4>Age</h4>
+        <p>
+          People may save during their working lives and use their savings after retirement.
+          Therefore, the age structure of the population can affect the savings ratio.
+        </p>
+
+        <h4>Taxation and Welfare Provision</h4>
+        <p>
+          Higher taxation can reduce households’ ability to save. Generous welfare benefits,
+          pensions, healthcare or education provision may reduce the need for private saving.
+        </p>
+
+        <h4>Financial System</h4>
+        <p>
+          A developed and trusted financial system can encourage saving because people have safe
+          and convenient ways to deposit and withdraw money.
+        </p>
+
+        <h4>Social Attitudes</h4>
+        <p>
+          In some societies, saving is encouraged and borrowing is discouraged. In these societies,
+          the savings ratio may be higher.
+        </p>
+      </div>
+
+      <div class="exam-tip">
+        <h3>8. Exam Tip</h3>
+        <p>
+          When explaining a change in aggregate demand, always identify which component changes:
+          consumption, investment, government spending, exports or imports.
+        </p>
+
+        <p>
+          Then explain the direction of the impact:
+        </p>
+
+        <ul>
+          <li>If C, I, G or X increases, AD shifts to the right.</li>
+          <li>If C, I, G or X decreases, AD shifts to the left.</li>
+          <li>If M increases, net exports fall, so AD may shift to the left.</li>
+          <li>If M decreases, net exports rise, so AD may shift to the right.</li>
+        </ul>
+
+        <p>
+          A strong exam answer should include both the chain of reasoning and the final effect
+          on aggregate demand.
+        </p>
+      </div>
+
+    </section>
+
+    <section class="lesson-section">
+      <h2>Summary Table</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Component</th>
+            <th>Main Determinants</th>
+            <th>Effect on AD</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Consumption</td>
+            <td>Income, wealth, taxation, confidence, interest rates, credit availability</td>
+            <td>Higher consumption increases AD</td>
+          </tr>
+          <tr>
+            <td>Investment</td>
+            <td>Interest rates, cost of capital, confidence, income growth, spare capacity, technology, profits, taxes and subsidies</td>
+            <td>Higher investment increases AD</td>
+          </tr>
+          <tr>
+            <td>Government Spending</td>
+            <td>Political priorities, tax revenue, borrowing, fiscal policy objectives</td>
+            <td>Higher government spending increases AD</td>
+          </tr>
+          <tr>
+            <td>Exports</td>
+            <td>Relative prices, exchange rate, quality, growth in export markets, trade restrictions</td>
+            <td>Higher exports increase AD</td>
+          </tr>
+          <tr>
+            <td>Imports</td>
+            <td>Relative prices, exchange rate, domestic income, quality, trade restrictions</td>
+            <td>Higher imports reduce net exports and may reduce AD</td>
+          </tr>
+          <tr>
+            <td>Savings</td>
+            <td>Income, real interest rates, confidence, age, taxation, welfare, financial system, social attitudes</td>
+            <td>Higher saving may reduce consumption and AD in the short run</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="lesson-section">
+      <h2>Class Activity</h2>
+
+      <div class="activity">
+        <h3>Activity 1: Identify the Component of AD</h3>
+        <p>
+          For each situation, decide which component of aggregate demand is affected:
+          C, I, G, X or M.
+        </p>
+
+        <ol>
+          <li>Households become more confident about future employment.</li>
+          <li>The government increases spending on public hospitals.</li>
+          <li>Firms buy more machinery to expand production.</li>
+          <li>The exchange rate falls, making exports cheaper.</li>
+          <li>Domestic consumers buy more imported cars.</li>
+        </ol>
+      </div>
+
+      <div class="activity">
+        <h3>Activity 2: MPC Calculation</h3>
+        <p>
+          National income increases by $200 million. The marginal propensity to consume is 0.75.
+        </p>
+
+        <p>
+          Calculate the increase in consumption.
+        </p>
+
+        <p class="formula">
+          Change in Consumption = MPC × Change in Income
+        </p>
+
+        <p>
+          Answer: 0.75 × $200 million = $150 million
+        </p>
+      </div>
+    </section>
+
+    <section class="lesson-section">
+      <h2>Key Takeaway</h2>
+
+      <div class="summary-box">
+        <h3>Big Idea</h3>
+        <p>
+          Aggregate demand changes when one or more of its components changes.
+          To explain a shift in AD clearly, identify the affected component first,
+          then explain the chain of reasoning.
+        </p>
+
+        <p>
+          Example: Lower interest rates reduce the cost of borrowing, so households may spend more
+          and firms may invest more. As a result, consumption and investment increase, causing
+          aggregate demand to shift to the right.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    A-Level Economics | Lesson 7.3 Determinants of Aggregate Demand
+  </footer>
+
 </body>
 </html>
