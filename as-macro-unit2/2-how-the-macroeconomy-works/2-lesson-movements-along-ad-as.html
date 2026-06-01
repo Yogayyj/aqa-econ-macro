@@ -22,6 +22,19 @@
     th,td{border:1px solid #d7e0ea;padding:10px;text-align:left;vertical-align:top}
     th{background:#1d3557;color:#fff}
     .note{background:#fff8e7;border-left:5px solid #f59e0b;padding:12px;margin:12px 0}
+
+    .mindmap-diagram{background:#ffffff;border:1px solid #dbe3ef;border-radius:16px;padding:28px 18px 34px;margin-top:14px;overflow-x:auto}
+    .mindmap-root{position:relative;max-width:620px;margin:0 auto 46px;background:#1d3557;color:#fff;text-align:center;padding:16px 18px;border-radius:14px;font-weight:700;line-height:1.5}
+    .mindmap-root::after{content:"";position:absolute;left:50%;bottom:-30px;transform:translateX(-50%);width:3px;height:30px;background:#9bb7d4}
+    .mindmap-level-1{position:relative;display:grid;grid-template-columns:repeat(4,minmax(220px,1fr));gap:18px;min-width:980px;padding-top:32px}
+    .mindmap-level-1::before{content:"";position:absolute;top:0;left:8%;right:8%;height:3px;background:#9bb7d4;border-radius:3px}
+    .mindmap-branch{position:relative;display:flex;flex-direction:column;align-items:center}
+    .mindmap-branch::before{content:"";position:absolute;top:-32px;left:50%;transform:translateX(-50%);width:3px;height:32px;background:#9bb7d4}
+    .branch-title{width:100%;text-align:center;color:#fff;padding:13px 10px;border-radius:12px;font-weight:700;margin-bottom:14px;line-height:1.35}
+    .branch-blue{background:#457b9d}.branch-green{background:#2a9d8f}.branch-orange{background:#e76f51}.branch-purple{background:#6c5ce7}
+    .sub-branch{width:100%;border-radius:12px;padding:13px;margin-bottom:12px;border:1px solid #d9e7f4;border-left:5px solid #457b9d;background:#f8fbff}
+    .sub-branch h4{margin:0 0 6px;color:#1d3557}.sub-branch p{margin:0}
+    .blue-box{border-left-color:#457b9d;background:#f8fbff}.green-box{border-left-color:#2a9d8f;background:#f4fffd}.orange-box{border-left-color:#e76f51;background:#fff8f6}.purple-box{border-left-color:#6c5ce7;background:#f7f5ff}
   </style>
 </head>
 <body>
@@ -59,6 +72,40 @@
     </ul>
     <div class="tip"><strong>Exam tip:</strong> AD is about <em>planned spending</em>; AS is about <em>planned output</em>.</div>
   </section>
+
+  <section class="card">
+    <h2>Mind Map Overview</h2>
+    <div class="mindmap-diagram">
+      <div class="mindmap-root">Movements along AD and AS are caused by a change in the price level, while shifts come from non-price determinants.</div>
+      <div class="mindmap-level-1">
+        <div class="mindmap-branch">
+          <div class="branch-title branch-blue">AD Movements</div>
+          <div class="sub-branch blue-box"><h4>Cause</h4><p>A change in the price level changes real national income demanded.</p></div>
+          <div class="sub-branch blue-box"><h4>Price level rises</h4><p>Movement up along AD: lower real output demanded.</p></div>
+          <div class="sub-branch blue-box"><h4>Price level falls</h4><p>Movement down along AD: higher real output demanded.</p></div>
+        </div>
+        <div class="mindmap-branch">
+          <div class="branch-title branch-green">AS Movements</div>
+          <div class="sub-branch green-box"><h4>Cause</h4><p>A change in the price level changes real output supplied.</p></div>
+          <div class="sub-branch green-box"><h4>Higher price level</h4><p>Firms have stronger profit incentives, so output supplied expands.</p></div>
+          <div class="sub-branch green-box"><h4>Lower price level</h4><p>Output supplied contracts as profitability weakens.</p></div>
+        </div>
+        <div class="mindmap-branch">
+          <div class="branch-title branch-orange">AS Shape</div>
+          <div class="sub-branch orange-box"><h4>Horizontal</h4><p>Spare capacity means output can rise with little inflationary pressure.</p></div>
+          <div class="sub-branch orange-box"><h4>Upward sloping</h4><p>Capacity pressures raise costs as firms increase output.</p></div>
+          <div class="sub-branch orange-box"><h4>Vertical at YF</h4><p>Full capacity means extra demand mainly raises the price level.</p></div>
+        </div>
+        <div class="mindmap-branch">
+          <div class="branch-title branch-purple">Shifts Reminder</div>
+          <div class="sub-branch purple-box"><h4>AD shifts</h4><p>Driven by changes in C, I, G, X or M rather than the price level.</p></div>
+          <div class="sub-branch purple-box"><h4>SRAS shifts</h4><p>Driven by production costs, productivity, taxes or subsidies.</p></div>
+          <div class="sub-branch purple-box"><h4>Exam rule</h4><p>Price-level change = movement; non-price determinant = shift.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <section class="card">
     <h2>Movements Along the AD Curve</h2>
