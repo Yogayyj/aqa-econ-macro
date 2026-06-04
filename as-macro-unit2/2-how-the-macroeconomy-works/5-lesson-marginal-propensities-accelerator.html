@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 5 - Marginal Propensities and the Accelerator</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: #f1f5f9;
+      color: #1e293b;
+      line-height: 1.65;
+    }
+    header {
+      background: linear-gradient(135deg, #0f766e, #2563eb);
+      color: #fff;
+      padding: 48px 20px;
+      text-align: center;
+    }
+    header h1 { margin: 0; font-size: clamp(2rem, 5vw, 3rem); }
+    header p { max-width: 850px; margin: 14px auto 0; font-size: 1.08rem; opacity: 0.95; }
+    main { max-width: 1120px; margin: 36px auto; padding: 0 20px 56px; }
+    a { color: #1d4ed8; }
+    .back-link { margin-bottom: 18px; }
+    .lesson-section {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+      margin-bottom: 26px;
+      padding: 28px;
+    }
+    .lesson-section h2 {
+      color: #1d4ed8;
+      margin-top: 0;
+      border-bottom: 2px solid #dbeafe;
+      padding-bottom: 10px;
+    }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    @media (min-width: 840px) { .grid.two { grid-template-columns: 1fr 1fr; } }
+    .card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 6px solid #2563eb;
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .card h3 { color: #1e40af; margin-top: 0; }
+    .formula {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #075985;
+      font-weight: 700;
+      padding: 10px 16px;
+      border-radius: 10px;
+      margin: 8px 0;
+    }
+    .key-term {
+      background: #ecfdf5;
+      border-left: 5px solid #10b981;
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin: 14px 0;
+    }
+    .get-right {
+      background: #fff7ed;
+      border-left: 6px solid #f97316;
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 18px;
+    }
+    .get-right h3 { color: #c2410c; margin-top: 0; }
+    .activity {
+      background: #eef2ff;
+      border-left: 6px solid #4f46e5;
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 18px;
+    }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; overflow: hidden; border-radius: 12px; }
+    th, td { border: 1px solid #cbd5e1; padding: 12px; vertical-align: top; }
+    th { background: #dbeafe; color: #1e3a8a; text-align: left; }
+    tbody tr:nth-child(even) { background: #f8fafc; }
+    ul, ol { padding-left: 24px; }
+    footer { background: #0f172a; color: #cbd5e1; text-align: center; padding: 22px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Lesson 5: Marginal Propensities, Saving, Investment and the Accelerator</h1>
+    <p>
+      This lesson extends aggregate demand by showing how changes in income affect saving,
+      taxation and imports, before explaining the difference between saving and investment
+      and the basic accelerator process.
+    </p>
+  </header>
+
+  <main>
+    <p class="back-link"><a href="./index.html">← Back to Module 2 lessons</a></p>
+
+    <section class="lesson-section">
+      <h2>Learning Objectives</h2>
+      <p>By the end of this lesson, students should be able to:</p>
+      <ul>
+        <li>define the marginal propensities to consume, save, tax and import;</li>
+        <li>calculate changes in saving, tax revenue and imports when national income changes;</li>
+        <li>explain why saving and investment are different in macroeconomics;</li>
+        <li>use the marginal capital-output ratio to explain the accelerator process; and</li>
+        <li>evaluate the limits of the accelerator theory.</li>
+      </ul>
+    </section>
+
+    <section class="lesson-section">
+      <h2>The Marginal Propensities to Consume, Save, Tax and Import</h2>
+      <p>
+        As explained earlier, the marginal propensity to consume (MPC) measures how a change
+        in income affects consumption. The other marginal propensities show how a change in
+        income affects saving, taxation and imports.
+      </p>
+
+      <div class="grid two">
+        <div class="card">
+          <h3>Marginal Propensity to Save (MPS)</h3>
+          <p>
+            The marginal propensity to save measures the proportion of a change in income
+            that is saved.
+          </p>
+          <p class="formula">MPS = ∆S / ∆Y</p>
+          <p>
+            If the MPS is 0.15 and national income rises by $200 million, saving will increase
+            by $30 million.
+          </p>
+          <p class="formula">∆S = ∆Y × MPS</p>
+          <p>
+            MPS is not the same as the savings ratio. MPS measures the effect of a change in
+            income, while the savings ratio measures the proportion of total disposable income saved.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Marginal Propensity to Tax (MPT)</h3>
+          <p>
+            The marginal propensity to tax, also known as the marginal rate of taxation,
+            measures how a change in income affects tax revenue.
+          </p>
+          <p class="formula">MPT = ∆T / ∆Y</p>
+          <p>
+            If national income falls by $500 million and the MPT is 0.3, tax revenue will fall
+            by $150 million.
+          </p>
+          <p class="formula">∆T = ∆Y × MPT</p>
+        </div>
+
+        <div class="card">
+          <h3>Marginal Propensity to Import (MPM)</h3>
+          <p>
+            The marginal propensity to import measures how a change in income affects spending
+            on imports.
+          </p>
+          <p class="formula">MPM = ∆M / ∆Y</p>
+          <p>
+            If national income increases by $400 million and the MPM is 0.25, spending on imports
+            will increase by $100 million.
+          </p>
+          <p class="formula">∆M = ∆Y × MPM</p>
+        </div>
+
+        <div class="card">
+          <h3>How the Marginal Propensities Add Up</h3>
+          <p>
+            In a closed economy without a government sector, MPC + MPS must equal 1. Any
+            increase in income that is not consumed must be saved.
+          </p>
+          <p>
+            In an open economy with a government sector, MPC + MPS + MPT + MPM must equal 1.
+            Any change in income must be spent on home-produced goods, saved, taxed or spent on imports.
+          </p>
+        </div>
+      </div>
+
+      <div class="key-term">
+        <strong>Key terms:</strong> MPS is the proportion of a change in income that is saved;
+        MPT is the proportion of a change in income that is taxed; MPM is the proportion of a
+        change in income that is spent on imports.
+      </div>
+
+      <div class="get-right">
+        <h3>Get it right</h3>
+        <p>
+          Marginal propensities measure how a <strong>change in income</strong> affects consumption,
+          saving, taxation or imports. Do not confuse them with average ratios calculated from
+          total income.
+        </p>
+      </div>
+    </section>
+
+    <section class="lesson-section">
+      <h2>The Difference Between Saving and Investment</h2>
+      <p>
+        Saving is a withdrawal from the circular flow of income. It is the part of households'
+        disposable income that is not spent. People may save by putting money in a bank account,
+        buying shares or contributing to a pension fund.
+      </p>
+      <p>
+        Financial institutions that receive savings often lend those funds to firms that want to
+        invest in new capital, such as offices, machinery or computers. Investment is an injection
+        into the circular flow of income and increases aggregate demand.
+      </p>
+      <div class="get-right">
+        <h3>Get it right</h3>
+        <p>
+          In economics, buying shares is a form of saving for households. When a company issues
+          new shares, it may receive funds that can then be used for investment in capital equipment.
+        </p>
+      </div>
+    </section>
+
+    <section class="lesson-section">
+      <h2>The Basic Accelerator Process</h2>
+      <p>
+        The accelerator process is a theory of investment. It is not a complete explanation of
+        what determines investment, but it explains one important influence on investment: changes
+        in national income.
+      </p>
+      <p>
+        If national income rises, aggregate demand also rises. If firms are close to full capacity,
+        they may need to invest in extra productive capacity to meet the higher demand.
+      </p>
+
+      <div class="card">
+        <h3>Marginal Capital-Output Ratio (MCOR)</h3>
+        <p>
+          The marginal capital-output ratio is the amount that has to be spent on capital to
+          produce a given increase in annual output.
+        </p>
+        <p>
+          For example, if an extra $30,000 of machinery raises annual output by $10,000, the MCOR
+          is 3:1.
+        </p>
+      </div>
+
+      <p>
+        The MCOR determines the accelerator coefficient. If the MCOR is 4:1, the accelerator
+        coefficient is 4. Because the MCOR is usually greater than 1, an increase in national income
+        often requires a larger increase in investment to allow firms to meet the extra demand.
+      </p>
+      <p class="formula">Investment = α × change in national income, or I = α × ∆Y</p>
+      <p>
+        The symbol α represents the accelerator coefficient. For example, if the MCOR is 2.5:1 and
+        national income rises by $500 million, the accelerator theory predicts that $1,250 million
+        of extra investment will be required.
+      </p>
+    </section>
+
+    <section class="lesson-section">
+      <h2>Case Study: A Growing Economy, the Budget Balance and Net Exports</h2>
+      <p>
+        In 2019, national income for an economy was $800 billion. In 2020, national income was
+        expected to grow by 5%. The government wants to know how this is likely to affect the budget
+        balance and net exports.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>2019 data</th>
+            <th>$ billion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Government spending</td><td>400</td></tr>
+          <tr><td>Tax revenue</td><td>360</td></tr>
+          <tr><td>Exports</td><td>130</td></tr>
+          <tr><td>Imports</td><td>150</td></tr>
+        </tbody>
+      </table>
+      <p>
+        In 2020, government spending remains $400 billion, exports are expected to increase to
+        $135 billion, the MPT is 0.3 and the MPM is 0.25.
+      </p>
+      <ol>
+        <li>Calculate the expected budget balance: government spending minus tax revenue.</li>
+        <li>Calculate the expected value of net exports.</li>
+      </ol>
+    </section>
+
+    <section class="lesson-section">
+      <h2>Limitations of the Accelerator Theory</h2>
+      <ul>
+        <li>
+          The theory is most useful when the economy is approaching full capacity. If firms have
+          spare capacity, they may meet extra demand without investing in new capital.
+        </li>
+        <li>
+          Firms will only invest if they expect higher demand to continue. Expectations and business
+          confidence are therefore important.
+        </li>
+        <li>
+          Some investment replaces worn-out or obsolete capital. The accelerator theory does not
+          focus on replacement investment.
+        </li>
+      </ul>
+      <div class="key-term">
+        <strong>Replacement investment:</strong> investment used to replace capital that has worn out
+        or become obsolete.
+      </div>
+    </section>
+
+    <section class="lesson-section">
+      <h2>Aggregate Demand and the Level of Economic Activity</h2>
+      <p>
+        Economic activity involves the production, consumption, exchange and distribution of goods
+        and services. Real GDP is the main indicator of economic activity. Employment and unemployment
+        are also useful indicators.
+      </p>
+      <p>
+        In the short run, aggregate demand is a key determinant of economic activity. When AD rises,
+        firms may increase output and employ more workers. When AD falls, output and employment are
+        likely to fall.
+      </p>
+      <p>
+        If there is spare capacity, higher AD is likely to raise real output and employment. As the
+        economy approaches full capacity, further increases in AD are more likely to raise the price
+        level instead, creating inflationary pressure.
+      </p>
+    </section>
+
+    <section class="lesson-section">
+      <h2>Progress Questions</h2>
+      <ol>
+        <li>What is the difference between saving and investment?</li>
+        <li>Why is the accelerator coefficient likely to be greater than 1?</li>
+        <li>
+          In an economy, national income increased by $300 million and the marginal capital-output
+          ratio is 2.5. What amount of investment would be predicted by the accelerator theory?
+        </li>
+        <li>
+          Why is the accelerator theory unlikely to provide a satisfactory explanation of investment
+          when the economy has plenty of spare capacity?
+        </li>
+      </ol>
+    </section>
+
+    <section class="lesson-section">
+      <h2>Lesson Summary</h2>
+      <div class="activity">
+        <p>
+          Marginal propensities explain how a change in income is divided between consumption,
+          saving, taxation and imports. Saving is a withdrawal from the circular flow, while
+          investment is an injection. The accelerator theory explains why rising income can lead
+          to a more than proportional increase in investment, especially when firms are near full capacity.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    A-Level Economics | Lesson 5 Marginal Propensities and the Accelerator
+  </footer>
+</body>
+</html>
