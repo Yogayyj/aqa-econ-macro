@@ -325,6 +325,40 @@
       color: #1e40af;
     }
 
+    .decision-logic {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin: 18px 0;
+    }
+
+    .decision-card {
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .decision-card strong {
+      display: block;
+      color: #1e40af;
+      margin-bottom: 6px;
+      font-size: 1.05rem;
+    }
+
+    .teacher-note {
+      background: #f0fdfa;
+      border-left: 5px solid #0f766e;
+      border-radius: 14px;
+      margin-top: 16px;
+      padding: 16px;
+    }
+
+    .teacher-note h4 {
+      color: #0f766e;
+      margin: 0 0 8px;
+    }
+
   </style>
 </head>
 
@@ -637,16 +671,49 @@
             <h3>Explanation</h3>
 
             <p>
-              At interest rate <strong>R1</strong>, planned investment is <strong>I1</strong>.
-              When the interest rate falls to <strong>R2</strong>, more investment projects
-              have an expected rate of return above the cost of borrowing.
-              Therefore, planned investment increases to <strong>I2</strong>.
+              The diagram shows how firms compare the <strong>marginal efficiency of investment
+              (MEI)</strong> with the <strong>interest rate</strong> before deciding how much planned
+              investment to undertake. The blue downward-sloping line is the MEI curve: as firms
+              take on more investment projects, the expected return on the next marginal project
+              normally becomes lower.
+            </p>
+
+            <div class="decision-logic">
+              <div class="decision-card">
+                <strong>If MEI &gt; interest rate</strong>
+                <span>The expected return is greater than the borrowing cost, so the project is worth doing.</span>
+              </div>
+              <div class="decision-card">
+                <strong>If MEI &lt; interest rate</strong>
+                <span>The expected return is below the borrowing cost, so the project is not worth doing.</span>
+              </div>
+              <div class="decision-card">
+                <strong>Firms invest until MEI = interest rate</strong>
+                <span>This intersection determines the quantity of planned investment.</span>
+              </div>
+            </div>
+
+            <p>
+              The red and green horizontal lines are interest rates. They do not determine the
+              shape of the MEI curve; instead, each interest rate acts as a horizontal reference
+              line that cuts the MEI curve and identifies the level of planned investment.
             </p>
 
             <p>
-              This shows an inverse relationship between the interest rate and planned investment:
-              when interest rates fall, investment tends to rise.
+              At interest rate <strong>R1</strong>, the MEI curve is cut at <strong>I1</strong>.
+              When the interest rate falls to <strong>R2</strong>, more projects have an expected
+              return above the cost of borrowing, so the intersection moves right and planned
+              investment increases to <strong>I2</strong>.
             </p>
+
+            <div class="teacher-note">
+              <h4>One-sentence summary for students</h4>
+              <p>
+                The downward-sloping curve shows the relationship between MEI and investment;
+                the interest rate is a horizontal reference line, so when the interest rate changes,
+                the intersection moves and planned investment changes.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -655,6 +722,126 @@
           If the cost of machinery, buildings or equipment increases, fewer investment projects
           will be profitable. Therefore, investment may fall.
         </p>
+
+        <section class="diagram-section">
+          <h2>Cost of Capital and the MEI Curve</h2>
+
+          <p>
+            An increase in the cost of capital, such as more expensive machinery or buildings,
+            reduces the expected net return from investment projects. This is shown by a
+            <strong>leftward shift in the MEI curve</strong>.
+          </p>
+
+          <div class="diagram-container">
+            <svg viewBox="0 0 700 500" class="mei-diagram">
+
+              <defs>
+                <marker id="arrow-cost-capital" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+                  <path d="M0,0 L0,6 L7,3 Z" fill="#1e293b" />
+                </marker>
+                <marker id="arrow-cost-shift" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+                  <path d="M0,0 L0,6 L7,3 Z" fill="#7c3aed" />
+                </marker>
+              </defs>
+
+              <!-- Axes -->
+              <line x1="90" y1="420" x2="620" y2="420"
+                    stroke="#1e293b" stroke-width="3" marker-end="url(#arrow-cost-capital)" />
+              <line x1="90" y1="420" x2="90" y2="60"
+                    stroke="#1e293b" stroke-width="3" marker-end="url(#arrow-cost-capital)" />
+
+              <!-- Axis labels -->
+              <text x="625" y="425" font-size="16" fill="#1e293b">
+                Planned investment
+              </text>
+              <text x="20" y="55" font-size="16" fill="#1e293b">
+                MEI / interest rate
+              </text>
+              <text x="75" y="445" font-size="16" fill="#1e293b">
+                O
+              </text>
+
+              <!-- Original and new MEI curves -->
+              <line x1="260" y1="95" x2="560" y2="405"
+                    stroke="#2563eb" stroke-width="4" />
+              <line x1="120" y1="95" x2="420" y2="405"
+                    stroke="#7c3aed" stroke-width="4" />
+
+              <text x="530" y="390" font-size="17" fill="#2563eb" font-weight="bold">
+                MEI1
+              </text>
+              <text x="390" y="390" font-size="17" fill="#7c3aed" font-weight="bold">
+                MEI2
+              </text>
+
+              <!-- Leftward shift arrow -->
+              <line x1="425" y1="125" x2="285" y2="125"
+                    stroke="#7c3aed" stroke-width="3"
+                    marker-end="url(#arrow-cost-shift)" />
+              <text x="295" y="105" font-size="15" fill="#7c3aed" font-weight="bold">
+                MEI shifts left
+              </text>
+
+              <!-- Interest rate line -->
+              <line x1="90" y1="250" x2="470" y2="250"
+                    stroke="#ef4444" stroke-width="2.5" stroke-dasharray="8 6" />
+              <text x="58" y="255" font-size="17" fill="#ef4444" font-weight="bold">
+                R
+              </text>
+
+              <!-- Intersections and planned investment levels -->
+              <circle cx="410" cy="250" r="5" fill="#2563eb" />
+              <circle cx="270" cy="250" r="5" fill="#7c3aed" />
+
+              <line x1="410" y1="250" x2="410" y2="420"
+                    stroke="#2563eb" stroke-width="2.5" stroke-dasharray="8 6" />
+              <line x1="270" y1="250" x2="270" y2="420"
+                    stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="8 6" />
+
+              <text x="402" y="445" font-size="17" fill="#2563eb" font-weight="bold">
+                I1
+              </text>
+              <text x="262" y="445" font-size="17" fill="#7c3aed" font-weight="bold">
+                I2
+              </text>
+
+              <!-- Investment decreases arrow -->
+              <line x1="390" y1="455" x2="290" y2="455"
+                    stroke="#1e293b" stroke-width="2.5"
+                    marker-end="url(#arrow-cost-capital)" />
+              <text x="292" y="480" font-size="15" fill="#1e293b">
+                Investment decreases
+              </text>
+
+              <!-- Explanation label -->
+              <rect x="405" y="75" width="230" height="88" rx="12"
+                    fill="#f5f3ff" stroke="#ddd6fe" />
+              <text x="422" y="105" font-size="14" fill="#5b21b6">
+                Higher capital costs lower
+              </text>
+              <text x="422" y="128" font-size="14" fill="#5b21b6">
+                expected net returns,
+              </text>
+              <text x="422" y="151" font-size="14" fill="#5b21b6">
+                shifting MEI left.
+              </text>
+
+            </svg>
+          </div>
+
+          <div class="diagram-explanation">
+            <h3>Explanation</h3>
+            <p>
+              The interest rate is held constant at <strong>R</strong>. When the cost of capital
+              rises, each investment project becomes less profitable, so the MEI curve shifts left
+              from <strong>MEI1</strong> to <strong>MEI2</strong>.
+            </p>
+            <p>
+              At the same interest rate, the intersection with the MEI curve moves left from
+              <strong>I1</strong> to <strong>I2</strong>. This means planned investment decreases.
+            </p>
+          </div>
+        </section>
 
         <h4>Expectations and Business Confidence</h4>
         <p>
