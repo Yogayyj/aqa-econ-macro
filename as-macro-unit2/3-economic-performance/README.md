@@ -1,2 +1,3 @@
 # 03 Economic Performance
-后续在本目录新增该课程的 HTML。
+
+- [Lesson 1: Economic Growth and the Economic Cycle](./1-lesson-economic-growth-and-cycle.html)
