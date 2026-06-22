@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 2 - Economic Cycle and Output Gaps</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, Arial, sans-serif; background:#f1f5f9; color:#1e293b; line-height:1.65; }
+    header { background:linear-gradient(135deg,#4338ca,#0f766e); color:#fff; padding:48px 20px; text-align:center; }
+    header h1 { margin:0; font-size:clamp(2rem,5vw,3rem); }
+    header p { max-width:900px; margin:14px auto 0; font-size:1.08rem; opacity:.95; }
+    main { max-width:1120px; margin:36px auto; padding:0 20px 56px; }
+    a { color:#1d4ed8; }
+    .back-link { margin:0 auto 18px; max-width:1120px; padding:18px 20px 0; }
+    .lesson-section { background:#fff; border-radius:20px; box-shadow:0 8px 22px rgba(15,23,42,.08); margin-bottom:26px; padding:28px; }
+    .lesson-section h2 { color:#3730a3; margin-top:0; border-bottom:2px solid #e0e7ff; padding-bottom:10px; }
+    .grid { display:grid; grid-template-columns:1fr; gap:18px; }
+    @media (min-width:840px) { .grid.two { grid-template-columns:1fr 1fr; } .grid.four { grid-template-columns:repeat(4,1fr); } }
+    .card { background:#f8fafc; border:1px solid #e2e8f0; border-left:6px solid #4f46e5; border-radius:16px; padding:20px; }
+    .card h3 { color:#3730a3; margin-top:0; }
+    .key-term { background:#ecfdf5; border-left:5px solid #10b981; border-radius:12px; padding:14px 18px; margin:14px 0; }
+    .warning { background:#fff7ed; border-left:6px solid #f97316; border-radius:16px; padding:20px; margin-top:18px; }
+    .activity { background:#eef2ff; border-left:6px solid #4f46e5; border-radius:16px; padding:20px; margin-top:18px; }
+    .formula { display:inline-block; background:#e0f2fe; color:#075985; font-weight:700; padding:10px 16px; border-radius:10px; margin:8px 0; }
+    table { width:100%; border-collapse:collapse; margin:16px 0; }
+    th,td { border:1px solid #cbd5e1; padding:12px; vertical-align:top; }
+    th { background:#e0e7ff; color:#312e81; text-align:left; }
+    svg { max-width:100%; height:auto; display:block; margin:auto; }
+    .diagram { background:#f8fafc; border:1px solid #e2e8f0; border-radius:16px; padding:16px; margin-top:16px; }
+    ul,ol { padding-left:24px; }
+    footer { background:#0f172a; color:#cbd5e1; text-align:center; padding:22px; }
+  </style>
+</head>
+<body>
+  <p class="back-link"><a href="./index.html">← Back to Module 3 lessons</a></p>
+  <header>
+    <h1>Lesson 2: The Economic Cycle and Output Gaps</h1>
+    <p>This second lesson on economic growth and the cycle explains booms, recessions, depressions and recoveries, then shows how real GDP, unemployment, inflation and investment help identify each phase.</p>
+  </header>
+
+  <main>
+    <section class="lesson-section">
+      <h2>Learning Objectives</h2>
+      <ul>
+        <li>Define the economic cycle and its four main phases.</li>
+        <li>Explain the characteristics of a boom, recession, depression and recovery.</li>
+        <li>Use real GDP, unemployment, inflation and investment as indicators of the economic cycle.</li>
+        <li>Distinguish between positive and negative output gaps.</li>
+        <li>Explain the likely consequences of persistent output gaps.</li>
+      </ul>
+    </section>
+
+    <section class="lesson-section">
+      <h2>1. What is the Economic Cycle?</h2>
+      <p>Economies do not grow at the same rate every year. Most economies experience fluctuations in economic activity around their long-run trend rate of economic growth. These fluctuations are known as the <strong>economic cycle</strong>.</p>
+      <div class="grid two">
+        <div class="key-term"><strong>Expansion:</strong> a period when aggregate demand, real output and employment are increasing.</div>
+        <div class="key-term"><strong>Contraction:</strong> a period when aggregate demand, real output and employment are falling.</div>
+      </div>
+      <div class="diagram">
+        <h3>Economic cycle: actual GDP around trend GDP</h3>
+        <svg viewBox="0 0 760 360" role="img" aria-label="Economic cycle showing actual GDP fluctuating around upward-sloping trend GDP">
+          <line x1="70" y1="300" x2="705" y2="300" stroke="#334155" stroke-width="2"/>
+          <line x1="70" y1="300" x2="70" y2="45" stroke="#334155" stroke-width="2"/>
+          <text x="356" y="338">Time</text><text x="18" y="62" transform="rotate(-90 25 62)">Real GDP</text><text x="55" y="322">O</text>
+          <line x1="95" y1="245" x2="675" y2="85" stroke="#64748b" stroke-width="3" stroke-dasharray="8 7"/>
+          <text x="590" y="93" fill="#475569">Trend GDP</text>
+          <path d="M95 245 C150 160, 205 145, 250 190 S340 285, 405 205 S505 70, 575 130 S650 240, 675 170" fill="none" stroke="#2563eb" stroke-width="5"/>
+          <text x="130" y="145" fill="#1d4ed8">Boom</text><text x="254" y="220" fill="#1d4ed8">Recession</text><text x="335" y="284" fill="#1d4ed8">Depression</text><text x="445" y="112" fill="#1d4ed8">Recovery</text><text x="585" y="154" fill="#1d4ed8">Boom</text>
+          <text x="465" y="70" fill="#2563eb">Actual GDP</text>
+        </svg>
+      </div>
+      <p>The trend GDP line slopes upward because the productive capacity of the economy normally increases over time.</p>
+    </section>
+
+    <section class="lesson-section">
+      <h2>2. The Four Main Phases</h2>
+      <div class="grid four">
+        <div class="card"><h3>Boom</h3><p>Output is above normal capacity. Aggregate demand is very high, unemployment is low, inflation is high and rising, wages rise quickly and firms may find it difficult to recruit workers.</p></div>
+        <div class="card"><h3>Recession</h3><p>Aggregate demand and economic activity are falling. Output falls, unemployment rises, wage growth slows and firms make lower profits. A technical recession means two consecutive quarters of negative real GDP growth.</p></div>
+        <div class="card"><h3>Depression</h3><p>A severe or prolonged slump. Households and firms are pessimistic, aggregate demand is low, spare capacity is high, unemployment is high, wages may be cut and deflation may occur.</p></div>
+        <div class="card"><h3>Recovery</h3><p>Real GDP begins to rise after recession or depression. Firms increase output, unemployment starts to fall, and confidence, wages, inflation and investment may gradually rise.</p></div>
+      </div>
+      <div class="warning"><strong>Exam tip:</strong> an economy does not always pass through every phase. For example, it may recover from recession without entering a depression.</div>
+    </section>
+
+    <section class="lesson-section">
+      <h2>3. Indicators Used to Identify the Cycle</h2>
+      <table>
+        <thead><tr><th>Indicator</th><th>What it shows</th><th>Typical pattern over the cycle</th></tr></thead>
+        <tbody>
+          <tr><td>Real GDP</td><td>The main measure of national output and economic activity.</td><td>Falls in recession, may remain far below capacity in depression, rises in recovery and is constrained by trend growth in a boom.</td></tr>
+          <tr><td>Unemployment</td><td>Shows the unused labour resources in the economy.</td><td>Usually rises after output starts falling and falls after recovery begins, so it is a lagging indicator.</td></tr>
+          <tr><td>Inflation</td><td>Shows pressure on the price level.</td><td>Usually rises in a boom, falls during recession, and may become deflation in a depression.</td></tr>
+          <tr><td>Investment</td><td>The most volatile component of aggregate demand.</td><td>Falls sharply when demand and profits fall; rises in a boom when firms need more capacity.</td></tr>
+        </tbody>
+      </table>
+      <div class="key-term"><strong>Lagging indicator:</strong> a statistic that changes after an event has taken place. Unemployment is often lagging because firms usually wait before hiring or dismissing workers.</div>
+      <div class="key-term"><strong>Time lag:</strong> the period between one event and another, such as the delay between falling output and rising unemployment.</div>
+    </section>
+
+    <section class="lesson-section">
+      <h2>4. Positive and Negative Output Gaps</h2>
+      <p>An output gap exists when the economy's equilibrium level of national income is not equal to its normal capacity level of national income, also called its productive potential.</p>
+      <p class="formula">Output gap = equilibrium national income − normal capacity national income = Ye − YN</p>
+      <div class="grid two">
+        <div class="card"><h3>Positive output gap</h3><p>Equilibrium national income is greater than normal capacity. This is associated with a boom and can cause accelerating inflation and a worsening current account if it persists.</p></div>
+        <div class="card"><h3>Negative output gap</h3><p>Equilibrium national income is less than normal capacity. This is associated with recession or depression and can cause disinflation, deflation and high unemployment if it persists.</p></div>
+      </div>
+      <div class="grid two">
+        <div class="diagram">
+          <h3>Positive output gap: Ye &gt; YN</h3>
+          <svg viewBox="0 0 360 280" role="img" aria-label="AD AS diagram with positive output gap where Ye is greater than YN">
+            <line x1="52" y1="235" x2="320" y2="235" stroke="#334155" stroke-width="2"/><line x1="52" y1="235" x2="52" y2="35" stroke="#334155" stroke-width="2"/>
+            <line x1="175" y1="55" x2="175" y2="235" stroke="#64748b" stroke-width="3"/><text x="158" y="253">YN</text><text x="162" y="47">LRAS</text>
+            <path d="M75 210 C145 170, 205 108, 285 60" fill="none" stroke="#16a34a" stroke-width="4"/><text x="270" y="67" fill="#15803d">SRAS</text>
+            <path d="M90 65 C160 115, 220 165, 285 220" fill="none" stroke="#2563eb" stroke-width="4"/><text x="286" y="224" fill="#1d4ed8">AD</text>
+            <line x1="235" y1="150" x2="235" y2="235" stroke="#ef4444" stroke-dasharray="6 5"/><text x="224" y="253">Ye</text>
+            <line x1="175" y1="220" x2="235" y2="220" stroke="#ef4444" stroke-width="3" marker-end="url(#posGap)"/><defs><marker id="posGap" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#ef4444"/></marker></defs>
+            <text x="185" y="213" fill="#ef4444">positive gap</text><text x="10" y="65" transform="rotate(-90 18 65)">Price level</text><text x="142" y="272">Real national income</text><text x="38" y="252">O</text>
+          </svg>
+        </div>
+        <div class="diagram">
+          <h3>Negative output gap: Ye &lt; YN</h3>
+          <svg viewBox="0 0 360 280" role="img" aria-label="AD AS diagram with negative output gap where Ye is less than YN">
+            <line x1="52" y1="235" x2="320" y2="235" stroke="#334155" stroke-width="2"/><line x1="52" y1="235" x2="52" y2="35" stroke="#334155" stroke-width="2"/>
+            <line x1="220" y1="55" x2="220" y2="235" stroke="#64748b" stroke-width="3"/><text x="203" y="253">YN</text><text x="207" y="47">LRAS</text>
+            <path d="M75 210 C145 170, 205 108, 285 60" fill="none" stroke="#16a34a" stroke-width="4"/><text x="270" y="67" fill="#15803d">SRAS</text>
+            <path d="M70 85 C125 125, 170 170, 230 222" fill="none" stroke="#2563eb" stroke-width="4"/><text x="232" y="224" fill="#1d4ed8">AD</text>
+            <line x1="145" y1="170" x2="145" y2="235" stroke="#ef4444" stroke-dasharray="6 5"/><text x="134" y="253">Ye</text>
+            <line x1="220" y1="220" x2="145" y2="220" stroke="#ef4444" stroke-width="3" marker-end="url(#negGap)"/><defs><marker id="negGap" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#ef4444"/></marker></defs>
+            <text x="150" y="213" fill="#ef4444">negative gap</text><text x="10" y="65" transform="rotate(-90 18 65)">Price level</text><text x="142" y="272">Real national income</text><text x="38" y="252">O</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="lesson-section">
+      <h2>5. Output Gaps on the Economic Cycle Diagram</h2>
+      <p>The vertical distance between actual GDP and trend GDP shows the size of the output gap. If actual GDP is above trend GDP, the economy has a positive output gap. If actual GDP is below trend GDP, the economy has a negative output gap.</p>
+      <div class="diagram">
+        <svg viewBox="0 0 760 360" role="img" aria-label="Economic cycle diagram highlighting positive and negative output gaps">
+          <line x1="70" y1="300" x2="705" y2="300" stroke="#334155" stroke-width="2"/><line x1="70" y1="300" x2="70" y2="45" stroke="#334155" stroke-width="2"/>
+          <text x="356" y="338">Time</text><text x="18" y="62" transform="rotate(-90 25 62)">Real GDP</text><text x="55" y="322">O</text>
+          <line x1="95" y1="245" x2="675" y2="85" stroke="#64748b" stroke-width="3" stroke-dasharray="8 7"/>
+          <path d="M95 245 C150 160, 205 145, 250 190 S340 285, 405 205 S505 70, 575 130 S650 240, 675 170" fill="none" stroke="#2563eb" stroke-width="5"/>
+          <line x1="174" y1="155" x2="174" y2="223" stroke="#ef4444" stroke-width="3"/><text x="112" y="148" fill="#ef4444">Positive output gap</text>
+          <line x1="335" y1="268" x2="335" y2="179" stroke="#f97316" stroke-width="3"/><text x="275" y="288" fill="#f97316">Negative output gap</text>
+          <text x="590" y="93" fill="#475569">Trend GDP</text><text x="470" y="72" fill="#2563eb">Actual GDP</text>
+        </svg>
+      </div>
+      <div class="activity"><h3>Activity</h3><p>Investigate changes in real GDP growth and unemployment in your country's economy over the past 30 years. Identify where possible booms, recessions, recoveries and negative output gaps occurred.</p></div>
+    </section>
+
+    <section class="lesson-section">
+      <h2>Progress Questions</h2>
+      <ol>
+        <li>What is the economic cycle?</li>
+        <li>List the four main phases of the economic cycle.</li>
+        <li>What is the main indicator of the economic cycle?</li>
+        <li>Why is unemployment a lagging indicator of the economic cycle?</li>
+        <li>Explain the difference between a positive output gap and a negative output gap.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>AS Macroeconomics Unit 2 · Module 3: Economic Performance</footer>
+</body>
+</html>
