@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 3 - Economic Shocks and Economic Activity</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, Arial, sans-serif; background:#f1f5f9; color:#1e293b; line-height:1.65; }
+    header { background:linear-gradient(135deg,#7c2d12,#1d4ed8); color:#fff; padding:48px 20px; text-align:center; }
+    header h1 { margin:0; font-size:clamp(2rem,5vw,3rem); }
+    header p { max-width:920px; margin:14px auto 0; font-size:1.08rem; opacity:.95; }
+    main { max-width:1120px; margin:36px auto; padding:0 20px 56px; }
+    a { color:#1d4ed8; }
+    .back-link { margin:0 auto 18px; max-width:1120px; padding:18px 20px 0; }
+    .lesson-section { background:#fff; border-radius:20px; box-shadow:0 8px 22px rgba(15,23,42,.08); margin-bottom:26px; padding:28px; }
+    .lesson-section h2 { color:#9a3412; margin-top:0; border-bottom:2px solid #fed7aa; padding-bottom:10px; }
+    .grid { display:grid; grid-template-columns:1fr; gap:18px; }
+    @media (min-width:840px) { .grid.two { grid-template-columns:1fr 1fr; } .grid.three { grid-template-columns:repeat(3,1fr); } }
+    .card { background:#f8fafc; border:1px solid #e2e8f0; border-left:6px solid #ea580c; border-radius:16px; padding:20px; }
+    .card h3 { color:#9a3412; margin-top:0; }
+    .key-term { background:#ecfdf5; border-left:5px solid #10b981; border-radius:12px; padding:14px 18px; margin:14px 0; }
+    .get-right { background:#fff7ed; border-left:6px solid #f97316; border-radius:16px; padding:20px; margin-top:18px; }
+    .activity { background:#eef2ff; border-left:6px solid #4f46e5; border-radius:16px; padding:20px; margin-top:18px; }
+    .case-study { background:#fefce8; border-left:6px solid #ca8a04; border-radius:16px; padding:20px; margin-top:18px; }
+    table { width:100%; border-collapse:collapse; margin:16px 0; }
+    th,td { border:1px solid #cbd5e1; padding:12px; vertical-align:top; }
+    th { background:#ffedd5; color:#7c2d12; text-align:left; }
+    svg { max-width:100%; height:auto; display:block; margin:auto; }
+    .diagram { background:#f8fafc; border:1px solid #e2e8f0; border-radius:16px; padding:16px; margin-top:16px; }
+    ul,ol { padding-left:24px; }
+    footer { background:#0f172a; color:#cbd5e1; text-align:center; padding:22px; }
+  </style>
+</head>
+<body>
+  <p class="back-link"><a href="./index.html">← Back to Module 3 lessons</a></p>
+  <header>
+    <h1>Lesson 3: How Demand-side and Supply-side Shocks Affect Economic Activity</h1>
+    <p>This third lesson on economic growth and the cycle explains how internal and external shocks can move an economy into recession, recovery or boom.</p>
+  </header>
+
+  <main>
+    <section class="lesson-section">
+      <h2>Learning Objectives</h2>
+      <ul>
+        <li>Define an economic shock and distinguish between demand-side and supply-side shocks.</li>
+        <li>Explain how domestic demand-side shocks affect aggregate demand, national income and the economic cycle.</li>
+        <li>Explain how external demand-side shocks affect exports, aggregate demand and economic activity.</li>
+        <li>Analyse negative and positive supply-side shocks using AD/SRAS diagrams.</li>
+        <li>Evaluate why fluctuations in economic activity are not only caused by shocks.</li>
+      </ul>
+    </section>
+
+    <section class="lesson-section">
+      <h2>1. Economic Shocks</h2>
+      <p>Economic shocks are sudden, unexpected changes that affect aggregate demand or aggregate supply. They are an important reason why economic activity fluctuates around the long-run trend rate of growth.</p>
+      <div class="grid two">
+        <div class="key-term"><strong>Demand-side shock:</strong> an unexpected change in one or more components of aggregate demand, such as consumption, investment, government spending or exports.</div>
+        <div class="key-term"><strong>Supply-side shock:</strong> an unexpected change in production costs or productive capacity that shifts short-run aggregate supply or long-run aggregate supply.</div>
+      </div>
+      <table>
+        <thead><tr><th>Where the shock starts</th><th>Demand-side examples</th><th>Supply-side examples</th></tr></thead>
+        <tbody>
+          <tr><td>Domestic economy</td><td>A sudden fall in consumer confidence, producer confidence, credit availability or government spending.</td><td>Industrial action, domestic energy shortages, or changes in productivity.</td></tr>
+          <tr><td>Global economy</td><td>A fall in world growth that reduces export demand.</td><td>A rise in world oil prices, commodity price shocks, or major technological innovation.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="lesson-section">
+      <h2>2. Domestic Demand-side Shocks</h2>
+      <p>A stable, growing economy can move into recession if aggregate demand suddenly falls. For example, if households and firms become pessimistic, households may reduce spending on consumer durables and firms may cut investment.</p>
+      <p>The initial fall in spending causes a <strong>downward multiplier effect</strong>, so national income falls by more than the original reduction in aggregate demand. Falling income can also create an <strong>accelerator effect</strong>: firms no longer need to expand capacity, so investment falls further.</p>
+      <div class="diagram">
+        <h3>Negative domestic demand-side shock</h3>
+        <svg viewBox="0 0 620 360" role="img" aria-label="AD AS diagram showing a fall in aggregate demand reducing real national income">
+          <line x1="70" y1="300" x2="570" y2="300" stroke="#334155" stroke-width="2"/><line x1="70" y1="300" x2="70" y2="45" stroke="#334155" stroke-width="2"/>
+          <text x="18" y="68" transform="rotate(-90 25 68)">Price level</text><text x="230" y="340">Real national income</text><text x="55" y="322">O</text>
+          <path d="M110 275 C210 265, 360 175, 505 55" fill="none" stroke="#16a34a" stroke-width="4"/><text x="508" y="60" fill="#15803d">SRAS</text>
+          <path d="M170 60 C260 120, 360 205, 480 285" fill="none" stroke="#2563eb" stroke-width="4"/><text x="482" y="287" fill="#1d4ed8">AD1</text>
+          <path d="M105 75 C195 145, 285 225, 395 292" fill="none" stroke="#ef4444" stroke-width="4"/><text x="397" y="294" fill="#ef4444">AD2</text>
+          <line x1="390" y1="205" x2="390" y2="300" stroke="#1d4ed8" stroke-dasharray="6 5"/><text x="380" y="320">Y1</text>
+          <line x1="300" y1="225" x2="300" y2="300" stroke="#ef4444" stroke-dasharray="6 5"/><text x="290" y="320">Y2</text>
+          <line x1="388" y1="250" x2="305" y2="250" stroke="#ef4444" stroke-width="3" marker-end="url(#adFall)"/>
+          <defs><marker id="adFall" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#ef4444"/></marker></defs>
+        </svg>
+      </div>
+      <div class="get-right"><strong>Get it right:</strong> the impact of both positive and negative demand-side shocks is amplified by multiplier and accelerator effects.</div>
+      <p>When confidence returns, aggregate demand starts to rise. The multiplier and accelerator can then help move the economy into recovery and, if demand grows too quickly, into boom.</p>
+    </section>
+
+    <section class="lesson-section">
+      <h2>3. External Demand-side Shocks</h2>
+      <p>Demand-side shocks can also start in the global economy. For many countries, exports are an important component of aggregate demand. If world growth slows, foreign demand for exports may fall, reducing domestic aggregate demand and economic activity.</p>
+      <div class="grid two">
+        <div class="card"><h3>Negative external demand shock</h3><p>Lower global growth reduces exports. Since exports are an injection into the circular flow, the fall in exports can create a downward multiplier effect and may cause recession.</p></div>
+        <div class="card"><h3>Positive external demand shock</h3><p>Higher global growth increases exports. This raises aggregate demand and can help a recovery or push the economy into a boom.</p></div>
+      </div>
+    </section>
+
+    <section class="lesson-section">
+      <h2>4. Supply-side Shocks: Oil Prices and SRAS</h2>
+      <p>Supply-side shocks shift aggregate supply. A rise in the world price of oil is a negative supply-side shock for oil-consuming economies because oil is used to produce and transport many goods and services.</p>
+      <div class="diagram">
+        <h3>A rise in oil prices reduces economic activity in oil-consuming countries</h3>
+        <svg viewBox="0 0 620 380" role="img" aria-label="AD AS diagram showing a leftward shift of SRAS after a rise in oil prices">
+          <line x1="70" y1="315" x2="570" y2="315" stroke="#334155" stroke-width="2"/><line x1="70" y1="315" x2="70" y2="45" stroke="#334155" stroke-width="2"/>
+          <text x="18" y="68" transform="rotate(-90 25 68)">Price level</text><text x="230" y="355">Real national income</text><text x="55" y="337">O</text>
+          <path d="M150 72 C250 140, 350 225, 490 300" fill="none" stroke="#2563eb" stroke-width="4"/><text x="493" y="302" fill="#1d4ed8">AD</text>
+          <path d="M125 292 C225 282, 380 185, 515 60" fill="none" stroke="#16a34a" stroke-width="4"/><text x="500" y="58" fill="#15803d">SRAS1</text>
+          <path d="M95 275 C185 260, 320 165, 455 52" fill="none" stroke="#ef4444" stroke-width="4"/><text x="420" y="48" fill="#ef4444">SRAS2</text>
+          <line x1="395" y1="230" x2="395" y2="315" stroke="#16a34a" stroke-dasharray="6 5"/><text x="385" y="335">Y1</text>
+          <line x1="310" y1="200" x2="310" y2="315" stroke="#ef4444" stroke-dasharray="6 5"/><text x="300" y="335">Y2</text>
+          <line x1="70" y1="230" x2="395" y2="230" stroke="#16a34a" stroke-dasharray="6 5"/><text x="38" y="234">PL1</text>
+          <line x1="70" y1="200" x2="310" y2="200" stroke="#ef4444" stroke-dasharray="6 5"/><text x="38" y="204">PL2</text>
+          <line x1="405" y1="105" x2="335" y2="105" stroke="#ef4444" stroke-width="3" marker-end="url(#srasLeft)"/>
+          <defs><marker id="srasLeft" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#ef4444"/></marker></defs>
+        </svg>
+      </div>
+      <p>Higher oil prices raise firms' costs, shifting SRAS left. The result is lower real national income and a higher price level. This means a negative supply-side shock can cause both recessionary pressure and inflationary pressure.</p>
+      <div class="get-right"><strong>Get it right:</strong> global events do not affect every country in the same way. Higher oil prices reduce activity in oil-consuming economies but can raise export revenue, aggregate demand and economic activity in oil-producing economies.</div>
+    </section>
+
+    <section class="lesson-section">
+      <h2>5. Case Study: The 1973 Oil Crisis</h2>
+      <div class="case-study">
+        <p>In October 1973, OPEC restricted oil supply to countries that had supported Israel in the Yom Kippur War. The price of oil rose sharply, creating the first oil shock.</p>
+        <p>Many countries were already experiencing high inflation, and the increase in oil prices made inflation worse. It also contributed to recession in oil-importing economies. In the UK, the recession lasted from 1973 to 1975, real GDP fell by over 3%, and unemployment continued to rise afterwards.</p>
+        <ol>
+          <li>Explain what is meant by a recession.</li>
+          <li>Explain why a rise in oil prices can increase both inflation and unemployment.</li>
+          <li>Explain why unemployment often continues to rise after a recovery begins.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="lesson-section">
+      <h2>6. Positive Supply-side Shocks and the Kondratieff Wave</h2>
+      <p>A positive supply-side shock can increase economic activity by increasing productivity, reducing costs and shifting aggregate supply to the right. Innovation can also create new products, increasing aggregate demand.</p>
+      <p>Nikolai Kondratieff argued that major inventions and waves of innovation can create long periods of rising economic activity. Examples include the steam engine, railway systems, information technology and biotechnology. He suggested that these long cycles, known as Kondratieff Waves, may last between 40 and 60 years.</p>
+    </section>
+
+    <section class="lesson-section">
+      <h2>7. Are Fluctuations Only Caused by Shocks?</h2>
+      <p>Shocks are important, but they are not the only cause of fluctuations. Booms can end because real GDP growth is limited by productive capacity. If aggregate demand grows too fast, inflation rises, confidence falls and aggregate demand may decline.</p>
+      <p>Depressions can also come to an end without a new external shock. Eventually, capital and consumer durables must be replaced, causing investment and consumption to rise. This can trigger multiplier effects and begin recovery.</p>
+      <div class="activity"><h3>Activity</h3><p>Research Hyman Minsky's financial instability hypothesis. Why might periods of stability encourage risk-taking and make a financial crisis more likely?</p></div>
+    </section>
+
+    <section class="lesson-section">
+      <h2>Progress Questions</h2>
+      <ol>
+        <li>What is an economic shock?</li>
+        <li>Explain how a fall in consumer and producer confidence can cause recession.</li>
+        <li>Explain how a slowdown in the global economy can reduce domestic economic activity.</li>
+        <li>Use an AD/SRAS diagram to explain the impact of a rise in oil prices on an oil-consuming country.</li>
+        <li>Explain why the same oil-price shock may benefit oil-producing countries.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>AS Macroeconomics Unit 2 · Module 3: Economic Performance</footer>
+</body>
+</html>
