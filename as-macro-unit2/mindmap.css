@@ -1,0 +1,92 @@
+.mindmap {
+  background: #fff;
+  border: 1px solid #dbe3ef;
+  border-radius: 20px;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, .08);
+  margin: 0 0 26px;
+  padding: 28px;
+}
+
+.mindmap h2 {
+  color: #1e3a5f;
+  margin-top: 0;
+  border-bottom: 2px solid #bfdbfe;
+  padding-bottom: 10px;
+}
+
+.mindmap-scroll {
+  overflow-x: auto;
+  padding: 4px 4px 12px;
+}
+
+.mindmap-root {
+  position: relative;
+  max-width: 650px;
+  margin: 0 auto 42px;
+  padding: 15px 18px;
+  border-radius: 14px;
+  background: #1e3a5f;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+}
+
+.mindmap-root::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -26px;
+  width: 3px;
+  height: 26px;
+  background: #93b4d3;
+}
+
+.mindmap-branches {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(205px, 1fr));
+  gap: 16px;
+  min-width: 900px;
+  padding-top: 28px;
+}
+
+.mindmap-branches::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 3px;
+  border-radius: 3px;
+  background: #93b4d3;
+}
+
+.mindmap-branch {
+  position: relative;
+  padding: 17px;
+  border: 1px solid #cbd5e1;
+  border-top: 5px solid var(--branch, #2563eb);
+  border-radius: 14px;
+  background: #f8fafc;
+}
+
+.mindmap-branch::before {
+  content: "";
+  position: absolute;
+  top: -33px;
+  left: 50%;
+  width: 3px;
+  height: 28px;
+  background: #93b4d3;
+}
+
+.mindmap-branch:nth-child(2) { --branch: #0d9488; }
+.mindmap-branch:nth-child(3) { --branch: #d97706; }
+.mindmap-branch:nth-child(4) { --branch: #7c3aed; }
+.mindmap-branch h3 { margin: 0 0 8px; color: #1e3a5f; }
+.mindmap-branch ul { margin: 0; padding-left: 19px; }
+.mindmap-branch li + li { margin-top: 5px; }
+
+@media (max-width: 620px) {
+  .mindmap { padding: 20px; }
+}
