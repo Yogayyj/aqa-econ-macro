@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An AP Computer Science A lab for learning Java classes, objects, constructors, and methods.">
+  <title>Fashion Item Java Lab</title>
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+  <section class="login-view" id="login-view" aria-labelledby="welcome-title">
+    <div class="login-card">
+      <div class="brand-mark" aria-hidden="true">FJ</div>
+      <p class="eyebrow">AP COMPUTER SCIENCE A</p>
+      <h1 id="welcome-title">Welcome to Fashion Java Lab</h1>
+      <p class="lede">Build one Java program step by step. Your work stays on this device.</p>
+      <form id="profile-form">
+        <label for="student-name">Name</label>
+        <input id="student-name" name="name" autocomplete="name" maxlength="80" required placeholder="Amy Zhang">
+        <label for="student-id">Student ID</label>
+        <input id="student-id" name="id" autocomplete="username" maxlength="40" required placeholder="2026001">
+        <p class="form-error" id="profile-error" role="alert"></p>
+        <button class="button primary wide" type="submit">Start Lab <span aria-hidden="true">→</span></button>
+      </form>
+      <a class="teacher-link" href="./teacher.html">Open Teacher Dashboard</a>
+    </div>
+  </section>
+
+  <div class="app" id="lab-view" hidden>
+    <header class="topbar">
+      <a class="wordmark" href="./index.html" aria-label="Fashion Java Lab home">
+        <span class="brand-mark small" aria-hidden="true">FJ</span>
+        <span><strong>Fashion Item</strong><small>Java Lab</small></span>
+      </a>
+      <div class="student-summary">
+        <div><span id="header-name"></span><small id="header-id"></small></div>
+        <span class="score-pill">Score <strong id="header-score">0 / 4</strong></span>
+        <button class="button ghost compact" id="export-button" type="button">Export</button>
+        <button class="button ghost compact" id="logout-button" type="button">Log out</button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <aside class="challenge-panel panel">
+        <p class="eyebrow">YOUR PATH</p>
+        <nav id="challenge-nav" aria-label="Challenges"></nav>
+        <div class="lesson-card">
+          <span class="challenge-number" id="challenge-number">Challenge 1 of 4</span>
+          <h1 id="challenge-title"></h1>
+          <p id="challenge-summary"></p>
+          <div id="challenge-task"></div>
+          <div class="concept-tags" id="concept-tags"></div>
+        </div>
+        <button class="text-button danger" id="reset-button" type="button">Reset my lab</button>
+      </aside>
+
+      <section class="editor-panel panel" aria-label="Java editor">
+        <div class="file-tabs" role="tablist" aria-label="Java files">
+          <button class="file-tab active" role="tab" aria-selected="true" data-file="main">Main.java <span class="edit-dot" title="Editable"></span></button>
+          <button class="file-tab" role="tab" aria-selected="false" data-file="fashion">FashionItem.java <span class="lock">Read only</span></button>
+          <button class="file-tab" role="tab" aria-selected="false" data-file="calculator">Calculator.java <span class="lock">Read only</span></button>
+        </div>
+        <div class="editor-wrap">
+          <div class="line-numbers" id="line-numbers" aria-hidden="true"></div>
+          <textarea id="code-editor" aria-label="Main.java code editor" spellcheck="false"></textarea>
+          <pre id="readonly-code" class="readonly-code" tabindex="0" hidden><code></code></pre>
+        </div>
+        <div class="actionbar">
+          <button class="button secondary" id="run-button" type="button"><span aria-hidden="true">▶</span> Run Code</button>
+          <button class="button primary" id="check-button" type="button"><span aria-hidden="true">✓</span> Check Answer</button>
+          <span class="save-status" id="save-status" role="status">Saved locally ✓</span>
+        </div>
+        <section class="results" aria-live="polite" aria-labelledby="results-title">
+          <div class="results-heading">
+            <p class="eyebrow" id="results-title">CHECK RESULTS</p>
+            <button class="text-button" id="clear-results" type="button">Clear</button>
+          </div>
+          <div id="results-content" class="results-placeholder">Choose a challenge, add your code, then check your answer.</div>
+        </section>
+      </section>
+
+      <aside class="api-panel panel">
+        <p class="eyebrow">QUICK REFERENCE</p>
+        <section class="api-card">
+          <div class="api-title"><span class="class-icon">C</span><div><h2>FashionItem</h2><small>Class</small></div></div>
+          <h3>Constructor <span class="kind instance">INSTANCE</span></h3>
+          <pre><code>FashionItem(
+  String itemBrand,
+  String itemType,
+  double itemPrice
+)</code></pre>
+          <p class="hint"><strong>Parameters</strong> are the names in a method or constructor definition.</p>
+          <h3>Methods</h3>
+          <code class="method">void showInfo()</code>
+          <code class="method">double getPrice()</code>
+        </section>
+        <section class="api-card">
+          <div class="api-title"><span class="class-icon purple">C</span><div><h2>Calculator</h2><small>Utility class</small></div></div>
+          <h3>Methods <span class="kind static">STATIC</span></h3>
+          <code class="method">static double add(double price1, double price2)</code>
+          <code class="method">static double discount(double price, double discountRate)</code>
+        </section>
+        <section class="compare-card">
+          <p><code>hairClip.showInfo()</code><strong><span>↑ OBJECT</span> instance method</strong></p>
+          <p><code>Calculator.add(...)</code><strong><span>↑ CLASS</span> static method</strong></p>
+        </section>
+      </aside>
+    </main>
+  </div>
+
+  <dialog id="reset-dialog">
+    <form method="dialog">
+      <div class="dialog-icon">!</div>
+      <h2>Reset your lab?</h2>
+      <p>This will delete your saved code and challenge progress on this device. This cannot be undone.</p>
+      <div class="dialog-actions">
+        <button class="button ghost" value="cancel">Keep my work</button>
+        <button class="button danger-button" id="confirm-reset" value="reset">Reset lab</button>
+      </div>
+    </form>
+  </dialog>
+  <script src="./assets/checks.js"></script>
+  <script src="./assets/app.js"></script>
+</body>
+</html>

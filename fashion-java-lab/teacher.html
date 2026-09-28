@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Dashboard · Fashion Java Lab</title>
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body class="teacher-page">
+  <header class="teacher-header">
+    <a class="wordmark" href="./index.html"><span class="brand-mark small">FJ</span><span><strong>Fashion Item</strong><small>Teacher Dashboard</small></span></a>
+    <a href="./index.html">← Student Lab</a>
+  </header>
+  <main class="teacher-main">
+    <section class="teacher-intro">
+      <p class="eyebrow">LOCAL SUBMISSION REVIEW</p>
+      <h1>Teacher Dashboard</h1>
+      <p>Review exported student work privately in your browser. Files are never uploaded.</p>
+    </section>
+    <section class="drop-zone" id="drop-zone">
+      <div class="upload-icon" aria-hidden="true">⇧</div>
+      <h2>Drop student JSON files here</h2>
+      <p>or select multiple exports from your computer</p>
+      <label class="button primary" for="file-input">Select Student JSON Files</label>
+      <input id="file-input" type="file" accept=".json,application/json" multiple>
+    </section>
+    <p class="import-errors" id="import-errors" role="alert"></p>
+    <div class="dashboard-grid">
+      <section class="dashboard-card">
+        <div class="card-header"><h2>Submissions</h2><span id="submission-count">0 students</span></div>
+        <div id="submission-list" class="empty-state">Import one or more assignment exports to see class progress.</div>
+      </section>
+      <section class="dashboard-card">
+        <div class="card-header"><h2>Student detail</h2><span>Final submission</span></div>
+        <div id="student-detail" class="empty-state">Select a student to inspect their progress and Main.java.</div>
+      </section>
+    </div>
+  </main>
+  <script src="./assets/teacher.js"></script>
+</body>
+</html>
